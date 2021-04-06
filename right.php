@@ -9,11 +9,11 @@
 
                 <div id="about-me">
                     <p><strong>Online-JOB</strong></p>
-					<P>099-520612</P>
-                    <p>9823480941</p>
-                    <p>Online-JOB.np.com<br />
+					          <P>000-000000</P>
+                    <p>0000000000</p>
+                    <p>JOB-Portal.co.in<br />
                     </p>
-               <p><b>Dhangadhi, Nepal</b></p>
+               <p><b>Maharashtra, India</b></p>
 </div> <!-- /about-me -->
 
                 <hr class="noscreen" />
