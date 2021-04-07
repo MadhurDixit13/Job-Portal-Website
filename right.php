@@ -5,22 +5,23 @@
             <div id="col-in">
 
                 <!-- About Me -->
-                <h3>Contact Us</h3>
+                <!-- <h3>Contact Us</h3> -->
 
-                <div id="about-me">
+                <!-- <div id="about-me">
                     <p><strong>Online-JOB</strong></p>
 					          <P>000-000000</P>
                     <p>0000000000</p>
                     <p>JOB-Portal.co.in<br />
                     </p>
                <p><b>Maharashtra, India</b></p>
-</div> <!-- /about-me -->
+</div>  -->
+<!-- /about-me -->
 
                 <hr class="noscreen" />
 
                 <!-- Category -->
                 <h3 >Login</h3>
-<div class="login">
+                <div class="login">
                 <form name="form1" method="post" action="login.php">
                   <table width="100%" border="0">
                     <tr>
