@@ -11,9 +11,10 @@
         display | position | float | overflow | width | height | border | margin | padding | background | align | font
 */
 
+
 * {min-height:1px;}
-body {border:0; margin:0; padding:0;background: rgb(2,0,36);
-   background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(124,53,9,1) 1%, rgba(0,212,255,1) 100%) 0 0 repeat-x; font:70%/160% "verdana",sans-serif; color:#192666; _text-align:center;}
+body {border:0; margin:0; padding:0;background-color: #d9e4f5;
+   background:  linear-gradient(315deg, #d9e4f5 0%, #f5e3e6 74%) 0 0 repeat-x; font:70%/160% "verdana",sans-serif; color:#192666; _text-align:center;}
 
 a {color:#192666;}
 a:hover {
@@ -34,7 +35,7 @@ h5 {font-size:100%;}
 /* B7CAF6 */
 table {display:table;  margin:15px 0; padding:0; border:1px solid #001d3d; font-size:100%;}
 tr {display:table-row;}
-th, td {display: table-cell; border:1px solid #ffcdb2; margin:0; padding:5px; vertical-align:top; text-align:left;}
+th, td {display: table-cell; border:1px solid black; margin:0; padding:5px; vertical-align:top; text-align:left;}
 th {background:#E7ECFD; text-align:center; 
   
      color:#192666;  
@@ -86,7 +87,7 @@ code, kbd, samp {font-family:monospace; font-size:110%;}
 #main {width:770px; margin:50px auto 0 auto; _text-align:left;}
 
 /* Header */
-#header {position:relative; width:760px; height:100px; margin:0;margin-left:5px; padding:0; background:#233C9B url("../design/head1.jpg") no-repeat;
+#header {position:relative; width:760px; height:100px; margin:0;margin-left:5px; padding:0; 
     color:#FFF;}
 
     /* Header - logo */
@@ -114,18 +115,18 @@ code, kbd, samp {font-family:monospace; font-size:110%;}
     #header #search legend {display:none;}
 
 /* Main menu (tabs) */
-#tabs {background:#c55df6; margin:0 5px; padding:10px 0 0 0; _height:1px;}
+#tabs {background:#957fef; margin:0 5px; padding:10px 0 0 0; _height:1px;}
 /* 192666 */
     #tabs ul {margin:0 10px; padding:0; list-style:none;}
     #tabs ul li {margin:0 5px 0 0; padding:0; float:left;}
-    #tabs ul li a {display:block; position:relative; padding:7px 15px; border:0; background:#c18cf9 0 0 repeat-x; color:#6d23b6; font-weight:bold; text-decoration:none; cursor:cursor;}
+    #tabs ul li a {display:block; position:relative; padding:7px 15px; border:0; background:#dec0f1 0 0 repeat-x; color:#001845; font-weight:bold; text-decoration:none; cursor:cursor;}
     
     /* Main menu (tabs - link) */
-    #tabs ul li a span.tab-l, #tabs ul li a:hover span.tab-l {position:absolute; top:0; left:0; _left:-15px; width:8px; height:8px; background:#c18cf9 0 0 no-repeat;}
-    #tabs ul li a span.tab-r, #tabs ul li a:hover span.tab-r {position:absolute; top:0; right:0; _right:-1px; width:8px; height:8px; background:#c18cf9 100% 0 no-repeat;}
+    #tabs ul li a span.tab-l, #tabs ul li a:hover span.tab-l {position:absolute; top:0; left:0; _left:-15px; width:8px; height:8px; background:#dec0f1 0 0 no-repeat;}
+    #tabs ul li a span.tab-r, #tabs ul li a:hover span.tab-r {position:absolute; top:0; right:0; _right:-1px; width:8px; height:8px; background:#dec0f1 100% 0 no-repeat;}
     
     /* Main menu (tabs - hover) */
-    #tabs ul li a:hover {background:#6411ad 0 0 repeat-x; color:#FFF;}
+    #tabs ul li a:hover {background:#00171f 0 0 repeat-x; color:#FFF;}
     #tabs ul li a:hover span.tab-l {background: 0 0 no-repeat;}
     #tabs ul li a:hover span.tab-r {background: 100% 0 no-repeat;}
     
@@ -154,8 +155,8 @@ code, kbd, samp {font-family:monospace; font-size:110%;}
 #content {float:left; width:530px; _width:550px; margin:0; padding:0 0 0 20px;}
 
     /* Content - article */
-    #content .article {clear:both; margin:0; padding:20px; background:url("../design/content_article_bg.jpg") 0 0 no-repeat;}
-    #content .article h2 {margin:0 -20px; padding:10px; background:#DEE5FD url("../design/content_title_bg.gif") 0 0 repeat-y; color:#192666;}
+    #content .article {clear:both; margin:0; padding:20px; background:#e8dcf0 0 0 no-repeat;}
+    #content .article h2 {margin:0 -20px; padding:10px; background:#957fef 0 0 repeat-y; color:#192666;}
     #content .article h2 span {background:url("../design/ico_list.gif") 0 50% no-repeat; padding-left:25px;}
     
     #content .article p {text-align:justify;}
@@ -175,9 +176,9 @@ code, kbd, samp {font-family:monospace; font-size:110%;}
     #content .btn-more a:hover {background:url("../design/btn_more.gif") -95px 0 no-repeat;}
 
 /* Right column */
-#col {float:left; width:200px; margin:0; padding:0; background:#bfacfb 0 0 repeat-y;}
-#col-in {padding:20px 10px; background:#bfacfb 0 0 no-repeat;}
-#col h3 {padding:13px 15px 14px 15px; margin:0 -10px 15px -10px; background:#c18cf9 0 0 repeat-y; color:#192666;}
+#col {float:left; width:200px; margin:0; padding:0; background:#dec0f1 0 0 repeat-y;}
+#col-in {padding:20px 10px; background:#dec0f1 0 0 no-repeat;}
+#col h3 {padding:13px 15px 14px 15px; margin:0 -10px 15px -10px; background:#957fef 0 0 repeat-y; color:#192666;}
 
     /* Right column - About me */
     #col #about-me {margin-bottom:15px; line-height:130%;}
@@ -218,7 +219,7 @@ code, kbd, samp {font-family:monospace; font-size:110%;}
    
 .login input[type="text"]
 {
-	background-color:#FFFFCC;
+	background-color:#FFF;
 	height:22px;
 	width:160px;
 	border:1px solid black;
@@ -229,18 +230,18 @@ code, kbd, samp {font-family:monospace; font-size:110%;}
 }
 .login input[type="text"]:hover
 {
-	background-color:#003366;
+	background-color:#FFF;
 	height:22px;
 	width:160px;
 	border:1px solid black;
 	font-size:12px;
 	font-weight:bold;
 	border-radius:5px 0px 5px 0px;
-	color:#FFFFFF;
+	
 }
 .login input[type="password"]
 {
-	background-color:#FFFFCC;
+	background-color:#FFF;
 	height:22px;
 	width:160px;
 	border:1px solid black;
@@ -250,18 +251,18 @@ code, kbd, samp {font-family:monospace; font-size:110%;}
 }
 .login input[type="password"]:hover
 {
-	background-color:#003366;
+	background-color:#FFF;
 	height:22px;
 	width:160px;
 	border:1px solid black;
 	font-size:12px;
 	font-weight:bold;
 	border-radius:5px 0px 5px 0px;
-	color:#FFFFFF;
+	
 }
 .login input[type="submit"]
 {
-	background-color:#FFFFCC;
+	background-color:#FFF;
 	height:22px;
 	width:100px;
 	border:1px solid #003366;
@@ -272,18 +273,18 @@ code, kbd, samp {font-family:monospace; font-size:110%;}
 }
 .login input[type="submit"]:hover
 {
-	background-color:#003366;
+	background-color:#FFF;
 	height:22px;
 	width:100px;
 	border:1px solid #003366;
 	font-size:12px;
 	font-weight:bold;
 	border-radius:5px 0px 5px 0px;
-	color:#FFFFFF;
+	
 }
 .login select
 {
-	background-color:#FFFFCC;
+	background-color:#FFF;
 	height:25px;
 	width:160px;
 	border:1px solid #003366;
@@ -313,6 +314,6 @@ code, kbd, samp {font-family:monospace; font-size:110%;}
 	font-size:12px;
 	font-weight:bold;
 	border-radius:5px 0px 5px 0px;
-    color:#ffcdb2;
+    
 	/* color:#FFFFFF; */
 }
