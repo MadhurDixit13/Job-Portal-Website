@@ -67,8 +67,15 @@
                     <tr>
                       <td><div align="center"><a href="Forget.php"><strong>Forgot Password? </strong></a></div></td>
                     </tr>
+                    
                   </table>
+
       </form>
+      <div align="center"><a href="EmployerReg.php"><strong>New Employer? Register Here</strong></a>
+                  </div>
+              
+              <div align="center"><a href="JobSeekerReg.php"><strong>New Job Seeker? Register Here</strong></a>                  </div>
+                <p class="btn-more box noprint">&nbsp;</p>
               </div>
                 <br/>
 
