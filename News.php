@@ -37,16 +37,7 @@ include "menu.php"
     <div id="page" class="box">
     <div id="page-in" class="box">
 
-        <div id="strip" class="box noprint">
-
-            <!-- RSS feeds -->
-            <hr class="noscreen" />
-
-            <!-- Breadcrumbs -->
-            <p id="breadcrumbs">&nbsp;</p>
-          <hr class="noscreen" />
-            
-        </div> <!-- /strip -->
+       
 
         <!-- Content -->
         <div id="content">
@@ -115,6 +106,9 @@ mysqli_close($con);
   </tr>
 </table>
                 </p>
+                <p class="btn-more box noprint">&nbsp;</p>
+                <p class="btn-more box noprint">&nbsp;</p>
+                <p class="btn-more box noprint">&nbsp;</p>
                 <p class="btn-more box noprint">&nbsp;</p>
                 <p class="btn-more box noprint">&nbsp;</p>
                 <p class="btn-more box noprint">&nbsp;</p>
