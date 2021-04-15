@@ -38,9 +38,7 @@ if(isset($_SESSION['$UserName_job'])){
 <body id="www-url-cz">
 <!-- Main -->
 <div id="main" class="box">
-<?php 
-include "Header.php"
-?>
+
 <?php 
 include "menu.php"
 ?>   
@@ -48,16 +46,7 @@ include "menu.php"
     <div id="page" class="box">
     <div id="page-in" class="box">
 
-        <div id="strip" class="box noprint">
-
-            <!-- RSS feeds -->
-            <hr class="noscreen" />
-
-            <!-- Breadcrumbs -->
-            <p id="breadcrumbs">You are here: <a href="index.php">Home</a></p>
-          <hr class="noscreen" />
-            
-        </div> <!-- /strip -->
+       
 
         <!-- Content -->
         <div id="content">
@@ -112,10 +101,19 @@ include "menu.php"
                 <p>&nbsp;</p>
 
                 <p class="btn-more box noprint">&nbsp;</p>
+                <p class="btn-more box noprint">&nbsp;</p>
+                <p class="btn-more box noprint">&nbsp;</p>
+                
           </div> <!-- /article -->
 
             <hr class="noscreen" />
-            
+            <p class="btn-more box noprint">&nbsp;</p>
+            <p class="btn-more box noprint">&nbsp;</p>
+            <p class="btn-more box noprint">&nbsp;</p>
+            <p class="btn-more box noprint">&nbsp;</p>
+            <p class="btn-more box noprint">&nbsp;</p>
+            <p class="btn-more box noprint">&nbsp;</p>
+            <p class="btn-more box noprint">&nbsp;</p>
         </div> <!-- /content -->
 
 <?php
