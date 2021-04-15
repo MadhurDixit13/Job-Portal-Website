@@ -13,7 +13,7 @@ else{
 if (!function_exists("GetSQLValueString")) {
 function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
 {
-  $theValue = get_magic_quotes_gpc() ? stripslashes($theValue) : $theValue;
+  $theValue = false ? stripslashes($theValue) : $theValue;
 
 //  $theValue = function_exists("mysqli_real_escape_string") ? mysqli_real_escape_string($theValue) : mysqli_escape_string($theValue);
 
@@ -224,7 +224,14 @@ mysqli_close($con);
           </div> <!-- /article -->
 
             <hr class="noscreen" />
-            
+            <p class="btn-more box noprint">&nbsp;</p>
+              
+              <p class="btn-more box noprint">&nbsp;</p>
+              
+              <p class="btn-more box noprint">&nbsp;</p>
+              
+              <p class="btn-more box noprint">&nbsp;</p>
+              <p class="btn-more box noprint">&nbsp;</p>
         </div> <!-- /content -->
 
 <?php

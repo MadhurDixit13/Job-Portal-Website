@@ -23,7 +23,7 @@ session_start();
 	// Specify the query to Insert Record
 	$sql = "insert into Feedback(JobSeekId,Feedback,FeedbakDate) values('".$Id."','".$FeedBack."','".$FDate."')";
 	// execute query
-	mysqli_query ($sql,$con);
+	mysqli_query ($con,$sql);
 	// Close The Connection
 	mysqli_close ($con);
 	
