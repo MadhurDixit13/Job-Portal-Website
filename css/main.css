@@ -217,21 +217,21 @@ code, kbd, samp {font-family:monospace; font-size:110%;}
 	background-color:#FFF;
 	height:22px;
 	width:160px;
-	border:1px solid black;
+	border:1px solid #003366;
 	font-size:12px;
 	font-weight:bold;
-	border-radius:5px 0px 5px 0px;
+	border-radius:5px ;
 	color:#003366;
 }
 .login input[type="text"]:hover
 {
-	background-color:#FFF;
+	background-color:rgb(99, 120, 212);
 	height:22px;
 	width:160px;
 	border:1px solid black;
 	font-size:12px;
 	font-weight:bold;
-	border-radius:5px 0px 5px 0px;
+	border-radius:5px;
 	
 }
 .login input[type="password"]
@@ -239,20 +239,20 @@ code, kbd, samp {font-family:monospace; font-size:110%;}
 	background-color:#FFF;
 	height:22px;
 	width:160px;
-	border:1px solid black;
+	border:1px solid #003366;
 	font-size:12px;
 	font-weight:bold;
-	border-radius:5px 0px 5px 0px;
+	border-radius:5px;
 }
 .login input[type="password"]:hover
 {
-	background-color:#FFF;
+	background-color:rgb(99, 120, 212);
 	height:22px;
 	width:160px;
 	border:1px solid black;
 	font-size:12px;
 	font-weight:bold;
-	border-radius:5px 0px 5px 0px;
+	border-radius:5px;
 	
 }
 .login input[type="submit"]
@@ -263,18 +263,18 @@ code, kbd, samp {font-family:monospace; font-size:110%;}
 	border:1px solid #003366;
 	font-size:12px;
 	font-weight:bold;
-	border-radius:5px 0px 5px 0px;
+	border-radius:5px;
 	color:#003366;
 }
 .login input[type="submit"]:hover
 {
-	background-color:#FFF;
+	background-color:rgb(99, 120, 212);
 	height:22px;
 	width:100px;
-	border:1px solid #003366;
+	border:1px solid black;
 	font-size:12px;
 	font-weight:bold;
-	border-radius:5px 0px 5px 0px;
+	border-radius:5px;
 	
 }
 .login select
@@ -282,10 +282,10 @@ code, kbd, samp {font-family:monospace; font-size:110%;}
 	background-color:#FFF;
 	height:25px;
 	width:160px;
-	border:1px solid #003366;
+	border:1px solid black;
 	font-size:12px;
 	font-weight:bold;
-	border-radius:5px 0px 5px 0px;
+	border-radius:5px;
 	color:#003366;
 }
 .login textarea
@@ -293,22 +293,22 @@ code, kbd, samp {font-family:monospace; font-size:110%;}
 	background-color:#ffcdb2;
 	height:45px;
 	width:160px;
-	border:1px solid black;
+	border:1px solid #003366;
 	font-size:12px;
 	font-weight:bold;
-	border-radius:5px 0px 5px 0px;
+	border-radius:5px;
 	color:#003366;
 }
 .login textarea:hover
 {
 	/* background-color:#003366; */
-    background-color:#3a86ff;
+    background-color:rgb(99, 120, 212);
 	height:45px;
 	width:160px;
-	border:1px solid #6a040f;
+	border:1px solid black;
 	font-size:12px;
 	font-weight:bold;
-	border-radius:5px 0px 5px 0px;
+	border-radius:5px;
     
 	/* color:#FFFFFF; */
 }
