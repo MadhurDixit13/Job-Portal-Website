@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?php require_once "EmployeInsert.php"; ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="cs" lang="cs">
 <head>
@@ -6,7 +6,7 @@
     <meta http-equiv="content-language" content="cs" />
     <meta name="robots" content="all,follow" />
 
-    <meta name="author" content="All: ... [Nazev webu - www.url.cz]; e-mail: info@url.cz" />
+    <meta name="author" />
     <meta name="copyright" content="Design/Code: Vit Dlouhy [Nuvio - www.nuvio.cz]; e-mail: vit.dlouhy@nuvio.cz" />
     
 <title>JOB PORTAL</title>
@@ -36,7 +36,6 @@ include "Header.php"
 <?php 
 include "menu.php"
 ?>   
-<!-- Page (2 columns) -->
     <div id="page" class="box">
     <div id="page-in" class="box">
 
@@ -74,8 +73,7 @@ include "menu.php"
             <div class="article">
                 <h2><span><a href="#">Welcome To JOB PORTAL</a></span></h2>
                
-
-                <form id="form2" method="post" action="ForPass.php">
+                <form id="form2" method="post" action="Forget.php">
                   <table width="100%" border="0" cellspacing="0" cellpadding="0">
                     <tr>
                       <td align="left" valign="middle">Select User:</td>
@@ -89,6 +87,14 @@ include "menu.php"
                           JobSeeker</label>
                         <br />
                       </p></td>
+                    </tr>
+                    <tr>
+                      <td>Email:</td>
+                      <td><span id="sprytextfield5">
+                        <label>
+                        <input type="text" name="txtEmail" id="txtEmail" />
+                        </label>
+                      <span class="textfieldRequiredMsg">Enter Email address</span></td>
                     </tr>
                     <tr>
                       <td>User Name:</td>
@@ -117,7 +123,7 @@ include "menu.php"
                     <tr>
                       <td>&nbsp;</td>
                       <td><label>
-                        <input type="submit" name="button2" id="button2" value="Submit" />
+                        <input type="submit" name="checkemail" id="button2" value="Continue" />
                       </label></td>
                     </tr>
                   </table>
