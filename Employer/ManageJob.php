@@ -16,8 +16,6 @@ else{
     <meta http-equiv="content-language" content="cs" />
     <meta name="robots" content="all,follow" />
 
-    <meta name="author" content="All: ... [Nazev webu - www.url.cz]; e-mail: info@url.cz" />
-    <meta name="copyright" content="Design/Code: Vit Dlouhy [Nuvio - www.nuvio.cz]; e-mail: vit.dlouhy@nuvio.cz" />
     
 <title>JOB PORTAL</title>
     <meta name="description" content="..." />
@@ -49,9 +47,7 @@ else{
 <body id="www-url-cz">
 <!-- Main -->
 <div id="main" class="box">
-<?php 
-include "Header.php"
-?>
+
 <?php 
 include "menu.php"
 ?>   
@@ -59,16 +55,7 @@ include "menu.php"
     <div id="page" class="box">
     <div id="page-in" class="box">
 
-        <div id="strip" class="box noprint">
-
-            <!-- RSS feeds -->
-            <hr class="noscreen" />
-
-            <!-- Breadcrumbs -->
-            <p id="breadcrumbs">&nbsp;</p>
-          <hr class="noscreen" />
-            
-        </div> <!-- /strip -->
+       
 
         <!-- Content -->
         <div id="content">
@@ -205,6 +192,10 @@ mysqli_close($con);
                 </table>
                 <p>&nbsp;</p>
 
+                <p class="btn-more box noprint">&nbsp;</p>
+                <p class="btn-more box noprint">&nbsp;</p>
+                <p class="btn-more box noprint">&nbsp;</p>
+                <p class="btn-more box noprint">&nbsp;</p>
                 <p class="btn-more box noprint">&nbsp;</p>
           </div> <!-- /article -->
 

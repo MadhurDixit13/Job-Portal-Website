@@ -6,8 +6,6 @@
     <meta http-equiv="content-language" content="cs" />
     <meta name="robots" content="all,follow" />
 
-    <meta name="author" content="All: ... [Nazev webu - www.url.cz]; e-mail: info@url.cz" />
-    <meta name="copyright" content="Design/Code: Vit Dlouhy [Nuvio - www.nuvio.cz]; e-mail: vit.dlouhy@nuvio.cz" />
     
     <title>Online-JOB.COM</title>
     <meta name="description" content="..." />
@@ -20,7 +18,8 @@
     <style type="text/css">
 <!--
 .style1 {
-	color: #000066;
+  color:#343a40;
+	/* color: #000066; */
 	font-weight: bold;
 }
 -->
@@ -32,9 +31,7 @@
 <body id="www-url-cz">
 <!-- Main -->
 <div id="main" class="box">
-<?php 
-include "Header.php"
-?>
+
 <?php 
 include "menu.php"
 ?>   
@@ -42,16 +39,7 @@ include "menu.php"
     <div id="page" class="box">
     <div id="page-in" class="box">
 
-        <div id="strip" class="box noprint">
-
-            <!-- RSS feeds -->
-            <hr class="noscreen" />
-
-            <!-- Breadcrumbs -->
-            <p id="breadcrumbs">&nbsp;</p>
-          <hr class="noscreen" />
-            
-        </div> <!-- /strip -->
+        
 
         <!-- Content -->
         <div id="content">
@@ -80,29 +68,29 @@ include "menu.php"
                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
                   <tr>
                     <td width="6%"><img src="design/ico_archive2.gif" alt="" width="9" height="11" /></td>
-                    <td width="94%"><strong>Online-JOB.com<br/>
-                    Taranagar,<br/>
-                    Dhangadhi, Nepal<br/>
-                    Pincode:11111</strong></td>
+                    <td width="94%"><strong>JOB-Portal.com<br/>
+                    Mumbai,<br/>
+                    Maharashtra, India<br/>
+                    Pincode:400081</strong></td>
                   </tr>
                   <tr>
                     <td><img src="design/ico_archive2.gif" alt="" width="9" height="11" /></td>
-					<td><strong>Office No: 091-520612<b>
-					Mobile: +9779823480941
+					<td><strong>Office No: 000-000000<b>
+					Mobile: +91 0000000000
 					</strong></td>
 					
                   </tr>
                   <tr>
                     <td><img src="design/ico_archive2.gif" alt="" width="9" height="11" /></td>
-                    <td><strong>Email: Online-JOB.np.com</strong></td>
+                    <td><strong>Email: JOB-Portal.co.in</strong></td>
                   </tr>
                   <tr>
                     <td><img src="design/ico_archive2.gif" alt="" width="9" height="11" /></td>
-                    <td><strong>Website:Online-JOB.com/nepal</strong></td>
+                    <td><strong>Website:JOB-Portal.com/india</strong></td>
                   </tr>
 			
                 </table>
-				<p><img src="design/banner5.jpg" alt="" width="500" height="300" /></p>
+				<p><center><img src="https://images.unsplash.com/photo-1487528278747-ba99ed528ebc?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8am9ic3xlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="" width="700" height="350" ></center></p>
               
               <p>&nbsp;</p>
 

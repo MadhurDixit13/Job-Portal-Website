@@ -3,24 +3,11 @@
 <link href="SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css">
 <div id="col" class="noprint">
             <div id="col-in">
-
-                <!-- About Me -->
-                <h3>Contact Us</h3>
-
-                <div id="about-me">
-                    <p><strong>Online-JOB</strong></p>
-					<P>099-520612</P>
-                    <p>9823480941</p>
-                    <p>Online-JOB.np.com<br />
-                    </p>
-               <p><b>Dhangadhi, Nepal</b></p>
-</div> <!-- /about-me -->
-
                 <hr class="noscreen" />
 
                 <!-- Category -->
                 <h3 >Login</h3>
-<div class="login">
+                <div class="login">
                 <form name="form1" method="post" action="login.php">
                   <table width="100%" border="0">
                     <tr>
@@ -66,8 +53,15 @@
                     <tr>
                       <td><div align="center"><a href="Forget.php"><strong>Forgot Password? </strong></a></div></td>
                     </tr>
+                    
                   </table>
+
       </form>
+      <div align="center"><a href="EmployerReg.php"><strong>New Employer? Register Here</strong></a>
+                  </div>
+              
+              <div align="center"><a href="JobSeekerReg.php"><strong>New Job Seeker? Register Here</strong></a>                  </div>
+                <p class="btn-more box noprint">&nbsp;</p>
               </div>
                 <br/>
 
