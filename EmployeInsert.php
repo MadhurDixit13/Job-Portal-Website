@@ -11,7 +11,7 @@
 	$con = mysqli_connect('localhost', 'root', '', 'job');
 	$errors = array();
 	if(isset($_POST['employersignup'])){
-	$CompnayName = mysqli_real_escape_string($con, $_POST['txtName']);
+	$CompanyName = mysqli_real_escape_string($con, $_POST['txtName']);
 	//$CompnayName=$_POST['txtName'];
 	$ContactPerson = mysqli_real_escape_string($con, $_POST['txtPerson']);
 	//$ContactPerson=$_POST['txtPerson'];
@@ -130,7 +130,7 @@
             $errors['email'] = "This email address does not exist!";
         }
 			}
-		else
+		/*else
 		{
 //mysqli_select_db("job", $con);
 		$sql = "select * from jobseeker_reg  where UserName='".$UserName."' and Question='".$Question."' and Answer='".$Answer."'";
@@ -147,7 +147,7 @@
 		$_SESSION['Name']=$row['JobSeekerName'];
 		header('location:JobSeeker/index.php');
 		} 
-	}
+	}*/
     }
 	if(isset($_POST['check-reset-otp'])){
         $_SESSION['info'] = "";
