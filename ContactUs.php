@@ -68,7 +68,7 @@ include "menu.php"
                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
                   <tr>
                     <td width="6%"><img src="design/ico_archive2.gif" alt="" width="9" height="11" /></td>
-                    <td width="94%"><strong>Online-JOB.com<br/>
+                    <td width="94%"><strong>JOB-Portal.com<br/>
                     Mumbai,<br/>
                     Maharashtra, India<br/>
                     Pincode:400081</strong></td>
