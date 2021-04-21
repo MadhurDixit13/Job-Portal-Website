@@ -110,9 +110,6 @@ var arrFormValidation=
 <!-- Main -->
 <div id="main" class="box">
 <?php 
-include "Header.php"
-?>
-<?php 
 include "menu.php"
 ?>   
 <!-- Page (2 columns) -->
