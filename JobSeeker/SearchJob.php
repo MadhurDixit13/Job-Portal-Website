@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 if(isset($_SESSION['$UserName_job'])){
@@ -11,10 +12,11 @@ if(isset($_SESSION['$UserName_job'])){
 if (!function_exists("GetSQLValueString")) {
 function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "")
 {
-  $theValue = FALSE ? stripslashes($theValue) : $theValue;
-
+  $theValue =  false ? stripslashes($theValue) : $theValue;
+  // get_magic_quotes_gpc()
 //  $theValue = function_exists("mysql_real_escape_string") ? mysqli_real_escape_string($theValue) : mysqli_escape_string($theValue);
-//
+//put false --^
+
   switch ($theType) {
     case "text":
       $theValue = ($theValue != "") ? "'" . $theValue . "'" : "NULL";
@@ -107,8 +109,6 @@ $queryString_Recordset2 = sprintf("&totalRows_Recordset2=%d%s", $totalRows_Recor
     <meta http-equiv="content-language" content="cs" />
     <meta name="robots" content="all,follow" />
 
-    <meta name="author" content="All: ... [Nazev webu - www.url.cz]; e-mail: info@url.cz" />
-    <meta name="copyright" content="Design/Code: Vit Dlouhy [Nuvio - www.nuvio.cz]; e-mail: vit.dlouhy@nuvio.cz" />
     
 <title>JOB PORTAL</title>
     <meta name="description" content="..." />
@@ -143,16 +143,6 @@ include "menu.php"
     <div id="page" class="box">
     <div id="page-in" class="box">
 
-        <div id="strip" class="box noprint">
-
-            <!-- RSS feeds -->
-            <hr class="noscreen" />
-
-            <!-- Breadcrumbs -->
-            <p id="breadcrumbs">&nbsp;</p>
-          <hr class="noscreen" />
-            
-        </div> <!-- /strip -->
 
         <!-- Content -->
         <div id="content">
@@ -346,6 +336,10 @@ mysqli_close($con);
 
               
 
+                <p class="btn-more box noprint">&nbsp;</p>
+                <p class="btn-more box noprint">&nbsp;</p>
+                <p class="btn-more box noprint">&nbsp;</p>
+                <p class="btn-more box noprint">&nbsp;</p>
                 <p class="btn-more box noprint">&nbsp;</p>
           </div> <!-- /article -->
 
