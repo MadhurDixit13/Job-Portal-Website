@@ -30,7 +30,9 @@
                 <h3 >&nbsp;</h3>
 
               <br/>
-
+              <?php if(isset($_SESSION['txtUser']) && $_SESSION['txtUser'] == 'admin') { ?>
+		<a href="manage_notification.php">Manage Notification</a> | 
+	<?php } ?>
       <hr class="noscreen" />
 
                 <!-- Archive -->

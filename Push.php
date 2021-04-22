@@ -24,7 +24,7 @@ if(!$result){
 die('Error in query: '. mysqli_error());
 }
 $data= array();
-while ($row = mysqli_fetch_array($result, MYSQL_ASSOC)) {
+while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 $data[]=$row;
 }
 return $data;
@@ -40,8 +40,8 @@ public function listUsers(){
 $sqlQuery = "SELECT * FROM ".$this->userTable." WHERE username != 'admin'";
 return $this->getData($sqlQuery);
 }
-public function loginUsers($UserName, $Password){
-$sqlQuery = "SELECT id as userid, username, password FROM ".$this->userTable." WHERE username='$UserName' AND password='$Password'";
+public function loginUsers($txtUser, $pwd){
+$sqlQuery = "SELECT id as userid, username, password FROM ".$this->userTable." WHERE username='$txtUser' AND password='$pwd'";
 // $sql="SELECT id as userid, username, password FROM ".$this->userTable." WHERE username='$username' AND password='$password'";
 return $this->getData($sqlQuery);
 

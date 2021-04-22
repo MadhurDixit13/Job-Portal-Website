@@ -4,7 +4,7 @@ include ('Push.php');
 $push = new Push();
 $array=array();
 $rows=array();
-$notifList = $push->listNotificationUser($_SESSION['username']);
+$notifList = $push->listNotificationUser($_SESSION['txtUser']);
 $record = 0;
 foreach ($notifList as $key) {
 $data['title'] = $key['title'];
