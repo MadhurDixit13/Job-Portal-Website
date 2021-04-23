@@ -84,7 +84,19 @@
             if($update_res){
                 $_SESSION['Name'] = $Name;
                 $_SESSION['Email'] = $Email;
-                header('location:index.php');
+				$info = "Your are registered successfully. Now you can login with your credentials.";
+                $_SESSION['info'] = $info;
+                $subject = "User Registered Successfully";
+                $message = "Hi $Name !! Your are successfully registered with us ";
+                $sender = "From: miniprojectmha@gmail.com";
+                if(mail($Email, $subject, $message, $sender)){
+                    $_SESSION['Email'] = $Email;
+                    $_SESSION['Password'] = $Password;
+                    header('location: passwordchanged.php');
+                    exit();
+            }else{
+                $errors['otp-error'] = "Failed while sending code!";
+            }
                 exit();
             }else{
                 $errors['otp-error'] = "Failed while updating code!";

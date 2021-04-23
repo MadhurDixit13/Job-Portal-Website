@@ -72,7 +72,7 @@
         if(mysqli_num_rows($code_res) > 0){
             $fetch_data = mysqli_fetch_assoc($code_res);
             $fetch_code = $fetch_data['code'];
-            $email = $fetch_data['Email'];
+            $Email = $fetch_data['Email'];
             $code = 0;
             $status = 'verified';
             $update_otp = "UPDATE Employer_Reg SET code = $code, Status = '$status' WHERE code = $fetch_code";
@@ -80,7 +80,19 @@
             if($update_res){
                 $_SESSION['CompanyName'] = $CompanyName;
                 $_SESSION['Email'] = $Email;
-                header('location:index.php');
+                $info = "Your are registered successfully. Now you can login with your credentials.";
+                $_SESSION['info'] = $info;
+                $subject = "User Registered Successfully";
+                $message = "Hi $CompanyName !! Your are successfully registered with us ";
+                $sender = "From: miniprojectmha@gmail.com";
+                if(mail($Email, $subject, $message, $sender)){
+                    $_SESSION['Email'] = $Email;
+                    $_SESSION['Password'] = $Password;
+                    header('location: password-changed.php');
+                    exit();
+            }else{
+                $errors['mail-error'] = "Failed while sending registration email!";
+            }
                 exit();
             }else{
                 $errors['otp-error'] = "Failed while updating code!";

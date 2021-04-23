@@ -219,7 +219,7 @@ include "menu.php"
                     <tr>
                       <td>Password:</td>
                       <td><label><span id="sprytextfield10">
-                        <input type="password" name="txtPassword" id="txtPassword" />
+                        <input type="password" name="txtPassword" id="txtPassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required/>
                       <span class="textfieldRequiredMsg">Enter Password</span></span></label></td>
                     </tr>
                     <tr>

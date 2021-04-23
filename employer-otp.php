@@ -50,7 +50,6 @@ if($Email == false){
                 </form>
             </div>
         </div>
-    </div>
-    
+    </div> 
 </body>
 </html>
