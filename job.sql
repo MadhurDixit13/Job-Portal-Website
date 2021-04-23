@@ -39,10 +39,10 @@ CREATE TABLE IF NOT EXISTS `application_master` (
 --
 
 INSERT INTO `application_master` (`ApplicationId`, `JobSeekId`, `JobId`, `Status`, `Description`) VALUES
-(1, 3, 1, 'Call Latter Send', 'Invited on 21-Dec-2013.'),
-(2, 3, 2, 'Call Latter Send', 'You are Invited For Interview on 10-MAR-2013.'),
-(3, 3, 3, 'Call Latter Send', 'Invited on 21-Dec-2013.'),
-(5, 3, 4, 'Call Latter Send', 'Invited on 21-Dec-2013.');
+(1, 3, 1, 'Call Latter Send', 'Invited on 21-Apr-2021.'),
+(2, 3, 2, 'Call Latter Send', 'You are Invited For Interview on 10-Mar-2021.'),
+(3, 3, 3, 'Call Latter Send', 'Invited on 21-Mar-2021.'),
+(5, 3, 4, 'Call Latter Send', 'Invited on 21-Mar-2013.');
 
 -- --------------------------------------------------------
 
@@ -73,10 +73,10 @@ CREATE TABLE IF NOT EXISTS `employer_reg` (
 --
 
 INSERT INTO `employer_reg` (`EmployerId`, `CompanyName`, `ContactPerson`, `Address`, `City`, `Email`, `Mobile`, `Area_Work`, `Status`, `UserName`, `Password`, `Question`, `Answer`,`code`) VALUES
-(2, 'TCS Private Limited', 'Mr. Mohan Shah', 'Navarangpura1', 'Ahmedabad', 'mohan@gmail.com', 9898989898, 'Software', 'Confirm', 'mohan', 'mohan', 'Who is Your Favourite Person?', 'sachin',234),
-(3, 'Wipro Infotech', 'Mr. Sunil Pandya', 'Baroda', 'Baroda', 'sunil@wipro.com', 8989898989, 'Hardware', 'Confirm', 'sunil', 'sunil', '','',567),
-(4, 'Solusoft  Pvt Limite', 'Mr. Nirav Soni', 'Narayanpura', 'Ahmedabad', 'nirav@gmail.com', 9898989898, 'Software', 'Confirm', 'nirav', 'nirav', 'What is Your Pet Name?', 'niru',78),
-(5, 'Info Matrics', 'Mr. Narayan', 'Sahibagh', 'Ahmedabad', 'narayan@yahoo.com', 6767676767, 'Software', 'Confirm', 'narayan', 'narayan', 'What is Your Pet Name?', 'nari',89);
+(2, 'TCS Private Limited', 'Mr. Mohan Shah', 'Navarangpura1', 'Ahmedabad', 'mohan@gmail.com', 9898989898, 'Software', 'verified', 'mohan', 'mohan', 'Who is Your Favourite Person?', 'sachin',234),
+(3, 'Wipro Infotech', 'Mr. Sunil Pandya', 'Baroda', 'Baroda', 'sunil@wipro.com', 8989898989, 'Hardware', 'verified', 'sunil', 'sunil', '','',567),
+(4, 'Solusoft  Pvt Limite', 'Mr. Nirav Soni', 'Narayanpura', 'Ahmedabad', 'nirav@gmail.com', 9898989898, 'Software', 'verified', 'nirav', 'nirav', 'What is Your Pet Name?', 'niru',78),
+(5, 'Info Matrics', 'Mr. Narayan', 'Sahibagh', 'Ahmedabad', 'narayan@yahoo.com', 6767676767, 'Software', 'verified', 'narayan', 'narayan', 'What is Your Pet Name?', 'nari',89);
 
 -- --------------------------------------------------------
 
@@ -97,10 +97,10 @@ CREATE TABLE IF NOT EXISTS `feedback` (
 --
 
 INSERT INTO `feedback` (`FeedbackId`, `JobSeekId`, `Feedback`, `FeedbakDate`) VALUES
-(5, 3, 'asdad', '2018-09-13'),
-(6, 3, 'asd', '2013-09-18'),
-(7, 4, 'Thanks For Your Support.', '2013-09-18'),
-(8, 3, 'asd', '2013-09-22');
+(5, 3, 'asdad', '2021-04-13'),
+(6, 3, 'asd', '2021-03-28'),
+(7, 4, 'Thanks For Your Support.', '2021-04-18'),
+(8, 3, 'asd', '2021-04-22');
 
 -- --------------------------------------------------------
 
@@ -159,10 +159,10 @@ CREATE TABLE IF NOT EXISTS `jobseeker_reg` (
 --
 
 INSERT INTO `jobseeker_reg` (`JobSeekId`, `JobSeekerName`, `Address`, `City`, `Email`, `Mobile`, `Qualification`, `Gender`, `BirthDate`, `Resume`, `Status`, `UserName`, `Password`, `Question`, `Answer`) VALUES
-(3, 'Jalpa Prajapati', 'Near Dena Bank', 'Mehsana', 'jalpa@gmail.com', 9898989898, 'M.C.A', 'Female', '2013-09-10', 'Marksheet.pdf', 'Confirm', 'jalpa', 'jalpa', 'What is Your Pet Name?', 'jalpa'),
-(4, 'Krunal Prajapati', 'Patan', 'Patan', 'krunal@gmail.com', 8989898989, 'M.B.A', 'Male', '2013-09-16', 'Marksheet.pdf', 'Confirm', 'krunal', 'krunal', '', ''),
-(5, 'Gopal Patel', 'Patan', 'Patan', 'gopal@gmail.com', 9898989898, 'MA', 'Male', '2013-10-15', 'admin.jpg', 'Confirm', 'gopal', 'gopal', '', ''),
-(6, 'Mehul Mistry', 'Swastik SOciety', 'Baroda', 'mehul@gmail.com', 8989898998, 'BE', 'Male', '2013-10-09', '470X310_1.jpg', 'Confirm', 'mehul', 'mehul', 'What is Your Pet Name?', 'mehu');
+(3, 'Jalpa Prajapati', 'Near Dena Bank', 'Mehsana', 'jalpa@gmail.com', 9898989898, 'M.C.A', 'Female', '1999-09-10', 'Marksheet.pdf', 'verified', 'jalpa', 'jalpa', 'What is Your Pet Name?', 'jalpa'),
+(4, 'Krunal Prajapati', 'Patan', 'Patan', 'krunal@gmail.com', 8989898989, 'M.B.A', 'Male', '1998-09-16', 'Marksheet.pdf', 'verified', 'krunal', 'krunal', '', ''),
+(5, 'Gopal Patel', 'Patan', 'Patan', 'gopal@gmail.com', 9898989898, 'MA', 'Male', '1998-10-15', 'admin.jpg', 'verified', 'gopal', 'gopal', '', ''),
+(6, 'Mehul Mistry', 'Swastik SOciety', 'Baroda', 'mehul@gmail.com', 8989898998, 'BE', 'Male', '1996-10-09', '470X310_1.jpg', 'verified', 'mehul', 'mehul', 'What is Your Pet Name?', 'mehu');
 
 
 -- --------------------------------------------------------
@@ -230,8 +230,7 @@ CREATE TABLE IF NOT EXISTS `user_master` (
 --
 
 INSERT INTO `user_master` (`UserId`, `UserName`, `Password`) VALUES
-(6, 'admin', 'admin'),
-(10, 'xyz', 'xyz');
+(6, 'admin', 'admin');
 
 -- --------------------------------------------------------
 
@@ -256,5 +255,5 @@ CREATE TABLE IF NOT EXISTS `walkin_master` (
 --
 
 INSERT INTO `walkin_master` (`WalkInId`, `CompanyName`, `JobTitle`, `Vacancy`, `MinQualification`, `Description`, `InterviewDate`, `InterviewTime`) VALUES
-(1, 'Wipro Infotech', 'Freshers Required', 5, 'B.C.A', 'Hardworking Person are Required.', '2013-09-25', '09:00:00'),
-(2, 'TCS Private Limited', 'Marketive Representative Invited', 2, 'Pharmacist', 'Ready TO work in North Gujarat', '2013-10-07', '09:00:00');
+(1, 'Wipro Infotech', 'Freshers Required', 5, 'B.C.A', 'Hardworking Person are Required.', '2021-04-25', '09:00:00'),
+(2, 'TCS Private Limited', 'Marketive Representative Invited', 2, 'Pharmacist', 'Ready TO work in North Gujarat', '2021-04-07', '09:00:00');

@@ -39,10 +39,10 @@
         $errors['txtEmail'] = "Email that you have entered is already exist!";
     }
 	if(count($errors) === 0){
-        $encpass = password_hash($password, PASSWORD_BCRYPT);
+        $encpass = password_hash($Password, PASSWORD_BCRYPT);
         $code = rand(999999, 111111);
         $Status = "notverified";
-        $insert_data = "insert into employer_reg(CompanyName,ContactPerson,Address,City,Email,Mobile,Area_Work,Status,UserName,Password,Question,Answer,code) values('".$CompnayName."','".$ContactPerson."','".$Address."','".$City."','".$Email."',".$Mobile.",'".$Area."','".$Status."','".$UserName."','".$Password."','".$Question."','".$Answer."','".$code."')";
+        $insert_data = "insert into employer_reg(CompanyName,ContactPerson,Address,City,Email,Mobile,Area_Work,Status,UserName,Password,Question,Answer,code) values('".$CompanyName."','".$ContactPerson."','".$Address."','".$City."','".$Email."',".$Mobile.",'".$Area."','".$Status."','".$UserName."','".$Password."','".$Question."','".$Answer."','".$code."')";
         $data_check = mysqli_query($con, $insert_data);
         if($data_check){
             $subject = "Email verification Code";
