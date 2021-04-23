@@ -31,9 +31,6 @@
 <!-- Main -->
 <div id="main" class="box">
 <?php 
-include "Header.php"
-?>
-<?php 
 include "menu.php"
 ?>   
 <!-- Page (2 columns) -->
@@ -121,7 +118,7 @@ $row = mysqli_fetch_array($result)
                     <td><?php echo $row['Area_Work'];?></td>
                   </tr>
                   <tr>
-                    <td><strong><a href="ApprovEmp.php?EmpId=<?php echo $row['EmployerId'];?>">Approv Employer</a></strong></td>
+                    <td><strong><a href="ManageEmployer.php">Go Back</a></strong></td>
                     <td>&nbsp;</td>
                   </tr>
                 </table>
@@ -133,6 +130,10 @@ $row = mysqli_fetch_array($result)
           </div> <!-- /article -->
 
             <hr class="noscreen" />
+            <p class="btn-more box noprint">&nbsp;</p> <p class="btn-more box noprint">&nbsp;</p>
+ <p class="btn-more box noprint">&nbsp;</p>
+ <p class="btn-more box noprint">&nbsp;</p>
+ <p class="btn-more box noprint">&nbsp;</p>
             
         </div> <!-- /content -->
 
@@ -144,9 +145,9 @@ include "right.php"
     </div> <!-- /page -->
 
  
-<?php
-include "footer.php"
-?>
+    <?php
+    include "footer.php"
+    ?>
 </div> <!-- /main -->
 
 </body>
