@@ -109,14 +109,14 @@ $row = mysqli_fetch_array($result)
                       </label>
                     <span class="textfieldRequiredMsg">A value is required.</span></span></td>
                   </tr>
-                  <tr>
+                  /*<tr>
                     <td><strong>Contact Person:</strong></td>
                     <td><span id="sprytextfield3">
                       <label>
                       <input name="txtContact" type="text" id="txtContact" value="<?php echo $row['ContactPerson'];?>" />
                       </label>
                     <span class="textfieldRequiredMsg">A value is required.</span></span></td>
-                  </tr>
+                  </tr>*/
                   <tr>
                     <td><strong>Address:</strong></td>
                     <td><span id="sprytextarea1">

@@ -18,7 +18,9 @@
 	$Mobile=$_POST['txtMobile'];
 	$Qualification=mysqli_real_escape_string($con, $_POST['txtQualification']);
 	$Gender=$_POST['cmbGender'];	
-	$BirthDate=$_POST['txtBirthDate'];
+	//$BirthDate=$_POST['txtBirthDate'];
+	$date1=$_POST['txtBirthDate'];    
+	$BirthDate = date("Y-m-d", strtotime($date1)); 
 	$path1 = $_FILES["txtFile"]["name"];
 	$Status="Pending";
 	$UserName=mysqli_real_escape_string($con, $_POST['txtUserName']);
