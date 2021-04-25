@@ -38,9 +38,7 @@ if (!isset($_SESSION))
 <body id="www-url-cz">
 <!-- Main -->
 <div id="main" class="box">
-<?php 
-include "Header.php"
-?>
+
 <?php 
 include "menu.php"
 ?>   
@@ -87,27 +85,27 @@ $ID=$_SESSION['ID'];
 $con = mysqli_connect("localhost","root","","job");
 
 // Specify the query to execute
-$sql = "select * from Employer_Reg where EmployerId ='".$ID."'  ";
+$sql = "select * from jobseeker_reg where JobSeekId ='".$ID."'  ";
 // Execute query
 $result = mysqli_query($con,$sql);
 // Loop through each records 
 $row = mysqli_fetch_array($result)
 ?>
-<form method="post" action="UpdateProfile.php">
+<form method="post" action="Updateprofile.php">
                 <table width="100%" border="1" cellspacing="2" cellpadding="2">
                   <tr>
-                    <td><strong>Company ID:</strong></td>
+                    <td><strong>Jobseeker ID:</strong></td>
                     <td><span id="sprytextfield1">
                       <label>
-                      <input name="txtId" type="text" id="txtId" value="<?php echo $row['EmployerId'];?>" />
+                      <input name="txtId" type="text" id="txtId" value="<?php echo $row['JobSeekId'];?>" />
                       </label>
                     <span class="textfieldRequiredMsg">A value is required.</span></span></td>
                   </tr>
                   <tr>
-                    <td><strong>Company Name:</strong></td>
+                    <td><strong>Name:</strong></td>
                     <td><span id="sprytextfield2">
                       <label>
-                      <input name="txtName" type="text" id="txtName" value="<?php echo $row['CompanyName'];?>" />
+                      <input name="txtName" type="text" id="txtName" value="<?php echo $row['JobSeekerName'];?>" />
                       </label>
                     <span class="textfieldRequiredMsg">A value is required.</span></span></td>
                   </tr>

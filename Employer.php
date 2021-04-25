@@ -76,7 +76,7 @@ include "menu.php"
 $con = mysqli_connect("localhost","root","","job");
 
 // Specify the query to execute
-$sql = "select * from employer_reg where Status='Confirm'";
+$sql = "select * from employer_reg where Status='verified'";
 // Execute query
 $result = mysqli_query($con,$sql);
 // Loop through each records

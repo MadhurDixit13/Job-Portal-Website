@@ -42,7 +42,7 @@ INSERT INTO `application_master` (`ApplicationId`, `JobSeekId`, `JobId`, `Status
 (1, 3, 1, 'Call Latter Send', 'Invited on 21-Apr-2021.'),
 (2, 3, 2, 'Call Latter Send', 'You are Invited For Interview on 10-Mar-2021.'),
 (3, 3, 3, 'Call Latter Send', 'Invited on 21-Mar-2021.'),
-(5, 3, 4, 'Call Latter Send', 'Invited on 21-Mar-2013.');
+(5, 3, 4, 'Call Latter Send', 'Invited on 25-Mar-2021.');
 
 -- --------------------------------------------------------
 
@@ -209,8 +209,8 @@ CREATE TABLE IF NOT EXISTS `news_master` (
 --
 
 INSERT INTO `news_master` (`NewsId`, `News`, `NewsDate`) VALUES
-(1, 'Register and Get JOB', '2013-09-24'),
-(2, 'New Vacancies will be updated after diwali', '2013-10-31');
+(1, 'Register and Get JOB', '2021-04-24'),
+(2, 'New Vacancies will be updated after diwali', '2021-03-31');
 
 -- --------------------------------------------------------
 
