@@ -19,6 +19,7 @@ Backend:
 MySql | php
 
 Project Section or Fields:
+
 1)Home Page includes:
 •	Home
 •	About Us
@@ -49,6 +50,7 @@ o	Forgot Password
 •	Submit
 
 3)Employer Interface includes:
+
 •	Home
 •	Profile
 •	Manage Jobs
@@ -58,6 +60,7 @@ o	Forgot Password
 
 
 4)Job Seeker Registration includes:
+
 •	Name
 •	Address(optional)
 •	City
