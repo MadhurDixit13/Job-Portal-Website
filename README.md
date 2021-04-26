@@ -1,6 +1,7 @@
 # Job-Portal-Website
 Miniproject
 Contributors:
+
 Madhur Dixit | Harsh Gada | Amey Gangan
 
 Problem Statement:
