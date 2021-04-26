@@ -10,14 +10,12 @@ Objectives:
 The main objective of this system is to provide the information about new jobs. This app can help any Fresher/Employee to search for any job available. Employers/ Companies can post the job details like Position, Description, CTC offered, etc and can track the number of applicants applied and view their resumes. They can recruit employees from a number of applicants based on their skills.
 
 Technologies Used:
+
 Front End:
-HTML
-CSS
-php
+HTML | CSS | php
 
 Backend:
-MySql
-php
+MySql | php
 
 Project Section or Fields:
 1)Home Page includes:
