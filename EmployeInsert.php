@@ -9,36 +9,51 @@
 <?php
 	session_start();
 	$con = mysqli_connect('localhost', 'root', '', 'job');
+    function test_input($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+      }
 	$errors = array();
 	if(isset($_POST['employersignup'])){
-	$CompanyName = mysqli_real_escape_string($con, $_POST['txtName']);
+	$CompanyName = $_POST['txtName'];
 	//$CompnayName=$_POST['txtName'];
-	$ContactPerson = mysqli_real_escape_string($con, $_POST['txtPerson']);
+	$ContactPerson = $_POST['txtPerson'];
 	//$ContactPerson=$_POST['txtPerson'];
 	$Address=$_POST['txtAddress'];
-	$City=$_POST['txtCity'];
-	$Email=mysqli_real_escape_string($con, $_POST['txtEmail']);
+	$City=test_input($_POST['txtCity']);
+	$Email=test_input($_POST['txtEmail']);
 	//$Email=$_POST['txtEmail'];
 	$Mobile=$_POST['txtMobile'];
 	$Area=$_POST['txtAreaWork'];
-	$Status="Pending";
-	$UserName=mysqli_real_escape_string($con, $_POST['txtUserName']);
+	$Status="notverified";
+	$UserName=test_input($_POST['txtUserName']);
 	//$UserName=$_POST['txtUserName'];
-	$Password=mysqli_real_escape_string($con, $_POST['txtPassword']);
+	$Password=$_POST['txtPassword'];
 	//$Password=$_POST['txtPassword'];
-	$cpassword = mysqli_real_escape_string($con, $_POST['txtcPassword']);
-	if($Password !== $cpassword){
-        $errors['txtPassword'] = "Confirm password not matched!";
+	$cpassword =$_POST['txtcPassword'];
+	if($Password != $cpassword){
+        //$errors['txtPassword'] = "Confirm password not matched!";
+        echo '<script type="text/javascript">alert("Confirm Password not matched!");window.location=\'EmployerReg.php\';</script>';
     }
 	$UserType="Employer";
 	$Question=$_POST['cmbQue'];
 	$Answer=$_POST['txtAnswer'];
-	$email_check = "SELECT * FROM employer_reg WHERE Email = '$Email'";
-	$res = mysqli_query($con, $email_check);
-	if(mysqli_num_rows($res) > 0){
-        $errors['txtEmail'] = "Email that you have entered is already exist!";
-    }
-	if(count($errors) === 0){
+	//$email_check = "SELECT * FROM employer_reg WHERE Email = '$Email'";
+    $sql_u = "SELECT * FROM employer_reg WHERE (UserName='$UserName' or Email='$Email');";
+  	$res_u = mysqli_query($con, $sql_u);
+  	if (mysqli_num_rows($res_u)>0) {
+        $row = mysqli_fetch_assoc($res_u);
+  	  if($Email==isset($row['Email'])){
+        echo '<script type="text/javascript">alert("Email already exists");window.location=\'EmployerReg.php\';</script>';
+        }
+        if($UserName==isset($row['UserName']))
+		{
+            echo '<script type="text/javascript">alert("UserName  already exists");window.location=\'EmployerReg.php\';</script>';
+		}
+
+  	}else{
         $encpass = password_hash($Password, PASSWORD_BCRYPT);
         $code = rand(999999, 111111);
         $Status = "notverified";
@@ -62,6 +77,11 @@
             $errors['db-error'] = "Failed while inserting data into database!";
         }
     }
+    // $res = mysqli_query($con, $email_check);
+	// if(mysqli_num_rows($res) > 0){
+    //     $errors['txtEmail'] = "Email that you have entered is already exist!";
+    // }
+	// if
 }
 	//if Employer click verification code submit button
     if(isset($_POST['check'])){
@@ -83,7 +103,7 @@
                 $info = "Your are registered successfully. Now you can login with your credentials.";
                 $_SESSION['info'] = $info;
                 $subject = "User Registered Successfully";
-                $message = "Hi $CompanyName !! Your are successfully registered with us ";
+                $message = "Hi ".$CompanyName." !! Your are successfully registered with us ";
                 $sender = "From: miniprojectmha@gmail.com";
                 if(mail($Email, $subject, $message, $sender)){
                     $_SESSION['Email'] = $Email;
@@ -102,7 +122,7 @@
         }
     }
 	if(isset($_POST['checkemail'])){
-		$UserName=$_POST['txtUserName'];
+		$UserName=test_input($_POST['txtUserName']);
 		$Question=$_POST['cmbQue'];
 		$Answer=$_POST['txtAnswer'];
 		$UserType=$_POST['rdUser'];
@@ -183,7 +203,7 @@
         $Password = mysqli_real_escape_string($con, $_POST['Password']);
         $cpassword = mysqli_real_escape_string($con, $_POST['cpassword']);
         if($Password !== $cpassword){
-            $errors['Password'] = "Confirm password not matched!";
+            echo '<script type="text/javascript">alert("Confirm Password not matched!");window.location=\'new-password.php\';</script>';
         }else{
             $code = 0;
             $Email = $_SESSION['Email'];//getting this email using session 

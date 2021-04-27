@@ -232,6 +232,12 @@ mysqli_close($con);
               
               <p class="btn-more box noprint">&nbsp;</p>
               <p class="btn-more box noprint">&nbsp;</p>
+              <p class="btn-more box noprint">&nbsp;</p>
+              
+              <p class="btn-more box noprint">&nbsp;</p>
+              <p class="btn-more box noprint">&nbsp;</p>
+              
+              <p class="btn-more box noprint">&nbsp;</p>
         </div> <!-- /content -->
 
 <?php

@@ -24,10 +24,12 @@ $con = mysqli_connect("localhost","root","","job");
 // Specify the query to Update Record
 $sql = "Update employer_reg  set CompanyName='".$txtName."',ContactPerson='".$txtContact."',Address='".$txtAddress."',City='".$txtCity."',Email='".$txtEmail."',Mobile='".$txtMobile."',Area_Work='".$txtArea."',UserName='".$txtUser."',Password='".$txtPassword."' where EmployerId=".$txtId."";
 // Execute query
-mysqli_query($con,$sql);
+if(mysqli_query($con,$sql)){
+    echo '<script type="text/javascript">alert("Profile Updated Succesfully");window.location=\'Profile.php\';</script>';
+}
 // Close The Connection
 mysqli_close($con);
-echo '<script type="text/javascript">alert("Profile Updated Succesfully");window.location=\'Profile.php\';</script>';
+//echo '<script type="text/javascript">alert("Profile Updated Succesfully");window.location=\'Profile.php\';</script>';
 ?>
 </body>
 </html>

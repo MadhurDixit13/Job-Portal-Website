@@ -23,11 +23,11 @@
 	$BirthDate = date("Y-m-d", strtotime($date1)); 
 	$path1 = $_FILES["txtFile"]["name"];
 	$Status="Pending";
-	$UserName=mysqli_real_escape_string($con, $_POST['txtUserName']);
-	$Password=mysqli_real_escape_string($con, $_POST['txtPassword']);
-	$cPassword=mysqli_real_escape_string($con, $_POST['txtcPassword']);
-	if($Password !== $cPassword){
-        $errors['txtPassword'] = "Confirm password not matched!";
+	$UserName=$_POST['txtUserName'];
+	$Password=$_POST['txtPassword'];
+	$cPassword=$_POST['txtcPassword'];
+	if($Password != $cPassword){
+        echo '<script type="text/javascript">alert("Confirm Password not matched!");window.location=\'JobSeekerReg.php\';</script>';
     }
 	$Question=$_POST['cmbQue'];
 	$Answer=$_POST['txtAnswer'];
@@ -36,13 +36,20 @@
 	{
 		$Qualification=$_POST['txtOther'];
 	}
-	$email_check = "SELECT * FROM jobseeker_reg WHERE Email = '$Email'";
+	$email_check = "SELECT * FROM jobseeker_reg WHERE (UserName='$UserName' or Email='$Email');";
 	$res = mysqli_query($con, $email_check);
-	if(mysqli_num_rows($res) > 0){
-        $errors['txtEmail'] = "Email that you have entered is already exist!";
-    }
-	move_uploaded_file($_FILES["txtFile"]["tmp_name"],"upload/"  .$_FILES["txtFile"]["name"]);
-	if(count($errors) === 0){
+	if (mysqli_num_rows($res)>0) {
+        $row = mysqli_fetch_assoc($res);
+  	  if($Email==isset($row['Email'])){
+        echo '<script type="text/javascript">alert("Email already exists");window.location=\'JobSeekerReg.php\';</script>';
+        }
+        if($UserName==isset($row['UserName']))
+		{
+            echo '<script type="text/javascript">alert("username  already exists");window.location=\'JobSeekerReg.php\';</script>';
+		}
+  	}
+	else{
+		move_uploaded_file($_FILES["txtFile"]["tmp_name"],"upload/"  .$_FILES["txtFile"]["name"]);
         $encpass = password_hash($password, PASSWORD_BCRYPT);
         $code = rand(999999, 111111);
         $Status = "notverified";
@@ -81,10 +88,11 @@
             $Email = $fetch_data['Email'];
             $code = 0;
             $status = 'verified';
-            $update_otp = "UPDATE jobseeker_reg SET code = $code, Status = '$status' WHERE code = $fetch_code";
+            $update_otp = "UPDATE jobseeker_reg SET code = $code, Status = $status WHERE code = $fetch_code";
             $update_res = mysqli_query($con, $update_otp);
             if($update_res){
                 $_SESSION['Name'] = $Name;
+				echo "<h1>".$Name."</h1>";
                 $_SESSION['Email'] = $Email;
 				$info = "Your are registered successfully. Now you can login with your credentials.";
                 $_SESSION['info'] = $info;
@@ -120,7 +128,7 @@
 		$records = mysqli_num_rows($result);
 		$row = mysqli_fetch_array($result);
 		//echo $records;
-		$Email = mysqli_real_escape_string($con, $_POST['txtEmail']);
+		$Email =$_POST['txtEmail'];
         $check_email = "SELECT * FROM jobseeker_reg WHERE Email='$Email'";
         $run_sql = mysqli_query($con, $check_email);
         if(mysqli_num_rows($run_sql) > 0){
