@@ -135,7 +135,7 @@
 		$records = mysqli_num_rows($result);
 		$row = mysqli_fetch_array($result);
 		//echo $records;
-		$Email = mysqli_real_escape_string($con, $_POST['txtEmail']);
+		$Email = $_POST['txtEmail'];
         $check_email = "SELECT * FROM Employer_Reg WHERE Email='$Email'";
         $run_sql = mysqli_query($con, $check_email);
         if(mysqli_num_rows($run_sql) > 0){
@@ -183,7 +183,7 @@
     }
 	if(isset($_POST['check-reset-otp'])){
         $_SESSION['info'] = "";
-        $otp_code = mysqli_real_escape_string($con, $_POST['otp']);
+        $otp_code =$_POST['otp'];
         $check_code = "SELECT * FROM Employer_Reg WHERE code = $otp_code";
         $code_res = mysqli_query($con, $check_code);
         if(mysqli_num_rows($code_res) > 0){
@@ -200,15 +200,16 @@
     }
 	if(isset($_POST['change-password'])){
         $_SESSION['info'] = "";
-        $Password = mysqli_real_escape_string($con, $_POST['Password']);
-        $cpassword = mysqli_real_escape_string($con, $_POST['cpassword']);
+        $Password =$_POST['Password'];
+        $cpassword =$_POST['cpassword'];
         if($Password !== $cpassword){
-            echo '<script type="text/javascript">alert("Confirm Password not matched!");window.location=\'new-password.php\';</script>';
+            $errors['Password'] = "Confirm password not matched!";
+        
         }else{
             $code = 0;
             $Email = $_SESSION['Email'];//getting this email using session 
 			$encpass = password_hash($Password, PASSWORD_BCRYPT);
-            $update_pass = "UPDATE Employer_Reg SET code = $code, Password =$Password  WHERE Email = '$Email'";
+            $update_pass = "UPDATE employer_reg SET code = $code, Password ='$Password'  WHERE Email = '$Email'";
             $run_query = mysqli_query($con, $update_pass);
             if($run_query){
                 $info = "Your password changed. Now you can login with your new password.";
