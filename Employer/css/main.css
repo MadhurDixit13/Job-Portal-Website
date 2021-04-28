@@ -45,7 +45,7 @@ dt {border:0; margin:0; padding:0; font-weight:bold;}
 dd {border:0; margin:0 0 0 30px; padding:0;}
 
 form {border:0; margin:0; padding:0;}
-fieldset {border:1px solid #ccc; margin:15px 0; padding:10px;}
+fieldset {border:1px solid #ccc; margin:15px 0; padding:10px;border-radius: 10%;}
 legend {margin-left:10px; font-size:100%; font-weight:bold; color:#008;}
 
 hr {display:block; height:1px; margin:10px 0; padding:0; background:#CCC; border:0 solid #CCC; color:#CCC;}

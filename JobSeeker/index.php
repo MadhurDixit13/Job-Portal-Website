@@ -18,12 +18,18 @@ if(isset($_SESSION['$UserName_job'])){
     <title>JOB PORTAL</title>
     <meta name="description" content="..." />
     <meta name="keywords" content="..." />
-    
+    <!-- <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> -->
     <link rel="index" href="./" title="Home" />
     <link rel="stylesheet" media="screen,projection" type="text/css" href="./css/main.css" />
     <link rel="stylesheet" media="print" type="text/css" href="./css/print.css" />
     <link rel="stylesheet" media="aural" type="text/css" href="./css/aural.css" />
+
     <style type="text/css">
+      /* <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="notification.js"></script> */
 <!--
 .style1 {
 	color: #000066;
@@ -102,6 +108,9 @@ include "menu.php"
                   </tr>
                 </table>
                 <p>&nbsp;</p>
+                /* <?php if(isset($_SESSION['txtUser']) && $_SESSION['txtUser'] == 'admin') { ?>
+		<a href="manage_notification.php">Manage Notification</a> | 
+	<?php } ?> */
 
               <p class="btn-more box noprint">&nbsp;</p>
               
@@ -127,8 +136,7 @@ include "right.php"
     </div> <!-- /page-in -->
     </div> <!-- /page -->
 
- 
-<?php
+  <?php
 include "footer.php"
 ?>
 </div> <!-- /main -->
