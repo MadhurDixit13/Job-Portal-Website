@@ -27,9 +27,8 @@ else{
 <!--
 .style1 {
 	color: #000066;
-	font-weight: bold;
 }
-.style3 {font-weight: bold}
+.style3 {}
 -->
     </style>
     <script src="../SpryAssets/SpryValidationTextField.js" type="text/javascript"></script>
@@ -37,6 +36,7 @@ else{
 </head>
 
 <body id="www-url-cz">
+<font size=3>
 <!-- Main -->
 <div id="main" class="box">
 
@@ -132,9 +132,9 @@ $UserName=$row['UserName'];
 ?>
 <tr>
 <td class="style3"><div align="left" class="style9 style5"><strong><?php echo $Id;?></strong></div></td>
-<td class="style3"><div align="left" class="style9 style5"><strong><?php echo $UserName;?></strong></div></td>
-<td class="style3"><div align="left" class="style9 style5"><strong><a href="EditUser.php?UserId=<?php echo $Id;?>">Edit</a></strong></div></td>
-<td class="style3"><div align="left" class="style9 style5"><strong><a href="DeleteUser.php?UserId=<?php echo $Id;?>">Delete</a></strong></div></td>
+<td class="style3"><div align="left" class="style9 style5"><?php echo $UserName;?></div></td>
+<td class="style3"><div align="left" class="style9 style5"><a href="EditUser.php?UserId=<?php echo $Id;?>">Edit</a></div></td>
+<td class="style3"><div align="left" class="style9 style5"><a href="DeleteUser.php?UserId=<?php echo $Id;?>">Delete</a></div></td>
 </tr>
 <?php
 }
@@ -191,5 +191,6 @@ var sprytextfield1 = new Spry.Widget.ValidationTextField("sprytextfield1");
 var sprytextfield2 = new Spry.Widget.ValidationTextField("sprytextfield2");
 //-->
 </script>
+</font>
 </body>
 </html>

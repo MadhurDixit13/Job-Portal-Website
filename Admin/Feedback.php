@@ -31,14 +31,20 @@ else{
         }
 
         .style3 {
-            font-weight: bold
         }
 
         -->
+        table th, table td{
+        padding: 10px; /* Apply cell padding */
+        }
+        table{
+        border-spacing: 10px; /* Apply cell spacing */
+        }
     </style>
 </head>
 
 <body id="www-url-cz">
+<font size=3>
 <!-- Main -->
 <div id="main" class="box">
   
@@ -110,14 +116,14 @@ else{
                                     <div align="left" class="style9 style5"><strong><?php echo $Id; ?></strong></div>
                                 </td>
                                 <td class="style3">
-                                    <div align="left" class="style9 style5"><strong><?php echo $Name; ?></strong></div>
+                                    <div align="left" class="style9 style5"><?php echo $Name; ?></div>
                                 </td>
                                 <td class="style3">
-                                    <div align="left" class="style9 style5"><strong><?php echo $Feedback; ?></strong>
+                                    <div align="left" class="style9 style5"><?php echo $Feedback; ?>
                                     </div>
                                 </td>
                                 <td class="style3">
-                                    <div align="left" class="style9 style5"><strong><?php echo $FeedbakDate; ?></strong>
+                                    <div align="left" class="style9 style5"><?php echo $FeedbakDate; ?>
                                     </div>
                                 </td>
                             </tr>
@@ -167,6 +173,6 @@ else{
     include "footer.php"
     ?>
 </div> <!-- /main -->
-
+</font>
 </body>
 </html>

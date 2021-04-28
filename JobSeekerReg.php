@@ -301,9 +301,18 @@ include "menu.php"
                     <tr>
                       <td>Qualification:</td>
                       <td><label>
-                          <input type="text" name="txtQualification" id="txtQualification" onkeyup="manage(this)"/>
-                      </label>
-					  <span class="textfieldRequiredMsg">Enter Qualification</span></td>
+                        <select name="cmbQualification" id="cmbQualification" onkeyup="manage(this)">
+                          <option value="B.E./B.Tech">B.E./B.Tech</option>
+                          <option value="M.E./M.Tech">M.E./M.Tech</option>
+                          <option value="M.B.A.">M.B.A.</option>
+                          <option value="B.Sc.">B.Sc.</option>
+                          <option value="M.Sc.">M.Sc.</option>
+                          <option value="B.A.">B.A.</option>
+                          <option value="M.A.">M.A.</option>
+                          <option value="B.Com.">B.Com.</option>
+                          <option value="M.Com.">M.Com.</option>
+                        </select>
+                      </label></td>
                     </tr>
                     <tr>
                       <td>Other:</td>

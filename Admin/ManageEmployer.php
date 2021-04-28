@@ -32,15 +32,21 @@ else{
         }
 
         .style3 {
-            font-weight: bold
         }
 
         -->
+        table th, table td{
+        padding: 10px; /* Apply cell padding */
+        }
+        table{
+        border-spacing: 10px; /* Apply cell spacing */
+        }
     </style>
 </head>
 
 <body id="www-url-cz">
 <!-- Main -->
+<font size=3>
 <div id="main" class="box">
    
     <?php
@@ -125,24 +131,24 @@ else{
                                             </td>
                                             <td class="style3">
                                                 <div align="left" class="style9 style5">
-                                                    <strong><?php echo $Name; ?></strong></div>
+                                                    <?php echo $Name; ?></div>
                                             </td>
                                             <td class="style3">
                                                 <div align="left" class="style9 style5">
-                                                    <strong><?php echo $City; ?></strong></div>
+                                                    <?php echo $City; ?></div>
                                             </td>
                                             <td class="style3">
                                                 <div align="left" class="style9 style5">
-                                                    <strong><?php echo $CP; ?></strong></div>
+                                                    <?php echo $CP; ?></div>
                                             </td>
                                             <td class="style3">
-                                                <div align="left" class="style9 style5"><strong><a
-                                                            href="DetailEmp.php?EmpId=<?php echo $Id; ?>">Detail</a></strong>
+                                                <div align="left" class="style9 style5"><a
+                                                            href="DetailEmp.php?EmpId=<?php echo $Id; ?>">Detail</a>
                                                 </div>
                                             </td>
                                             <td class="style3">
-                                                <div align="left" class="style9 style5"><strong><a
-                                                            href="DeleteEmp.php?EmpId=<?php echo $Id; ?>">Delete</a></strong>
+                                                <div align="left" class="style9 style5"><a
+                                                            href="DeleteEmp.php?EmpId=<?php echo $Id; ?>">Delete</a>
                                                 </div>
                                             </td>
                                         </tr>
@@ -196,6 +202,6 @@ else{
     include "footer.php"
     ?>
 </div> <!-- /main -->
-
+</font>
 </body>
 </html>

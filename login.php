@@ -26,7 +26,7 @@ echo '<script type="text/javascript">alert("Wrong UserName or Password");window.
 else
 {
 	$_SESSION['$UserName']=$UserName;
-header("location:Admin/index.php");
+header("location:Admin/User.php");
 } 
 mysqli_close($con);
 }

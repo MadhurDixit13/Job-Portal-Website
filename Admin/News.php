@@ -13,8 +13,6 @@ else{
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <meta http-equiv="content-language" content="cs"/>
     <meta name="robots" content="all,follow"/>
-
-
     <title>JOB PORTAL</title>
     <meta name="description" content="..."/>
     <meta name="keywords" content="..."/>
@@ -32,20 +30,20 @@ else{
 
         .style3 {
             font-family: Verdana, Arial, Helvetica, sans-serif;
-            font-size: small;
+            font-size: large;
             font-weight: bold;
             color: #192666;
         }
 
         .style4 {
             font-family: Verdana, Arial, Helvetica, sans-serif;
-            font-size: small;
+            font-size:large;
             font-weight: bold;
             color: #FFFFFF;
         }
 
         .style7 {
-            font-size: small
+            font-size: large
         }
 
         .style8 {
@@ -54,10 +52,23 @@ else{
 
         .style9 {
             font-family: Verdana, Arial, Helvetica, sans-serif;
-            font-size: small;
+            font-size: large;
         }
-
         -->
+        .button {
+            background-color: #192666; /* Green */
+            
+        }
+        .button:hover {
+            background-color: #192666; /* Green */
+            color: white;
+        }
+        table th, table td{
+        padding: 10px; /* Apply cell padding */
+        }
+        table{
+        border-spacing: 10px; /* Apply cell spacing */
+        }
     </style>
     <script src="../SpryAssets/SpryValidationTextField.js" type="text/javascript"></script>
     <link href="../SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css"/>
@@ -391,6 +402,7 @@ else{
 
 <body id="www-url-cz">
 <!-- Main -->
+<font size=3>
 <div id="main" class="box">
    
     <?php
@@ -453,7 +465,7 @@ else{
                                         <tr>
                                             <td>&nbsp;</td>
                                             <td><label>
-                                                    <input type="submit" name="button" id="button" value="Submit"/>
+                                                    <input type="submit" name="button" id="button" class="button"value="Submit"/>
                                                 </label></td>
                                         </tr>
                                     </table>
@@ -581,5 +593,6 @@ else{
     var sprytextfield1 = new Spry.Widget.ValidationTextField("sprytextfield1");
     //-->
 </script>
+</font>
 </body>
 </html>
