@@ -102,7 +102,6 @@ Functional:
 9. Companies can view the job applicants resume and profile.
 10. Company can send a descripted call letter to applied job applicants.
 
-
 Non-functional:
 1. Better UI Design to get the webpages user friendly.
 2. User authentication will be done through email.
