@@ -29,8 +29,12 @@
 <!-- Main -->
 <div id="main" class="box">
 <?php 
+error_reporting(0);
 include "menu.php"
 ?>   
+<?php 
+error_reporting(0);
+?>
     <div id="page" class="box">
     <div id="page-in" class="box">
 
@@ -124,6 +128,9 @@ include "menu.php"
                   </table>
               </form>
                 <p>&nbsp;</p>
+              <p class="btn-more box noprint">&nbsp;</p>
+              <p class="btn-more box noprint">&nbsp;</p>
+              <p class="btn-more box noprint">&nbsp;</p>
               <p class="btn-more box noprint">&nbsp;</p>
           </div> <!-- /article -->
 

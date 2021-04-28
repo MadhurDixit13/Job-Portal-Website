@@ -99,12 +99,15 @@ else{
                                         <th bgcolor="#1CB5F1" class="style3">
                                             <div align="left" class="style9 style5"><strong>Detail</strong></div>
                                         </th>
+                                        <th bgcolor="#1CB5F1" class="style3">
+                                            <div align="left" class="style9 style5"><strong>Delete</strong></div>
+                                        </th>
                                     </tr>
                                     <?php
                                     // Establish Connection with Database
                                     $con = mysqli_connect("localhost", "root", "", "job");
                                     // Specify the query to execute
-                                    $sql = "select * from Employer_Reg where Status='Pending'";
+                                    $sql = "select * from Employer_Reg where Status='verified'";
                                     // Execute query
                                     $result = mysqli_query($con,$sql);
                                     // Loop through each records
@@ -135,6 +138,11 @@ else{
                                             <td class="style3">
                                                 <div align="left" class="style9 style5"><strong><a
                                                             href="DetailEmp.php?EmpId=<?php echo $Id; ?>">Detail</a></strong>
+                                                </div>
+                                            </td>
+                                            <td class="style3">
+                                                <div align="left" class="style9 style5"><strong><a
+                                                            href="DeleteEmp.php?EmpId=<?php echo $Id; ?>">Delete</a></strong>
                                                 </div>
                                             </td>
                                         </tr>

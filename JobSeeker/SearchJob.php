@@ -48,7 +48,7 @@ $currentPage = $_SERVER["PHP_SELF"];
 
 
 
-$query_Recordset1 = "SELECT MinQualification FROM job_master";
+$query_Recordset1 = "SELECT distinct MinQualification FROM job_master";
 $Recordset1 = mysqli_query( $con,$query_Recordset1) or die(mysqli_error());
 $row_Recordset1 = mysqli_fetch_assoc($Recordset1);
 $totalRows_Recordset1 = mysqli_num_rows($Recordset1);

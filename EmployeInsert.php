@@ -2,47 +2,62 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Untitled Document</title>
+<title>JobPortal Document</title>
 </head>
 
 <body>
 <?php
 	session_start();
 	$con = mysqli_connect('localhost', 'root', '', 'job');
+    function test_input($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+      }
 	$errors = array();
 	if(isset($_POST['employersignup'])){
-	$CompanyName = mysqli_real_escape_string($con, $_POST['txtName']);
+	$CompanyName = $_POST['txtName'];
 	//$CompnayName=$_POST['txtName'];
-	$ContactPerson = mysqli_real_escape_string($con, $_POST['txtPerson']);
+	$ContactPerson = $_POST['txtPerson'];
 	//$ContactPerson=$_POST['txtPerson'];
 	$Address=$_POST['txtAddress'];
-	$City=$_POST['txtCity'];
-	$Email=mysqli_real_escape_string($con, $_POST['txtEmail']);
+	$City=test_input($_POST['txtCity']);
+	$Email=test_input($_POST['txtEmail']);
 	//$Email=$_POST['txtEmail'];
 	$Mobile=$_POST['txtMobile'];
 	$Area=$_POST['txtAreaWork'];
-	$Status="Pending";
-	$UserName=mysqli_real_escape_string($con, $_POST['txtUserName']);
+	$Status="notverified";
+	$UserName=test_input($_POST['txtUserName']);
 	//$UserName=$_POST['txtUserName'];
-	$Password=mysqli_real_escape_string($con, $_POST['txtPassword']);
+	$Password=$_POST['txtPassword'];
 	//$Password=$_POST['txtPassword'];
-	$cpassword = mysqli_real_escape_string($con, $_POST['txtcPassword']);
-	if($Password !== $cpassword){
-        $errors['txtPassword'] = "Confirm password not matched!";
+	$cpassword =$_POST['txtcPassword'];
+	if($Password != $cpassword){
+        //$errors['txtPassword'] = "Confirm password not matched!";
+        echo '<script type="text/javascript">alert("Confirm Password not matched!");window.location=\'EmployerReg.php\';</script>';
     }
 	$UserType="Employer";
 	$Question=$_POST['cmbQue'];
 	$Answer=$_POST['txtAnswer'];
-	$email_check = "SELECT * FROM employer_reg WHERE Email = '$Email'";
-	$res = mysqli_query($con, $email_check);
-	if(mysqli_num_rows($res) > 0){
-        $errors['txtEmail'] = "Email that you have entered is already exist!";
-    }
-	if(count($errors) === 0){
-        $encpass = password_hash($password, PASSWORD_BCRYPT);
+	//$email_check = "SELECT * FROM employer_reg WHERE Email = '$Email'";
+    $sql_u = "SELECT * FROM employer_reg WHERE (UserName='$UserName' or Email='$Email');";
+  	$res_u = mysqli_query($con, $sql_u);
+  	if (mysqli_num_rows($res_u)>0) {
+        $row = mysqli_fetch_assoc($res_u);
+  	  if($Email==isset($row['Email'])){
+        echo '<script type="text/javascript">alert("Email already exists");window.location=\'EmployerReg.php\';</script>';
+        }
+        if($UserName==isset($row['UserName']))
+		{
+            echo '<script type="text/javascript">alert("UserName  already exists");window.location=\'EmployerReg.php\';</script>';
+		}
+
+  	}else{
+        $encpass = password_hash($Password, PASSWORD_BCRYPT);
         $code = rand(999999, 111111);
         $Status = "notverified";
-        $insert_data = "insert into employer_reg(CompanyName,ContactPerson,Address,City,Email,Mobile,Area_Work,Status,UserName,Password,Question,Answer,code) values('".$CompnayName."','".$ContactPerson."','".$Address."','".$City."','".$Email."',".$Mobile.",'".$Area."','".$Status."','".$UserName."','".$Password."','".$Question."','".$Answer."','".$code."')";
+        $insert_data = "insert into employer_reg(CompanyName,ContactPerson,Address,City,Email,Mobile,Area_Work,Status,UserName,Password,Question,Answer,code) values('".$CompanyName."','".$ContactPerson."','".$Address."','".$City."','".$Email."',".$Mobile.",'".$Area."','".$Status."','".$UserName."','".$Password."','".$Question."','".$Answer."','".$code."')";
         $data_check = mysqli_query($con, $insert_data);
         if($data_check){
             $subject = "Email verification Code";
@@ -62,6 +77,11 @@
             $errors['db-error'] = "Failed while inserting data into database!";
         }
     }
+    // $res = mysqli_query($con, $email_check);
+	// if(mysqli_num_rows($res) > 0){
+    //     $errors['txtEmail'] = "Email that you have entered is already exist!";
+    // }
+	// if
 }
 	//if Employer click verification code submit button
     if(isset($_POST['check'])){
@@ -72,7 +92,7 @@
         if(mysqli_num_rows($code_res) > 0){
             $fetch_data = mysqli_fetch_assoc($code_res);
             $fetch_code = $fetch_data['code'];
-            $email = $fetch_data['Email'];
+            $Email = $fetch_data['Email'];
             $code = 0;
             $status = 'verified';
             $update_otp = "UPDATE Employer_Reg SET code = $code, Status = '$status' WHERE code = $fetch_code";
@@ -80,7 +100,19 @@
             if($update_res){
                 $_SESSION['CompanyName'] = $CompanyName;
                 $_SESSION['Email'] = $Email;
-                header('location:index.php');
+                $info = "Your are registered successfully. Now you can login with your credentials.";
+                $_SESSION['info'] = $info;
+                $subject = "User Registered Successfully";
+                $message = "Hi ".$CompanyName." !! Your are successfully registered with us ";
+                $sender = "From: miniprojectmha@gmail.com";
+                if(mail($Email, $subject, $message, $sender)){
+                    $_SESSION['Email'] = $Email;
+                    $_SESSION['Password'] = $Password;
+                    header('location: password-changed.php');
+                    exit();
+            }else{
+                $errors['mail-error'] = "Failed while sending registration email!";
+            }
                 exit();
             }else{
                 $errors['otp-error'] = "Failed while updating code!";
@@ -90,7 +122,7 @@
         }
     }
 	if(isset($_POST['checkemail'])){
-		$UserName=$_POST['txtUserName'];
+		$UserName=test_input($_POST['txtUserName']);
 		$Question=$_POST['cmbQue'];
 		$Answer=$_POST['txtAnswer'];
 		$UserType=$_POST['rdUser'];
@@ -103,7 +135,7 @@
 		$records = mysqli_num_rows($result);
 		$row = mysqli_fetch_array($result);
 		//echo $records;
-		$Email = mysqli_real_escape_string($con, $_POST['txtEmail']);
+		$Email = $_POST['txtEmail'];
         $check_email = "SELECT * FROM Employer_Reg WHERE Email='$Email'";
         $run_sql = mysqli_query($con, $check_email);
         if(mysqli_num_rows($run_sql) > 0){
@@ -151,7 +183,7 @@
     }
 	if(isset($_POST['check-reset-otp'])){
         $_SESSION['info'] = "";
-        $otp_code = mysqli_real_escape_string($con, $_POST['otp']);
+        $otp_code =$_POST['otp'];
         $check_code = "SELECT * FROM Employer_Reg WHERE code = $otp_code";
         $code_res = mysqli_query($con, $check_code);
         if(mysqli_num_rows($code_res) > 0){
@@ -168,15 +200,16 @@
     }
 	if(isset($_POST['change-password'])){
         $_SESSION['info'] = "";
-        $Password = mysqli_real_escape_string($con, $_POST['Password']);
-        $cpassword = mysqli_real_escape_string($con, $_POST['cpassword']);
+        $Password =$_POST['Password'];
+        $cpassword =$_POST['cpassword'];
         if($Password !== $cpassword){
             $errors['Password'] = "Confirm password not matched!";
+        
         }else{
             $code = 0;
             $Email = $_SESSION['Email'];//getting this email using session 
 			$encpass = password_hash($Password, PASSWORD_BCRYPT);
-            $update_pass = "UPDATE Employer_Reg SET code = $code, Password =$Password  WHERE Email = '$Email'";
+            $update_pass = "UPDATE employer_reg SET code = $code, Password ='$Password'  WHERE Email = '$Email'";
             $run_query = mysqli_query($con, $update_pass);
             if($run_query){
                 $info = "Your password changed. Now you can login with your new password.";

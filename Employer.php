@@ -65,7 +65,7 @@ include "menu.php"
 
                 <p>
                 
-              <table width="100%" border="1" cellpadding="1" cellspacing="2" bordercolor="#006699" >
+              <table width="100%" border="0" cellpadding="1" cellspacing="2" bordercolor="#006699" >
 <tr>
 <th height="32" bgcolor="#006699" class="style3"><div align="left" class="style9 style5 style2"><strong>Company Name</strong></div></th>
 <th bgcolor="#006699" class="style3"><div align="left" class="style9 style5 style2"><strong>Contact Person</strong></div></th>
@@ -76,7 +76,7 @@ include "menu.php"
 $con = mysqli_connect("localhost","root","","job");
 
 // Specify the query to execute
-$sql = "select * from employer_reg where Status='Confirm'";
+$sql = "select * from employer_reg where Status='verified'";
 // Execute query
 $result = mysqli_query($con,$sql);
 // Loop through each records

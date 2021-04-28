@@ -5,9 +5,6 @@
     <meta http-equiv="content-language" content="cs"/>
     <meta name="robots" content="all,follow"/>
 
-    <meta name="author" content="All: ... [Nazev webu - www.url.cz]; e-mail: info@url.cz"/>
-    <meta name="copyright" content="Design/Code: Vit Dlouhy [Nuvio - www.nuvio.cz]; e-mail: vit.dlouhy@nuvio.cz"/>
-
     <title>JOB PORTAL</title>
     <meta name="description" content="..."/>
     <meta name="keywords" content="..."/>
@@ -30,9 +27,6 @@
 <body id="www-url-cz">
 <!-- Main -->
 <div id="main" class="box">
-    <?php
-    include "Header.php"
-    ?>
     <?php
     include "menu.php"
     ?>
@@ -72,10 +66,10 @@
 
                 <!-- Article -->
                 <div class="article">
-                    <h2><span><a href="#">Welcome To Control Panel</a></span></h2>
+                    <h1><span><a href="#">Welcome To Control Panel</a></span></h1>
 
-
-                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <font size="3">
+                    <table width="100%" border="0" cellspacing="2" cellpadding="1">
                         <tr>
                             <td></td>
                         </tr>
@@ -92,7 +86,7 @@
                                 // Loop through each records
                                 $row = mysqli_fetch_array($result)
                                 ?>
-                                <table width="100%" border="1" cellspacing="2" cellpadding="2">
+                                <table width="100%" border="1" cellspacing="2" cellpadding="2" >
                                     <tr>
                                         <td>Id:</td>
                                         <td><?php echo $row['JobSeekId']; ?></td>
@@ -135,11 +129,11 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td><strong><a href="ApprovJob.php?JobId=<?php echo $row['JobSeekId']; ?>">Approv
-                                                    Job Seeker</a></strong></td>
+                                        <td><strong><a href="ManageJob.php">Go Back</a></strong></td>
                                         <td></td>
                                     </tr>
                                 </table>
+                                </font>
                             </td>
                         </tr>
                     </table>
