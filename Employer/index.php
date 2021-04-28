@@ -100,11 +100,13 @@ include "menu.php"
                   <tr>
                     <td bgcolor="#A0B9F3"><div align="center"><a href="ManageWalkin.php"><strong>Walkin</strong></a></div></td>
                     <td bgcolor="#A0B9F3"><div align="center"><a href="Application.php"><strong>Application</strong></a></div></td>
-                    <td bgcolor="#A0B9F3"><div align="center"><a href="logout.php"><strong>Logout</strong></a></div></td>
+                    <td bgcolor="#A0B9F3"><div align="center"><a href="session_destroy.php"><strong>Logout</strong></a></div></td>
                   </tr>
                 </table>
                 <p>&nbsp;</p>
 
+              <p class="btn-more box noprint">&nbsp;</p>
+              <p class="btn-more box noprint">&nbsp;</p>
               <p class="btn-more box noprint">&nbsp;</p>
               <p class="btn-more box noprint">&nbsp;</p>
               <p class="btn-more box noprint">&nbsp;</p>

@@ -1,4 +1,3 @@
-<?xml version="1.0"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="cs" lang="cs">
 <head>
@@ -30,9 +29,6 @@
 <body id="www-url-cz">
 <!-- Main -->
 <div id="main" class="box">
-<?php 
-include "Header.php"
-?>
 <?php 
 include "menu.php"
 ?>   
@@ -72,7 +68,7 @@ include "menu.php"
 
             <!-- Article -->
             <div class="article">
-                <h2><span><a href="#">Welcome To Control Panel</a></span></h2>
+                <h2><span>Welcome To Control Panel</span></h2>
                
 <?php
 $JobId=$_GET['JobId'];
@@ -89,10 +85,13 @@ $sql = "Update Application_Master set Status='".$Status."' ,Description='".$Desc
 // Execute query
 mysqli_query($con,$sql);
 // Close The Connection
-mysqli_close($con);
+$subject = "Call Letter has been sent from employer";
+$message = "Your verification code is $code";
+$sender = "From: miniprojectmha@gmail.com";
+if(mail($Email, $subject, $message, $sender)){
 echo '<script type="text/javascript">alert("Call Latter Send Succesfully");window.location=\'Application.php\';</script>';
-?>
-                
+ }
+        mysqli_close($con);      ?>  
                 <p>&nbsp;</p>
 
               <p class="btn-more box noprint">&nbsp;</p>

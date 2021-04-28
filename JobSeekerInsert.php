@@ -2,10 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Untitled Document</title>
+<title>JobPortal Document</title>
 </head>
 
 <body>
+<?php 
+error_reporting(0);
+?>
 <?php
 	session_start();
 	$con = mysqli_connect('localhost', 'root', '', 'job');
@@ -18,14 +21,16 @@
 	$Mobile=$_POST['txtMobile'];
 	$Qualification=mysqli_real_escape_string($con, $_POST['txtQualification']);
 	$Gender=$_POST['cmbGender'];	
-	$BirthDate=$_POST['txtBirthDate'];
+	//$BirthDate=$_POST['txtBirthDate'];
+	$date1=$_POST['txtBirthDate'];    
+	$BirthDate = date("Y-m-d", strtotime($date1)); 
 	$path1 = $_FILES["txtFile"]["name"];
 	$Status="Pending";
-	$UserName=mysqli_real_escape_string($con, $_POST['txtUserName']);
-	$Password=mysqli_real_escape_string($con, $_POST['txtPassword']);
-	$cPassword=mysqli_real_escape_string($con, $_POST['txtcPassword']);
-	if($Password !== $cPassword){
-        $errors['txtPassword'] = "Confirm password not matched!";
+	$UserName=$_POST['txtUserName'];
+	$Password=$_POST['txtPassword'];
+	$cPassword=$_POST['txtcPassword'];
+	if($Password != $cPassword){
+        echo '<script type="text/javascript">alert("Confirm Password not matched!");window.location=\'JobSeekerReg.php\';</script>';
     }
 	$Question=$_POST['cmbQue'];
 	$Answer=$_POST['txtAnswer'];
@@ -34,13 +39,20 @@
 	{
 		$Qualification=$_POST['txtOther'];
 	}
-	$email_check = "SELECT * FROM jobseeker_reg WHERE Email = '$Email'";
+	$email_check = "SELECT * FROM jobseeker_reg WHERE (UserName='$UserName' or Email='$Email');";
 	$res = mysqli_query($con, $email_check);
-	if(mysqli_num_rows($res) > 0){
-        $errors['txtEmail'] = "Email that you have entered is already exist!";
-    }
-	move_uploaded_file($_FILES["txtFile"]["tmp_name"],"upload/"  .$_FILES["txtFile"]["name"]);
-	if(count($errors) === 0){
+	if (mysqli_num_rows($res)>0) {
+        $row = mysqli_fetch_assoc($res);
+  	  if($Email==isset($row['Email'])){
+        echo '<script type="text/javascript">alert("Email already exists");window.location=\'JobSeekerReg.php\';</script>';
+        }
+        if($UserName==isset($row['UserName']))
+		{
+            echo '<script type="text/javascript">alert("username  already exists");window.location=\'JobSeekerReg.php\';</script>';
+		}
+  	}
+	else{
+		move_uploaded_file($_FILES["txtFile"]["tmp_name"],"upload/"  .$_FILES["txtFile"]["name"]);
         $encpass = password_hash($password, PASSWORD_BCRYPT);
         $code = rand(999999, 111111);
         $Status = "notverified";
@@ -70,7 +82,7 @@
     if(isset($_POST['check'])){
 		$con = mysqli_connect('localhost', 'root', '', 'job');
         $_SESSION['info'] = "";
-        $otp_code = mysqli_real_escape_string($con, $_POST['otp']);
+        $otp_code = $_POST['otp'];
         $check_code = "SELECT * FROM jobseeker_reg WHERE code = $otp_code";
         $code_res = mysqli_query($con, $check_code);
         if(mysqli_num_rows($code_res) > 0){
@@ -79,12 +91,25 @@
             $Email = $fetch_data['Email'];
             $code = 0;
             $status = 'verified';
-            $update_otp = "UPDATE jobseeker_reg SET code = $code, Status = '$status' WHERE code = $fetch_code";
+            $update_otp = "UPDATE jobseeker_reg SET code = $code, Status = $status WHERE code = $fetch_code";
             $update_res = mysqli_query($con, $update_otp);
             if($update_res){
                 $_SESSION['Name'] = $Name;
+				echo "<h1>".$Name."</h1>";
                 $_SESSION['Email'] = $Email;
-                header('location:index.php');
+				$info = "Your are registered successfully. Now you can login with your credentials.";
+                $_SESSION['info'] = $info;
+                $subject = "User Registered Successfully";
+                $message = "Hi $Name !! Your are successfully registered with us ";
+                $sender = "From: miniprojectmha@gmail.com";
+                if(mail($Email, $subject, $message, $sender)){
+                    $_SESSION['Email'] = $Email;
+                    $_SESSION['Password'] = $Password;
+                    header('location: passwordchanged.php');
+                    exit();
+            }else{
+                $errors['otp-error'] = "Failed while sending code!";
+            }
                 exit();
             }else{
                 $errors['otp-error'] = "Failed while updating code!";
@@ -106,10 +131,10 @@
 		$records = mysqli_num_rows($result);
 		$row = mysqli_fetch_array($result);
 		//echo $records;
-		$Email = mysqli_real_escape_string($con, $_POST['txtEmail']);
+		$Email =$_POST['txtEmail'];
         $check_email = "SELECT * FROM jobseeker_reg WHERE Email='$Email'";
         $run_sql = mysqli_query($con, $check_email);
-        if(mysqli_num_rows($run_sql) > 0){
+        if((mysqli_num_rows($run_sql) > 0) && ($result)){
             $code = rand(999999, 111111);
             $insert_code = "UPDATE jobseeker_reg SET code = $code WHERE Email = '$Email'";
             $run_query =  mysqli_query($con, $insert_code);
@@ -139,7 +164,7 @@
 			$otp_code = mysqli_real_escape_string($con, $_POST['otp']);
 			$check_code = "SELECT * FROM jobseeker_reg WHERE code = $otp_code";
 			$code_res = mysqli_query($con, $check_code);
-			if(mysqli_num_rows($code_res) > 0){
+			if(mysqli_num_rows($code_res) > 0 ){
 				$fetch_data = mysqli_fetch_assoc($code_res);
 				$Email = $fetch_data['txtEmail'];
 				$_SESSION['txtEmail'] = $Email;
@@ -154,15 +179,15 @@
 
 		if(isset($_POST['change-password'])){
 			$_SESSION['info'] = "";
-			$Password = mysqli_real_escape_string($con, $_POST['Password']);
-			$cpassword = mysqli_real_escape_string($con, $_POST['cpassword']);
+			$Password = $_POST['Password'];
+			$cpassword = $_POST['cpassword'];
 			if($Password !== $cpassword){
 				$errors['Password'] = "Confirm password not matched!";
 			}else{
 				$code = 0;
 				$Email = $_SESSION['Email'];//getting this email using session 
 				$encpass = password_hash($Password, PASSWORD_BCRYPT);
-				$update_pass = "UPDATE jobseeker_reg SET code = $code, Password =$Password  WHERE Email = '$Email'";
+				$update_pass = "UPDATE jobseeker_reg SET code = $code, Password ='$Password'  WHERE Email = '$Email'";
 				$run_query = mysqli_query($con, $update_pass);
 				if($run_query){
 					$info = "Your password changed. Now you can login with your new password.";

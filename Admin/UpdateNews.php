@@ -3,20 +3,21 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Untitled Document</title>
+<title>JobPortal Document</title>
 </head>
 
 <body>
 <?php
 $Id = $_POST['txtNewsId'];
 $News=$_POST['txtNews'];
-$Date=$_POST['txtDate'];
+$date1=$_POST['txtDate'];    
+$Date = date("Y-m-d", strtotime($date1)); 
 // Establish Connection with MYSQL
 $con = mysqli_connect("localhost","root","","job");
 // Select Database
 //mysql_select_db("job", $con);
 // Specify the query to Update Record
-$sql = "Update News_Master set News='".$News."',NewsDate='".$Date."' where NewsId=".$Id."";
+$sql = "UPDATE news_master set News='".$News."',NewsDate='".$Date."' where NewsId=".$Id."";
 // Execute query
 mysqli_query($con,$sql);
 // Close The Connection

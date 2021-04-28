@@ -12,9 +12,6 @@ if (!isset($_SESSION))
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="content-language" content="cs" />
     <meta name="robots" content="all,follow" />
-
-    <meta name="author" content="All: ... [Nazev webu - www.url.cz]; e-mail: info@url.cz" />
-    <meta name="copyright" content="Design/Code: Vit Dlouhy [Nuvio - www.nuvio.cz]; e-mail: vit.dlouhy@nuvio.cz" />
     
 <title>JOB PORTAL</title>
     <meta name="description" content="..." />
@@ -32,18 +29,84 @@ if (!isset($_SESSION))
 }
 -->
     </style>
-    <script src="../SpryAssets/SpryValidationTextField.js" type="text/javascript"></script>
-    <script src="../SpryAssets/SpryValidationTextarea.js" type="text/javascript"></script>
-    <link href="../SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css" />
-    <link href="../SpryAssets/SpryValidationTextarea.css" rel="stylesheet" type="text/css" />
+    <script src="SpryAssets/SpryValidationTextField.js" type="text/javascript"></script>
+    <script src="SpryAssets/SpryValidationTextarea.js" type="text/javascript"></script>
+    <link href="SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css" />
+    <link href="SpryAssets/SpryValidationTextarea.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body id="www-url-cz">
 <!-- Main -->
+<SCRIPT language="JavaScript1.2" src="gen_validation.js"></SCRIPT>
+<SCRIPT language="JavaScript1.2">
+var arrFormValidation=
+             [
+               [//Id
+
+               ],
+			 		[//Name
+						["minlen=1",
+		"Please Enter Company Name"
+						  ]
+					
+                     ],
+                   [//Contact Person
+						  ["minlen=1",
+		"Please Enter Contact Person"
+						  ]
+						  
+                   ],
+				   [//Address
+						["minlen=1",
+		"Please Enter Address"
+						  ] 					  				
+                   ],
+                   [//City
+						["minlen=1",
+		"Please Enter City"
+						  ] 					  				
+                   ],
+				   [//Email
+						  
+						["minlen=1",
+		"Please Enter Email "
+						  ], 
+						  ["email",
+		"Please Enter valid email "
+						  ]  
+                   ],
+				   [//Mobile
+						   ["num",
+		"Please Enter valid Mobile "
+						  ],
+						  ["minlen=10",
+		"Please Enter valid Mobile "
+						  ] 	  
+                   ],
+				   [//Area
+						  
+					  ["minlen=1",
+		"Please Enter Area of Work"
+						  ] 	
+								 
+						  
+                   ],
+				
+				   [//User
+						  ["minlen=5",
+		"Please Enter UserName "
+						  ]
+						 
+						  
+                   ],
+				   [//Password
+						["minlen=8",
+		"Please Enter Password "
+						  ] 
+            ];
+</SCRIPT>
 <div id="main" class="box">
-<?php 
-include "Header.php"
-?>
+
 <?php 
 include "menu.php"
 ?>   
@@ -75,6 +138,7 @@ include "menu.php"
 
             <hr class="noscreen" />
             
+            
             <!-- Article -->
            
             <!-- /article -->
@@ -96,23 +160,16 @@ $result = mysqli_query($con,$sql);
 // Loop through each records 
 $row = mysqli_fetch_array($result)
 ?>
-<form method="post" action="UpdateProfile.php">
+<form method="post" action="UpdateProfile.php" onSubmit="return validateForm(this,arrFormValidation);" enctype="multipart/form-data" id="form2">
                 <table width="100%" border="1" cellspacing="2" cellpadding="2">
-                  <tr>
-                    <td><strong>Company ID:</strong></td>
-                    <td><span id="sprytextfield1">
-                      <label>
-                      <input name="txtId" type="text" id="txtId" value="<?php echo $row['EmployerId'];?>" />
-                      </label>
-                    <span class="textfieldRequiredMsg">A value is required.</span></span></td>
-                  </tr>
+              
+                  <input type='hidden' name="txtId" id="txtId" value="<?php echo $row['EmployerId'];?>" />
                   <tr>
                     <td><strong>Company Name:</strong></td>
                     <td><span id="sprytextfield2">
                       <label>
                       <input name="txtName" type="text" id="txtName" value="<?php echo $row['CompanyName'];?>" />
                       </label>
-                    <span class="textfieldRequiredMsg">A value is required.</span></span></td>
                   </tr>
                   <tr>
                     <td><strong>Contact Person:</strong></td>
@@ -120,7 +177,7 @@ $row = mysqli_fetch_array($result)
                       <label>
                       <input name="txtContact" type="text" id="txtContact" value="<?php echo $row['ContactPerson'];?>" />
                       </label>
-                    <span class="textfieldRequiredMsg">A value is required.</span></span></td>
+                    
                   </tr>
                   <tr>
                     <td><strong>Address:</strong></td>
@@ -128,7 +185,6 @@ $row = mysqli_fetch_array($result)
                       <label>
                       <textarea name="txtAddress" id="txtAddress" cols="35" rows="3"><?php echo $row['Address'];?></textarea>
                       </label>
-                    <span class="textareaRequiredMsg">A value is required.</span></span></td>
                   </tr>
                   <tr>
                     <td><strong>City:</strong></td>
@@ -136,15 +192,13 @@ $row = mysqli_fetch_array($result)
                       <label>
                       <input name="txtCity" type="text" id="txtCity" value="<?php echo $row['City'];?>" />
                       </label>
-                    <span class="textfieldRequiredMsg">A value is required.</span></span></td>
                   </tr>
                   <tr>
                     <td><strong>Email:</strong></td>
                     <td><span id="sprytextfield5">
                       <label>
-                      <input name="txtEmail" type="text" id="txtEmail" value="<?php echo $row['Email'];?>" />
+                      <input name="txtEmail" type="email" id="txtEmail" value="<?php echo $row['Email'];?>" />
                       </label>
-                    <span class="textfieldRequiredMsg">A value is required.</span></span></td>
                   </tr>
                   <tr>
                     <td><strong>Mobile:</strong></td>
@@ -152,7 +206,6 @@ $row = mysqli_fetch_array($result)
                       <label>
                       <input name="txtMobile" type="text" id="txtMobile" value="<?php echo $row['Mobile'];?>" />
                       </label>
-                    <span class="textfieldRequiredMsg">A value is required.</span></span></td>
                   </tr>
                   <tr>
                     <td><strong>Area of Work:</strong></td>
@@ -160,7 +213,6 @@ $row = mysqli_fetch_array($result)
                       <label>
                       <input name="txtArea" type="text" id="txtArea" value="<?php echo $row['Area_Work'];?>" />
                       </label>
-                    <span class="textfieldRequiredMsg">A value is required.</span></span></td>
                   </tr>
                   <tr>
                     <td><strong>User Name:</strong></td>
@@ -168,27 +220,28 @@ $row = mysqli_fetch_array($result)
                       <label>
                       <input name="txtUser" type="text" id="txtUser" value="<?php echo $row['UserName'];?>" />
                       </label>
-                    <span class="textfieldRequiredMsg">A value is required.</span></span></td>
                   </tr>
                   <tr>
                     <td><strong>Password:</strong></td>
                     <td><span id="sprytextfield9">
                       <label>
                       <input name="txtPassword" type="password" id="txtPassword" value="<?php echo $row['Password'];?>" />
+                      <span class="textfieldRequiredMsg">Enter Password</span></span>
                       </label>
-                    <span class="textfieldRequiredMsg">A value is required.</span></span></td>
                   </tr>
                   
                   <tr>
                     <td>&nbsp;</td>
                     <td><label>
-                      <input type="submit" name="button" id="button" value="Submit" />
+                      <input type="submit" name="button" id="btSubmit" value="Submit" />
                     </label></td>
                   </tr>
                 </table>
 </form>
               <p>&nbsp;</p>
 
+                <p class="btn-more box noprint">&nbsp;</p>
+                <p class="btn-more box noprint">&nbsp;</p>
                 <p class="btn-more box noprint">&nbsp;</p>
           </div> <!-- /article -->
 
@@ -202,7 +255,7 @@ include "right.php"
 
     </div> <!-- /page-in -->
     </div> <!-- /page -->
-
+    
  
 <?php
 include "footer.php"

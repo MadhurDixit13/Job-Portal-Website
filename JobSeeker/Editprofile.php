@@ -1,3 +1,10 @@
+<?php
+if (!isset($_SESSION)) 
+{
+  session_start();
+  
+}
+?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="cs" lang="cs">
@@ -132,7 +139,7 @@ var arrFormValidation=
                    ],
 				   [//Email
 						  
-						["minlen=5",
+						["minlen=1",
 		"Please Enter Email "
 						  ], 
 						  ["email",
@@ -210,10 +217,6 @@ var arrFormValidation=
 </SCRIPT>
 <!-- Main -->
 <div id="main" class="box">
-
-
-=======
-
 <?php 
 include "menu.php"
 ?>   
@@ -309,12 +312,7 @@ include "menu.php"
                       </label>
 					  <span class="textfieldRequiredMsg">Enter Qualification</span></td>
                     </tr>
-                    <tr>
-                      <td>Other:</td>
-                      <td><label>
-                        <input type="text" name="txtOther" id="txtOther" onkeyup="manage(this)"/>
-                      </label></td>
-                    </tr>
+                    
                     <tr>
                       <td>Gender:</td>
                       <td><label>
