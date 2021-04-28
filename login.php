@@ -33,7 +33,7 @@ mysqli_close($con);
 else if($UserType=="JobSeeker")
 {
 $con = mysqli_connect("localhost","root","","job");
-$sql = "select * from jobseeker_reg where UserName='".$UserName."' and Password='".$Password."' and Status='Confirm'";
+$sql = "select * from jobseeker_reg where UserName='".$UserName."' and Password='".$Password."' and Status='verified'";
 $result = mysqli_query($con,$sql);
 $records = mysqli_num_rows($result);
 $row = mysqli_fetch_array($result);
@@ -66,7 +66,7 @@ mysqli_close($con);
 else
 {
 $con = mysqli_connect("localhost","root","","job");
-$sql = "select * from employer_reg where UserName='".$UserName."' and Password='".$Password."' and Status='Confirm'";
+$sql = "select * from employer_reg where UserName='".$UserName."' and Password='".$Password."' and Status='verified'";
 $result = mysqli_query($con,$sql);
 $records = mysqli_num_rows($result);
 $row = mysqli_fetch_array($result);

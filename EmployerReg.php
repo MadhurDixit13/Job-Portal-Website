@@ -1,13 +1,10 @@
-<?xml version="1.0"?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="cs" lang="cs">
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="content-language" content="cs" />
     <meta name="robots" content="all,follow" />
-
-    <meta name="author" content="All: ... [Nazev webu - www.url.cz]; e-mail: info@url.cz" />
-    <meta name="copyright" content="Design/Code: Vit Dlouhy [Nuvio - www.nuvio.cz]; e-mail: vit.dlouhy@nuvio.cz" />
     
 <title>Job Portal</title>
     <meta name="description" content="..." />
@@ -226,6 +223,12 @@ include "menu.php"
                       <span class="textfieldRequiredMsg">Enter Password</span></span></label></td>
                     </tr>
                     <tr>
+                      <td>Confirm Password:</td>
+                      <td><label><span id="sprytextfield10">
+                        <input type="password" name="txtcPassword" id="txtcPassword" />
+                      <span class="textfieldRequiredMsg">Comfirm Password</span></span></label></td>
+                    </tr>
+                    <tr>
                       <td>Security Question:</td>
                      <td><select name="cmbQue" id="cmbQue">
                         <option>What is Your Pet Name?</option>
@@ -244,7 +247,7 @@ include "menu.php"
                     <tr>
                       <td colspan="2"><label>
                         <div align="center">
-                          <input type="submit" name="button2" id="button2" value="Submit" />
+                          <input type="submit" name="employersignup" id="button2" value="Submit" />
                           </div>
                       </label></td>
                     </tr>

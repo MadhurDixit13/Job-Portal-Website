@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 if(isset($_SESSION['$UserName_job'])){
@@ -14,6 +15,10 @@ function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDe
   $theValue =  false ? stripslashes($theValue) : $theValue;
   // get_magic_quotes_gpc()
 //  $theValue = function_exists("mysql_real_escape_string") ? mysqli_real_escape_string($theValue) : mysqli_escape_string($theValue);
+
+// =======
+//put false --^
+
 
   switch ($theType) {
     case "text":
