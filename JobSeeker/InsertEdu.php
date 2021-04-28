@@ -6,6 +6,7 @@
 </head>
 
 <body>
+<font size=4>
 <?php
 if(!isset($_SESSION))
 {
@@ -33,5 +34,6 @@ session_start();
 	echo '<script type="text/javascript">alert("Profile Created Succesfully");window.location=\'Education.php\';</script>';
 
 ?>
+</font>
 </body>
 </html>

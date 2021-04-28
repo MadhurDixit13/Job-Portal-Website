@@ -7,6 +7,7 @@
 </head>
 
 <body>
+<font size=4>
 <?php
 $Id = $_POST['txtUserId'];
 $Name=$_POST['txtUserName'];
@@ -22,5 +23,6 @@ mysqli_query($con,$sql);
 mysqli_close($con);
 echo '<script type="text/javascript">alert("User Updated Succesfully");window.location=\'User.php\';</script>';
 ?>
+</font>
 </body>
 </html>

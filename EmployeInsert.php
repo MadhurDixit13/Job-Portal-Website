@@ -6,6 +6,7 @@
 </head>
 
 <body>
+<font size=4>
 <?php
 	session_start();
 	$con = mysqli_connect('localhost', 'root', '', 'job');
@@ -204,5 +205,6 @@
 	//echo '<script type="text/javascript">alert("Registration Completed Succesfully");window.location=\'index.php\';</script>';
 
 ?>
+</font>
 </body>
 </html>

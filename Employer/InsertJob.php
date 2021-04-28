@@ -13,6 +13,7 @@ if (!isset($_SESSION))
 </head>
 
 <body>
+<font size=4>
 <?php
 
 	$txtTitle=$_POST['txtTitle'];
@@ -36,5 +37,6 @@ if (!isset($_SESSION))
 	echo '<script type="text/javascript">alert("Walkin Inserted Succesfully");window.location=\'ManageJob.php\';</script>';
 
 ?>
+</font>
 </body>
 </html>

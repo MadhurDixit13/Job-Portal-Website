@@ -39,6 +39,7 @@ if (!isset($_SESSION))
 </head>
 
 <body id="www-url-cz">
+<font size=4>
 <!-- Main -->
 <div id="main" class="box">
 <?php 
@@ -223,5 +224,6 @@ var sprytextfield8 = new Spry.Widget.ValidationTextField("sprytextfield8");
 var sprytextfield9 = new Spry.Widget.ValidationTextField("sprytextfield9");
 //-->
 </script>
+</font>
 </body>
 </html>

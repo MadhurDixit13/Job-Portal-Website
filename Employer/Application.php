@@ -84,6 +84,7 @@ $totalRows_Recordset2 = mysqli_num_rows($Recordset2);
 </head>
 
 <body id="www-url-cz">
+<font size=4>
 <!-- Main -->
 <div id="main" class="box">
 
@@ -246,7 +247,7 @@ include "right.php"
 include "footer.php"
 ?>
 </div> <!-- /main -->
-
+</font>
 </body>
 </html>
 <?php

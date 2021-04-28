@@ -6,6 +6,7 @@
 </head>
 
 <body>
+<font size=4>
 <?php
 
 	$Id=$_GET['WalkinId'];
@@ -21,5 +22,6 @@
 	echo '<script type="text/javascript">alert("Walkin Deleted Succesfully");window.location=\'ManageWalkin.php\';</script>';
 
 ?>
+</font>
 </body>
 </html>

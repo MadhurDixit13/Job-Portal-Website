@@ -6,6 +6,7 @@
 </head>
 
 <body>
+<font size=4>
 <?php
 session_start();
 $UserName=$_POST['txtUser'];
@@ -71,6 +72,6 @@ header("location:Employer/index.php");
 mysqli_close($con);
 }
 ?>
-
+</font>
 </body>
 </html>

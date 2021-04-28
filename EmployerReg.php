@@ -27,6 +27,7 @@
 </head>
 
 <body id="www-url-cz">
+<font size=4>
 <SCRIPT language="JavaScript1.2" src="gen_validation.js"></SCRIPT>
 <SCRIPT language="JavaScript1.2">
 var arrFormValidation=
@@ -293,5 +294,6 @@ var sprytextfield10 = new Spry.Widget.ValidationTextField("sprytextfield10");
 var sprytextfield11 = new Spry.Widget.ValidationTextField("sprytextfield11");
 //-->
 </script>
+</font>
 </body>
 </html>

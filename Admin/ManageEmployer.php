@@ -40,6 +40,7 @@ else{
 </head>
 
 <body id="www-url-cz">
+<font size=4>
 <!-- Main -->
 <div id="main" class="box">
    
@@ -188,6 +189,6 @@ else{
     include "footer.php"
     ?>
 </div> <!-- /main -->
-
+</font>
 </body>
 </html>

@@ -7,6 +7,7 @@
 </head>
 
 <body>
+<font size=4>
 <?php
 
 	$News=$_POST['txtNews'];
@@ -23,5 +24,6 @@ $con = mysqli_connect("localhost","root","","job");
 	echo '<script type="text/javascript">alert("New News Inserted Succesfully");window.location=\'News.php\';</script>';
 
 ?>
+</font>
 </body>
 </html>

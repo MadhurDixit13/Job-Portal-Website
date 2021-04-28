@@ -28,6 +28,7 @@
 </head>
 
 <body id="www-url-cz">
+<font size=4>
 <!-- Main -->
 <div id="main" class="box">
 <?php 
@@ -155,5 +156,6 @@ var sprytextfield3 = new Spry.Widget.ValidationTextField("sprytextfield3");
 var sprytextfield4 = new Spry.Widget.ValidationTextField("sprytextfield4");
 //-->
 </script>
+</font>
 </body>
 </html>

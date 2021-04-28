@@ -347,6 +347,7 @@ function ds_onclick(d, m, y) {
 </head>
 
 <body id="www-url-cz">
+<font size=4>
 <SCRIPT language="JavaScript1.2" src="gen_validation.js"></SCRIPT>
 <SCRIPT language="JavaScript1.2">
 var arrFormValidation=
@@ -648,5 +649,6 @@ var sprytextfield9 = new Spry.Widget.ValidationTextField("sprytextfield9");
 var sprytextfield10 = new Spry.Widget.ValidationTextField("sprytextfield10");
 //-->
 </script>
+</font>
 </body>
 </html>

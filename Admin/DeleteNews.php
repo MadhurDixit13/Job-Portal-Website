@@ -7,6 +7,7 @@
 </head>
 
 <body>
+<font size=4>
 <?php
 
 	$Id=$_GET['NewsId'];
@@ -22,5 +23,6 @@ $con = mysqli_connect("localhost","root","","job");
 	echo '<script type="text/javascript">alert("News Deleted Succesfully");window.location=\'News.php\';</script>';
 
 ?>
+</font>
 </body>
 </html>

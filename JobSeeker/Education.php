@@ -43,6 +43,7 @@ if(isset($_SESSION['$UserName_job'])){
 </head>
 
 <body id="www-url-cz">
+<font size=4>
 <!-- Main -->
 <div id="main" class="box">
 <?php 
@@ -247,5 +248,6 @@ var sprytextfield1 = new Spry.Widget.ValidationTextField("sprytextfield1");
 var sprytextfield2 = new Spry.Widget.ValidationTextField("sprytextfield2");
 //-->
 </script>
+</font>
 </body>
 </html>

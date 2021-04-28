@@ -129,6 +129,7 @@ $queryString_Recordset2 = sprintf("&totalRows_Recordset2=%d%s", $totalRows_Recor
 </head>
 
 <body id="www-url-cz">
+<font size=4>
 <!-- Main -->
 <div id="main" class="box">
 <?php 
@@ -357,7 +358,7 @@ include "right.php"
 include "footer.php"
 ?>
 </div> <!-- /main -->
-
+</font>
 </body>
 </html>
 <?php

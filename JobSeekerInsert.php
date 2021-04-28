@@ -6,6 +6,7 @@
 </head>
 
 <body>
+<font size=4>
 <?php
 
 	$Name=$_POST['txtName'];
@@ -57,5 +58,6 @@ mysqli_close ($con);
 
 
 ?>
+</font>
 </body>
 </html>

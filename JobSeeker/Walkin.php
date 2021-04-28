@@ -36,6 +36,7 @@ if(isset($_SESSION['$UserName_job'])){
 </head>
 
 <body id="www-url-cz">
+<font size=4>
 <!-- Main -->
 <div id="main" class="box">
 <?php 
@@ -173,6 +174,6 @@ include "right.php"
 include "footer.php"
 ?>
 </div> <!-- /main -->
-
+</font>
 </body>
 </html>

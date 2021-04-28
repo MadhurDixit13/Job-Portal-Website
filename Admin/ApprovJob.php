@@ -6,6 +6,7 @@
 </head>
 
 <body>
+<font size=4>
 <?php
 $Id = $_GET['JobId'];
 // Establish Connection with Database
@@ -18,5 +19,6 @@ mysqli_query($con,$sql);
 mysqli_close($con);
 echo '<script type="text/javascript">alert("Job Seeker Request Confirmed");window.location=\'ManageJob.php\';</script>';
 ?>
+</font>
 </body>
 </html>

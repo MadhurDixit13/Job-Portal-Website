@@ -5,8 +5,6 @@
     <meta http-equiv="content-language" content="cs"/>
     <meta name="robots" content="all,follow"/>
 
-    <meta name="author" content="All: ... [Nazev webu - www.url.cz]; e-mail: info@url.cz"/>
-    <meta name="copyright" content="Design/Code: Vit Dlouhy [Nuvio - www.nuvio.cz]; e-mail: vit.dlouhy@nuvio.cz"/>
 
     <title>JOB PORTAL</title>
     <meta name="description" content="..."/>
@@ -51,6 +49,7 @@
 </head>
 
 <body id="www-url-cz">
+<font size=4>
 <!-- Main -->
 <div id="main" class="box">
     <?php
@@ -189,5 +188,6 @@
     var sprytextfield1 = new Spry.Widget.ValidationTextField("sprytextfield1");
     //-->
 </script>
+</font>
 </body>
 </html>

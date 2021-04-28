@@ -6,6 +6,7 @@
 </head>
 
 <body>
+<font size=4>
 <?php
 
 	$UserName=$_POST['txtUserName'];
@@ -22,5 +23,6 @@
 	echo '<script type="text/javascript">alert("User Inserted Succesfully");window.location=\'User.php\';</script>';
 
 ?>
+</font>
 </body>
 </html>

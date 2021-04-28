@@ -1,4 +1,5 @@
 <!-- Main menu (tabs) -->
+<font size=4>
      <div id="tabs" class="noprint">
 
             <h3 class="noscreen">Navigation</h3>
@@ -14,3 +15,4 @@
 
         <hr class="noscreen" />
      </div> <!-- /tabs -->
+     </font>

@@ -6,6 +6,7 @@
 </head>
 
 <body>
+<font size=4>
 <?php
 session_start();
 $UserName=$_POST['txtUserName'];
@@ -57,5 +58,6 @@ header('location:JobSeeker/index.php');
 mysqli_close($con);
 }
 ?>
+</font>
 </body>
 </html>

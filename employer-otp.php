@@ -14,6 +14,7 @@ if($Email == false){
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<font size=4>
     <div class="container">
         <div class="row">
             <div class="col-md-4 offset-md-4 form">
@@ -51,6 +52,6 @@ if($Email == false){
             </div>
         </div>
     </div>
-    
+    </font>
 </body>
 </html>

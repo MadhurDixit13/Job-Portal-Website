@@ -27,6 +27,7 @@
 </head>
 
 <body id="www-url-cz">
+<font size=4>
 <SCRIPT language="JavaScript1.2" src="gen_validation.js"></SCRIPT>
 <SCRIPT language="JavaScript1.2">
 var arrFormValidation=
@@ -229,6 +230,6 @@ include "right.php"
 include "footer.php"
 ?>
 </div> <!-- /main -->
-
+</font>
 </body>
 </html>

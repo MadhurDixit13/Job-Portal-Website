@@ -7,6 +7,7 @@
 </head>
 
 <body>
+<font size=4>
 <?php
 $Id = $_POST['txtNewsId'];
 $News=$_POST['txtNews'];
@@ -23,5 +24,6 @@ mysqli_query($con,$sql);
 mysqli_close($con);
 echo '<script type="text/javascript">alert("News Updated Succesfully");window.location=\'News.php\';</script>';
 ?>
+</font>
 </body>
 </html>

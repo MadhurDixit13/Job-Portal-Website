@@ -43,6 +43,7 @@ if(isset($_SESSION['$UserName_emp'])){
 </head>
 
 <body id="www-url-cz">
+<font size=4>
 <!-- Main -->
 <div id="main" class="box">
 
@@ -103,6 +104,6 @@ include "right.php"
 include "footer.php"
 ?>
 </div> <!-- /main -->
-
+</font>
 </body>
 </html>

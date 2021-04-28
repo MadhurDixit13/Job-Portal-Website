@@ -45,6 +45,7 @@ else{
 </head>
 
 <body id="www-url-cz">
+<font size=4>
 <!-- Main -->
 <div id="main" class="box">
 
@@ -223,5 +224,6 @@ var sprytextfield2 = new Spry.Widget.ValidationTextField("sprytextfield2");
 var sprytextarea1 = new Spry.Widget.ValidationTextarea("sprytextarea1");
 //-->
 </script>
+</font>
 </body>
 </html>

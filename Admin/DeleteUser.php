@@ -7,6 +7,7 @@
 </head>
 
 <body>
+<font size=4>
 <?php
 
 	$Id=$_GET['UserId'];
@@ -21,5 +22,6 @@ $con = mysqli_connect("localhost","root","","job");
 	echo '<script type="text/javascript">alert("User Deleted Succesfully");window.location=\'User.php\';</script>';
 
 ?>
+</font>
 </body>
 </html>

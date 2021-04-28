@@ -12,6 +12,7 @@ session_start();
 </head>
 
 <body>
+<font size=4>
 <?php
 
 	$JobId=$_GET['JobId'];
@@ -49,5 +50,6 @@ else
 echo '<script type="text/javascript">alert("You have already Applied For Job");window.location=\'SearchJob.php\';</script>';
 }
 ?>
+</font>
 </body>
 </html>

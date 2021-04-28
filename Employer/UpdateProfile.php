@@ -6,6 +6,7 @@
 </head>
 
 <body>
+<font size=4>
 <?php
 $txtId = $_POST['txtId'];
 $txtName=$_POST['txtName'];
@@ -29,5 +30,6 @@ mysqli_query($con,$sql);
 mysqli_close($con);
 echo '<script type="text/javascript">alert("Profile Updated Succesfully");window.location=\'Profile.php\';</script>';
 ?>
+</font>
 </body>
 </html>

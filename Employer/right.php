@@ -5,7 +5,7 @@
 //session_start();
 }
 ?>
-
+<font size=4>
 <div id="col" class="noprint">
             <div id="col-in">
 
@@ -42,5 +42,6 @@
 
 <hr class="noscreen" />
           </div> <!-- /col-in -->
-</div> 
+</div>
+</font> 
 <!-- /col -->
