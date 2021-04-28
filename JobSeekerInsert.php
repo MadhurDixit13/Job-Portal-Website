@@ -7,19 +7,26 @@
 
 <body>
 <?php
-
-	$Name=$_POST['txtName'];
-	$Address=$_POST['txtAddress'];
-	$City=$_POST['txtCity'];
+	session_start();
+	$con = mysqli_connect('localhost', 'root', '', 'job');
+	$errors = array();
+	if(isset($_POST['jobseekersignup'])){
+	$Name=mysqli_real_escape_string($con, $_POST['txtName']);
+	$Address=mysqli_real_escape_string($con, $_POST['txtAddress']);
+	$City=mysqli_real_escape_string($con, $_POST['txtCity']);
 	$Email=$_POST['txtEmail'];
 	$Mobile=$_POST['txtMobile'];
-	$Qualification=$_POST['txtQualification'];
+	$Qualification=mysqli_real_escape_string($con, $_POST['txtQualification']);
 	$Gender=$_POST['cmbGender'];	
 	$BirthDate=$_POST['txtBirthDate'];
 	$path1 = $_FILES["txtFile"]["name"];
 	$Status="Pending";
-	$UserName=$_POST['txtUserName'];
-	$Password=$_POST['txtPassword'];
+	$UserName=mysqli_real_escape_string($con, $_POST['txtUserName']);
+	$Password=mysqli_real_escape_string($con, $_POST['txtPassword']);
+	$cPassword=mysqli_real_escape_string($con, $_POST['txtcPassword']);
+	if($Password !== $cPassword){
+        $errors['txtPassword'] = "Confirm password not matched!";
+    }
 	$Question=$_POST['cmbQue'];
 	$Answer=$_POST['txtAnswer'];
 	$UserType="JobSeeker";
@@ -27,16 +34,157 @@
 	{
 		$Qualification=$_POST['txtOther'];
 	}
-	  move_uploaded_file($_FILES["txtFile"]["tmp_name"],"upload/"  .$_FILES["txtFile"]["name"]);
+	$email_check = "SELECT * FROM jobseeker_reg WHERE Email = '$Email'";
+	$res = mysqli_query($con, $email_check);
+	if(mysqli_num_rows($res) > 0){
+        $errors['txtEmail'] = "Email that you have entered is already exist!";
+    }
+	move_uploaded_file($_FILES["txtFile"]["tmp_name"],"upload/"  .$_FILES["txtFile"]["name"]);
+	if(count($errors) === 0){
+        $encpass = password_hash($password, PASSWORD_BCRYPT);
+        $code = rand(999999, 111111);
+        $Status = "notverified";
+        $insert_data = "insert into jobseeker_reg(JobSeekerName,Address,City,Email,Mobile,Qualification,Gender,BirthDate,Resume,Status,UserName,Password,Question,Answer,code) VALUES (
+			'$Name','$Address','$City','$Email','$Mobile','$Qualification','$Gender','$BirthDate','$path1','$Status','$UserName','$Password','$Question','$Answer','".$code."')";
+		$data_check = mysqli_query($con, $insert_data);
+	if($data_check){
+		$subject = "Email verification Code";
+		$message = "Your verification code is $code";
+		$sender = "From: miniprojectmha@gmail.com";
+		if(mail($Email, $subject, $message, $sender)){
+			$info = "We've sent a verification code to your email - $Email";
+			$_SESSION['info'] = $info;
+			$_SESSION['Email'] = $Email;
+			$_SESSION['Password'] = $Password;
+			header('location: jobseeker-otp.php');
+			exit();
+		}else{
+			$errors['otp-error'] = "Failed while sending code!";
+		}
+	}else{
+		$errors['db-error'] = "Failed while inserting data into database!";
+		}
+	}
+}
+	//if JobSeeker click verification code submit button
+    if(isset($_POST['check'])){
+		$con = mysqli_connect('localhost', 'root', '', 'job');
+        $_SESSION['info'] = "";
+        $otp_code = mysqli_real_escape_string($con, $_POST['otp']);
+        $check_code = "SELECT * FROM jobseeker_reg WHERE code = $otp_code";
+        $code_res = mysqli_query($con, $check_code);
+        if(mysqli_num_rows($code_res) > 0){
+            $fetch_data = mysqli_fetch_assoc($code_res);
+            $fetch_code = $fetch_data['code'];
+            $Email = $fetch_data['Email'];
+            $code = 0;
+            $status = 'verified';
+            $update_otp = "UPDATE jobseeker_reg SET code = $code, Status = '$status' WHERE code = $fetch_code";
+            $update_res = mysqli_query($con, $update_otp);
+            if($update_res){
+                $_SESSION['Name'] = $Name;
+                $_SESSION['Email'] = $Email;
+                header('location:index.php');
+                exit();
+            }else{
+                $errors['otp-error'] = "Failed while updating code!";
+            }
+        }else{
+            $errors['otp-error'] = "You've entered incorrect code!";
+        }
+    }
+	if(isset($_POST['checkemail'])){
+		$UserName=$_POST['txtUserName'];
+		$Question=$_POST['cmbQue'];
+		$Answer=$_POST['txtAnswer'];
+		$UserType=$_POST['rdUser'];
+		if($UserType=="JobSeeker")
+		{
+//mysqli_select_db("job", $con);
+		$sql = "select * from jobseeker_reg  where UserName='".$UserName."' and Question='".$Question."' and Answer='".$Answer."'";
+		$result = mysqli_query($con,$sql);
+		$records = mysqli_num_rows($result);
+		$row = mysqli_fetch_array($result);
+		//echo $records;
+		$Email = mysqli_real_escape_string($con, $_POST['txtEmail']);
+        $check_email = "SELECT * FROM jobseeker_reg WHERE Email='$Email'";
+        $run_sql = mysqli_query($con, $check_email);
+        if(mysqli_num_rows($run_sql) > 0){
+            $code = rand(999999, 111111);
+            $insert_code = "UPDATE jobseeker_reg SET code = $code WHERE Email = '$Email'";
+            $run_query =  mysqli_query($con, $insert_code);
+            if($run_query){
+                $subject = "Password Reset Code";
+                $message = "Your password reset code is $code";
+                $sender = "From: miniprojectmha@gmail.com";
+                if(mail($Email, $subject, $message, $sender)){
+                    $info = "We've sent a passwrod reset otp to your email - $Email";
+                    $_SESSION['info'] = $info;
+                    $_SESSION['Email'] = $Email;
+                    header('location: resetcode.php');
+                    exit();
+                }else{
+                    $errors['otp-error'] = "Failed while sending code!";
+                }
+            }else{
+                $errors['db-error'] = "Something went wrong!";
+            }
+        }else{
+            $errors['email'] = "This email address does not exist!";
+        }
+			}
+		}
+		if(isset($_POST['check-reset-otp'])){
+			$_SESSION['info'] = "";
+			$otp_code = mysqli_real_escape_string($con, $_POST['otp']);
+			$check_code = "SELECT * FROM jobseeker_reg WHERE code = $otp_code";
+			$code_res = mysqli_query($con, $check_code);
+			if(mysqli_num_rows($code_res) > 0){
+				$fetch_data = mysqli_fetch_assoc($code_res);
+				$Email = $fetch_data['txtEmail'];
+				$_SESSION['txtEmail'] = $Email;
+				$info = "Please create a new password that you don't use on any other site.";
+				$_SESSION['info'] = $info;
+				header('location: newpassword.php');
+				exit();
+			}else{
+				$errors['otp-error'] = "You've entered incorrect code!";
+			}
+		}
+
+		if(isset($_POST['change-password'])){
+			$_SESSION['info'] = "";
+			$Password = mysqli_real_escape_string($con, $_POST['Password']);
+			$cpassword = mysqli_real_escape_string($con, $_POST['cpassword']);
+			if($Password !== $cpassword){
+				$errors['Password'] = "Confirm password not matched!";
+			}else{
+				$code = 0;
+				$Email = $_SESSION['Email'];//getting this email using session 
+				$encpass = password_hash($Password, PASSWORD_BCRYPT);
+				$update_pass = "UPDATE jobseeker_reg SET code = $code, Password =$Password  WHERE Email = '$Email'";
+				$run_query = mysqli_query($con, $update_pass);
+				if($run_query){
+					$info = "Your password changed. Now you can login with your new password.";
+					$_SESSION['info'] = $info;
+					header('Location: passwordchanged.php');
+				}else{
+					$errors['db-error'] = "Failed to change your password!";
+				}
+			}
+		}
+		if(isset($_POST['login-now'])){
+			header('Location: index.php');
+		}
 	// Establish Connection with MYSQL
-	$con = mysqli_connect ("localhost","root","","job");
+	//$con = mysqli_connect ("localhost","root","","job");
 	// Select Database	mysql_select_db("job", $con);
 	// Specify the query to Insert Record
 //	$sql = "insert into jobSeeker_reg(JobSeekerName,Address,City,Email,Mobile,Qualification,Gender,BirthDate,Resume,Status,UserName,Password,Question,Answer) values(
 //'".$Name."','".$Address."','".$City."','".$Email."',".$Mobile.",'".$Qualification."','".$Gender."',
 //'".$BirthDate."','".$path1."','".$Status."','".$UserName."','".$Password."','".$Question."','".$Answer."')";
 
-$sql="insert into jobSeeker_reg(JobSeekerName,Address,City,Email,Mobile,Qualification,Gender,BirthDate,Resume,Status,UserName,Password,Question,Answer) VALUES (
+/*$sql="insert into jobSeeker_reg(JobSeekerName,Address,City,Email,Mobile,Qualification,Gender,BirthDate,Resume,Status,UserName,Password,Question,Answer) VALUES (
 '$Name','$Address','$City','$Email','$Mobile','$Qualification','$Gender','$BirthDate','$path1','$Status','$UserName','$Password','$Question','$Answer'
 
 )";
@@ -44,11 +192,8 @@ $sql="insert into jobSeeker_reg(JobSeekerName,Address,City,Email,Mobile,Qualific
 
 var_dump($sql);
 	if(mysqli_query ($con,$sql)){
-
-
-
         echo '<script type="text/javascript">alert("Registration Completed Succesfully");window.location=\'index.php\';</script>';
-    }
+    }*/
 
 
 mysqli_close ($con);

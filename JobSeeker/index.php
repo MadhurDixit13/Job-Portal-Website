@@ -13,8 +13,7 @@ if(isset($_SESSION['$UserName_job'])){
     <meta http-equiv="content-language" content="cs" />
     <meta name="robots" content="all,follow" />
 
-    <meta name="author" content="All: ... [Nazev webu - www.url.cz]; e-mail: info@url.cz" />
-    <meta name="copyright" content="Design/Code: Vit Dlouhy [Nuvio - www.nuvio.cz]; e-mail: vit.dlouhy@nuvio.cz" />
+
     
     <title>JOB PORTAL</title>
     <meta name="description" content="..." />
@@ -37,9 +36,7 @@ if(isset($_SESSION['$UserName_job'])){
 <body id="www-url-cz">
 <!-- Main -->
 <div id="main" class="box">
-<?php 
-include "Header.php"
-?>
+
 <?php 
 include "menu.php"
 ?>   
@@ -79,7 +76,7 @@ include "menu.php"
 
             <!-- Article -->
             <div class="article">
-                <h2><span><a href="#">Welcome To Control Panel</a></span></h2>
+                <h2><center><span><a href="#">Welcome To Control Panel</a></span></center></h2>
                
 
                 <table width="100%" border="0">
@@ -106,6 +103,16 @@ include "menu.php"
                 </table>
                 <p>&nbsp;</p>
 
+              <p class="btn-more box noprint">&nbsp;</p>
+              
+              <p class="btn-more box noprint">&nbsp;</p>
+              
+              <p class="btn-more box noprint">&nbsp;</p>
+              
+              <p class="btn-more box noprint">&nbsp;</p>
+              
+              <p class="btn-more box noprint">&nbsp;</p>
+              
               <p class="btn-more box noprint">&nbsp;</p>
           </div> <!-- /article -->
 

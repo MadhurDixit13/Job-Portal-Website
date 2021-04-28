@@ -38,9 +38,7 @@ if(isset($_SESSION['$UserName_job'])){
 <body id="www-url-cz">
 <!-- Main -->
 <div id="main" class="box">
-<?php 
-include "Header.php"
-?>
+
 <?php 
 include "menu.php"
 ?>   
@@ -80,7 +78,7 @@ include "menu.php"
 
             <!-- Article -->
             <div class="article">
-                <h2><span><a href="#">Welcome <?php echo $_SESSION['Name'];?></a></span></h2>
+                <h2><center><span><a href="#">Welcome <?php echo $_SESSION['Name'];?></a></span></center></h2>
                
 <?php
 $ID=$_SESSION['ID'];
@@ -138,6 +136,11 @@ $row = mysqli_fetch_array($result)
               <p>&nbsp;</p>
 
                 <p class="btn-more box noprint">&nbsp;</p>
+                <p class="btn-more box noprint">&nbsp;</p>
+                <p class="btn-more box noprint">&nbsp;</p>
+                <p class="btn-more box noprint">&nbsp;</p>
+                <p class="btn-more box noprint">&nbsp;</p>
+                
           </div> <!-- /article -->
 
             <?php

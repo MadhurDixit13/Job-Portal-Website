@@ -6,8 +6,6 @@
     <meta http-equiv="content-language" content="cs" />
     <meta name="robots" content="all,follow" />
 
-    <meta name="author" content="All: ... [Nazev webu - www.url.cz]; e-mail: info@url.cz" />
-    <meta name="copyright" content="Design/Code: Vit Dlouhy [Nuvio - www.nuvio.cz]; e-mail: vit.dlouhy@nuvio.cz" />
     
     <title>Welcome To Job Portal</title>
     <meta name="description" content="..." />
@@ -448,9 +446,6 @@ var arrFormValidation=
 <!-- Main -->
 <div id="main" class="box">
 <?php 
-include "Header.php"
-?>
-<?php 
 include "menu.php"
 ?>   
 <!-- Page (2 columns) -->
@@ -495,7 +490,7 @@ include "menu.php"
                     <div class="login">
 
                 <form action="JobSeekerInsert.php" method="post" onSubmit="return validateForm(this,arrFormValidation);" enctype="multipart/form-data" id="form2">
-                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <table width="100%"  cellspacing="0" cellpadding="0">
                     <tr>
                       <td>JobSeeker Name:</td>
                       <td><span id="sprytextfield3">
@@ -525,7 +520,7 @@ include "menu.php"
                       <td>Email:</td>
                       <td><span id="sprytextfield5">
                         <label>
-                        <input type="text" name="txtEmail" id="txtEmail" />
+                        <input type="email" name="txtEmail" id="txtEmail" />
                         </label>
                       <span class="textfieldRequiredMsg">Enter Email Id</span></span></td>
                     </tr>
@@ -533,7 +528,7 @@ include "menu.php"
                       <td>Mobile:</td>
                       <td><span id="sprytextfield6">
                         <label>
-                        <input type="text" name="txtMobile" id="txtMobile" />
+                        <input type="tel" name="txtMobile" id="txtMobile" />
                         </label>
                       <span class="textfieldRequiredMsg">Enter Mobile</span></span></td>
                     </tr>
@@ -568,7 +563,7 @@ include "menu.php"
                       <span class="textfieldRequiredMsg">Enter Birth Date</span></span></td>
                     </tr>
                     <tr>
-                      <td>Upload Marksheet:</td>
+                      <td>Upload Resume:</td>
                       <td><label>
                         <input type="file" name="txtFile" id="txtFile" />
                       </label></td>
@@ -585,6 +580,12 @@ include "menu.php"
                       <td>Password:</td>
                       <td><label><span id="sprytextfield9">
                         <input type="password" name="txtPassword" id="txtPassword" />
+                      <span class="textfieldRequiredMsg">Enter Password</span></span></label></td>
+                    </tr>
+					<tr>
+                      <td>Confirm Password:</td>
+                      <td><label><span id="sprytextfield9">
+                        <input type="password" name="txtcPassword" id="txtcPassword" />
                       <span class="textfieldRequiredMsg">Enter Password</span></span></label></td>
                     </tr>
                     <tr>
@@ -609,7 +610,7 @@ include "menu.php"
                       <td colspan="2"><label>
                         <label></label>
                         <div align="center">
-                          <input type="submit" name="button2" id="button2" value="Submit" />
+                          <input type="submit" name="jobseekersignup" id="button2" value="Submit" />
                           </div>
                       </label></td>
                     </tr>
