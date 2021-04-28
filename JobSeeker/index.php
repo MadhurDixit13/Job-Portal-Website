@@ -12,8 +12,6 @@ if(isset($_SESSION['$UserName_job'])){
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="content-language" content="cs" />
     <meta name="robots" content="all,follow" />
-
-
     
     <title>JOB PORTAL</title>
     <meta name="description" content="..." />
@@ -30,11 +28,18 @@ if(isset($_SESSION['$UserName_job'])){
 	font-weight: bold;
 }
 -->
+        table th, table td{
+        padding: 10px; /* Apply cell padding */
+        }
+        table{
+        border-spacing: 10px; /* Apply cell spacing */
+        }
     </style>
 </head>
 
 <body id="www-url-cz">
 <!-- Main -->
+<font size=3>
 <div id="main" class="box">
 
 <?php 
@@ -76,7 +81,7 @@ include "menu.php"
 
             <!-- Article -->
             <div class="article">
-                <h2><center><span><a href="#">Welcome To Control Panel</a></span></center></h2>
+                <h2><center><span><U>Welcome To Control Panel</U></span></center></h2>
                
 
                 <table width="100%" border="0">
@@ -114,6 +119,12 @@ include "menu.php"
               <p class="btn-more box noprint">&nbsp;</p>
               
               <p class="btn-more box noprint">&nbsp;</p>
+              <p class="btn-more box noprint">&nbsp;</p>
+              
+              <p class="btn-more box noprint">&nbsp;</p>
+              <p class="btn-more box noprint">&nbsp;</p>
+              
+              <p class="btn-more box noprint">&nbsp;</p>
           </div> <!-- /article -->
 
             <hr class="noscreen" />
@@ -132,6 +143,6 @@ include "right.php"
 include "footer.php"
 ?>
 </div> <!-- /main -->
-
+</font>
 </body>
 </html>

@@ -1,12 +1,4 @@
 /*
-    Project: CrystalX
-    URL: http://www.nuvio.cz
-    
-    Output device: screen, projection
-    
-    Author: Vit Dlouhy (vit.dlouhy@nuvio.cz); Nuvio (www.nuvio.cz)
-    Last revision: 2006-12-05, 12:00 GMT+1
-
     Structure:
         display | position | float | overflow | width | height | border | margin | padding | background | align | font
 */
@@ -14,7 +6,7 @@
 * {min-height:1px;}
 body {border:0; margin:0; padding:0;background-color: #d9e4f5;
     background: 0 0 repeat-x; font:70%/160% "verdana",sans-serif; 
-  color:#192666; _text-align:center;}
+  color:#192666; _text-align:center;align-items: center;align-content: center;}
 
 a {color:#192666;}
 a:hover {color:#4F6AD7;}
@@ -70,15 +62,15 @@ code, kbd, samp {font-family:monospace; font-size:110%;}
 .va-middle {vertical-align:middle;}
 
 .clear {clear:both;}
-.box {min-height:1px; _height:1px;}
+.box {min-height:1px; _height:1px;align-content: center;}
 .box:after {content:"."; display:block; line-height:0px; font-size:0px; visibility:hidden; clear:both;}
 
 .nom {margin:0;}
-.noscreen {display:none;}
+.noscreen {display:none;align-content: center;}
 
 /* -----------------...........--------------------------------------------------------------------------------------- */
 
-#main {width:100%; margin:0; _text-align:left;}
+#main {width:100%; margin:0; _text-align:left;align-content: center;}
 
 /* Header */
 #header {position:relative; width:100%; height:100px; margin:0;margin-left:0px; padding:0; 
@@ -126,10 +118,10 @@ code, kbd, samp {font-family:monospace; font-size:110%;}
 #page {width:100%; height:100%;min-height:1px; background:0 0 no-repeat; _height:1px;background-image:url("../design/banner-4.jpg");background-size: contain cover;  -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;}
-#page-in {min-height:1px; padding:0px 0; background:0 0 no-repeat; _height:1px;  }
+#page-in {align-content: center;align-self: center;align-items: center; }
 
 /* Strip */
-#strip {position:relative; clear:both; padding:3px 20px 10px 20px; color:#6182D1;}
+#strip {position:relative; clear:both; padding:3px 20px 10px 20px; color:#6182D1;align-content: center;}
 #strip p {margin:0;}
 #strip a {color:#6182D1;}
 #strip a:hover {color:#192666;}
@@ -141,14 +133,13 @@ code, kbd, samp {font-family:monospace; font-size:110%;}
     #strip #rss {float:right; width:175px; _width:200px; margin:0; padding-left:25px; background:url("../design/ico_rss.gif") 0 50% no-repeat}
 
 /* Content */
-#content {float:left; width:1200px; _width:550px; margin:0; padding:0 0 0 20px;}
+#content {float:center; margin:0; padding:0 0 0 20px;align-content: center;align-self: center;align-items: center;}
 
     /* Content - article */
-    #content .article {clear:both; margin:20px; padding:20px; background-color: #abe9cd;background:linear-gradient(315deg, #abe9cd 0%, #3eadcf 74%) 0 0 no-repeat;}
-    #content .article h2 {margin:0 -20px; padding:10px; background:0 0 repeat-y; color:#192666;}
-    #content .article h2 span {background:url("../design/ico_list.gif") 0 50% no-repeat; padding-left:25px;}
+    #content .article {position:relative;clear:both; margin:50px; padding:20px; background-color: #abe9cd;background:linear-gradient(315deg, #abe9cd 0%, #3eadcf 74%) 0 0 no-repeat;align-content: center;align-self: center;align-self: center;}
+    #content .article h2 {margin:0 -20px; padding:10px; background:0 0 repeat-y; color:#192666;align-content: center;}
     
-    #content .article p {text-align:justify;}
+    #content .article p {align-content: center;align-items: center;align-self: center;}
     #content .info {margin:10px 0; padding-bottom:8px; border-bottom:1px solid #DEE5FD; color:#6685CC;}
     #content .info a {color:#6685CC;}
     #content .info a:hover {color:#FF9000;}
@@ -200,28 +191,4 @@ code, kbd, samp {font-family:monospace; font-size:110%;}
 #footer a {color:#6685CC;}
 #footer a:hover {color:#192666;}
 
-    /* Footer - "back on top" */
-    #top {position:absolute; top:55px; left:550px;}
-    #top p {position:relative; width:30px; height:25px; margin:0; overflow:hidden;}
-    #top p span {display:block; position:absolute; left:0; top:0; z-index:1; width:30px; height:25px; background:url("../design/ico_top.gif") 0 0 no-repeat; cursor:pointer;}
-    #top a:hover span {background:url("../design/ico_top.gif") -30px 0 no-repeat;}
 
-    /*  Footer - copyright */
-    #footer p#copyright {
-	position:absolute;
-	top:10px;
-	left:40px;
-	margin:0;
-	width: 245px;
-}
-
-    /* Footer - created by */
-    #createdby {
-	position:absolute;
-	top:10px;
-	left:562px;
-	margin:0;
-	color:#8CA3D8;
-	width: 174px;
-}
-  

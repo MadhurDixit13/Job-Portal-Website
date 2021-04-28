@@ -7,6 +7,7 @@
                 <li><a href="AboutUs.php">About Us<span class="tab-l"></span><span class="tab-r"></span></a></li>
                 <!-- <li><a href="Employer.php">Employer<span class="tab-l"></span><span class="tab-r"></span></a></li>
                  <li><a href="JobSeeker.php">Job Seeker<span class="tab-l"></span><span class="tab-r"></span></a></li> -->
+                 <li><a href="FAQ.php">FAQ's<span class="tab-l"></span><span class="tab-r"></span></a></li>
                   <li><a href="News.php">Latest News<span class="tab-l"></span><span class="tab-r"></span></a></li>
                 <li><a href="ContactUs.php">Contact Us<span class="tab-l"></span><span class="tab-r"></span></a></li>
             </ul>

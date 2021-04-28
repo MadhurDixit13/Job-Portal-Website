@@ -32,11 +32,18 @@ else{
 	font-weight: bold;
 }
 -->
+table th, table td{
+        padding: 10px; /* Apply cell padding */
+        }
+        table{
+        border-spacing: 10px; /* Apply cell spacing */
+        }
     </style>
 </head>
 
 <body id="www-url-cz">
 <!-- Main -->
+<font size=3>
 <div id="main" class="box">
 
 <?php 
@@ -69,7 +76,7 @@ include "menu.php"
 
             <!-- Article -->
             <div class="article">
-                <h2><span><a href="#">Welcome <?php echo $_SESSION['$UserName_emp'];?></a></span></h2>
+                <h2><span><U>Welcome <?php echo $_SESSION['$UserName_emp'];?></U></span></h2>
                <?php
 $ID=$_SESSION['ID'];
 // Establish Connection with Database
@@ -83,39 +90,39 @@ $row = mysqli_fetch_array($result)
 ?>
                 <table width="100%" border="1" cellspacing="2" cellpadding="2">
                   <tr>
-                    <td><strong>Company ID:</strong></td>
+                    <td>Company ID:</td>
                     <td><?php echo $row['EmployerId'];?></td>
                   </tr>
                   <tr>
-                    <td><strong>Company Name:</strong></td>
+                    <td>Company Name:</td>
                     <td><?php echo $row['CompanyName'];?></td>
                   </tr>
                   <tr>
-                    <td><strong>Contact Person:</strong></td>
+                    <td>Contact Person:</td>
                     <td><?php echo $row['ContactPerson'];?></td>
                   </tr>
                   <tr>
-                    <td><strong>Address:</strong></td>
+                    <td>Address:</td>
                     <td><?php echo $row['Address'];?></td>
                   </tr>
                   <tr>
-                    <td><strong>City:</strong></td>
+                    <td>City:</td>
                     <td><?php echo $row['City'];?></td>
                   </tr>
                   <tr>
-                    <td><strong>Email:</strong></td>
+                    <td>Email:</td>
                     <td><?php echo $row['Email'];?></td>
                   </tr>
                   <tr>
-                    <td><strong>Mobile:</strong></td>
+                    <td>Mobile:</td>
                     <td><?php echo $row['Mobile'];?></td>
                   </tr>
                   <tr>
-                    <td><strong>Area of Work:</strong></td>
+                    <td>Area of Work:</td>
                     <td><?php echo $row['Area_Work'];?></td>
                   </tr>
                   <tr>
-                    <td><strong>User Name:</strong></td>
+                    <td>User Name:</td>
                     <td><?php echo $row['UserName'];?></td>
                   </tr>
                   
@@ -154,6 +161,6 @@ include "right.php"
 include "footer.php"
 ?>
 </div> <!-- /main -->
-
+</font>
 </body>
 </html>

@@ -123,13 +123,20 @@ $queryString_Recordset2 = sprintf("&totalRows_Recordset2=%d%s", $totalRows_Recor
 	font-weight: bold;
 }
 .style2 {font-weight: bold}
-.style3 {font-weight: bold}
+.style3 {}
 -->
+        table th, table td{
+        padding: 10px; /* Apply cell padding */
+        }
+        table{
+        border-spacing: 10px; /* Apply cell spacing */
+        }
     </style>
 </head>
 
 <body id="www-url-cz">
 <!-- Main -->
+<font size=3>
 <div id="main" class="box">
 <?php 
 include "Header.php"
@@ -169,7 +176,7 @@ include "menu.php"
                 <form id="form1" method="post" action="SearchJob.php">
                   <table width="100%" border="0" cellspacing="0" cellpadding="0">
                     <tr>
-                      <td><strong>Select Qualification:</strong></td>
+                      <td>Select Qualification:</td>
                       <td><label>
                       <select name="cmbQual" id="cmbQual">
                         <?php
@@ -189,7 +196,7 @@ do {
                       <td><label></label></td>
                     </tr>
                     <tr>
-                      <td><strong>Select Compnay Name:</strong></td>
+                      <td>Select Compnay Name:</td>
                       <td><label>
                         <select name="cmbCompany" id="cmbCompany">
                           <?php
@@ -209,7 +216,7 @@ do {
                       <td>&nbsp;</td>
                     </tr>
                     <tr>
-                      <td><strong>Select Area of Work:</strong></td>
+                      <td>Select Area of Work:</td>
                       <td><label>
                         <select name="cmbArea" id="cmbArea">
                           <?php
@@ -245,32 +252,32 @@ do {
 						do { ?>
                           <table width="100%" border="0" cellpadding="0" cellspacing="0">
                           <tr>
-                          <td><strong>JobId</strong></td>
-                          <td><strong><?php echo $row_Recordset2['JobId']; ?></strong></td>
+                          <td>JobId</td>
+                          <td><?php echo $row_Recordset2['JobId']; ?></td>
                           </tr>
                           <tr>
-                          <td><strong>CompanyName</strong></td>
-                          <td><strong><?php echo $row_Recordset2['CompanyName']; ?></strong></td>
+                          <td>CompanyName</td>
+                          <td><?php echo $row_Recordset2['CompanyName']; ?></td>
                           </tr>
                           <tr>
-                          <td><strong>JobTitle</strong></td>
-                          <td><strong><?php echo $row_Recordset2['JobTitle']; ?></strong></td>
+                          <td>JobTitle</td>
+                          <td><?php echo $row_Recordset2['JobTitle']; ?></td>
                           </tr>
                           <tr>
-                          <td><strong>Vacancy</strong></td>
-                          <td><strong><?php echo $row_Recordset2['Vacancy']; ?></strong></td>
+                          <td>Vacancy</td>
+                          <td><?php echo $row_Recordset2['Vacancy']; ?></td>
                           </tr>
                           <tr>
-                          <td><strong>MinQualification</strong></td>
-                           <td><strong><?php echo $row_Recordset2['MinQualification']; ?></strong></td>
+                          <td>MinQualification</td>
+                           <td><?php echo $row_Recordset2['MinQualification']; ?></td>
                            </tr>
                            <tr>
-                          <td><strong>Description</strong></td>
-                          <td><strong><?php echo $row_Recordset2['Description']; ?></strong></td>
+                          <td>Description</td>
+                          <td><?php echo $row_Recordset2['Description']; ?></td>
                         </tr>
                            <tr>
                              <td>&nbsp;</td>
-                             <td><a href="Apply.php?JobId=<?php echo $row_Recordset2['JobId'];?>"><strong>Apply For Job</strong></a></td>
+                             <td><a href="Apply.php?JobId=<?php echo $row_Recordset2['JobId'];?>">Apply For Job</a></td>
                            </tr>
                         </table>
                         <?php } while ($row_Recordset2 = mysqli_fetch_assoc($Recordset2));
@@ -284,15 +291,15 @@ do {
                 </table>
                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
                   <tr>
-                    <td bgcolor="#A0B9F3"><strong>Status of Job</strong></td>
+                    <td bgcolor="#A0B9F3">Status of Job</td>
                   </tr>
                   <tr>
                     <td><table width="100%" border="1" cellpadding="1" cellspacing="2" bordercolor="#006699" >
                       <tr>
-                        <th height="32" bgcolor="#006699" class="style3"><div align="left" class="style9 style5 style2"><strong>Company Name</strong></div></th>
-                        <th bgcolor="#006699" class="style3"><div align="left" class="style9 style5 style2"><strong>Job Title</strong></div></th>
-                        <th bgcolor="#006699" class="style3"><div align="left" class="style9 style5 style2"><strong>Status</strong></div></th>
-                         <th bgcolor="#006699" class="style3"><div align="left" class="style9 style5 style2"><strong>Description</strong></div></th>
+                        <th height="32" bgcolor="#006699" class="style3"><div align="left" class="style9 style5 style2">Company Name</div></th>
+                        <th bgcolor="#006699" class="style3"><div align="left" class="style9 style5 style2">Job Title</div></th>
+                        <th bgcolor="#006699" class="style3"><div align="left" class="style9 style5 style2">Status</div></th>
+                         <th bgcolor="#006699" class="style3"><div align="left" class="style9 style5 style2">Description</div></th>
                       </tr>
                       <?php
 // Establish Connection with Database
@@ -313,10 +320,10 @@ $Status=$row['Status'];
 $Description=$row['Description'];
 ?>
                       <tr>
-                        <td class="style3"><div align="left" class="style9 style5"><strong><?php echo $CompanyName;?></strong></div></td>
-                        <td class="style3"><div align="left" class="style9 style5"><strong><?php echo $JobTitle;?></strong></div></td>
-                         <td class="style3"><div align="left" class="style9 style5"><strong><?php echo $Status;?></strong></div></td>
-                         <td class="style3"><div align="left" class="style9 style5"><strong><?php echo $Description;?></strong></div></td>
+                        <td class="style3"><div align="left" class="style9 style5"><?php echo $CompanyName;?></div></td>
+                        <td class="style3"><div align="left" class="style9 style5"><?php echo $JobTitle;?></div></td>
+                         <td class="style3"><div align="left" class="style9 style5"><?php echo $Status;?></div></td>
+                         <td class="style3"><div align="left" class="style9 style5"><?php echo $Description;?></div></td>
                       </tr>
                       <?php
 }
@@ -357,7 +364,7 @@ include "right.php"
 include "footer.php"
 ?>
 </div> <!-- /main -->
-
+</font>
 </body>
 </html>
 <?php

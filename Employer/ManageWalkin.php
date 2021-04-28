@@ -32,6 +32,12 @@ else{
 	font-weight: bold;
 }
 -->
+table th, table td{
+        padding: 10px; /* Apply cell padding */
+        }
+        table{
+        border-spacing: 10px; /* Apply cell spacing */
+        }
     </style>
      <style type="text/css">
 
@@ -85,7 +91,7 @@ else{
 <link href="SpryAssets/SpryValidationTextarea.css" rel="stylesheet" type="text/css" />
 <style type="text/css">
 <!--
-.style3 {font-weight: bold}
+.style3 {}
 -->
 </style>
 </head>
@@ -364,6 +370,7 @@ function ds_onclick(d, m, y) {
 
 <body id="www-url-cz">
 <!-- Main -->
+<font size=3>
 <div id="main" class="box">
 
 <?php 
@@ -401,13 +408,13 @@ include "menu.php"
 
                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
                   <tr>
-                    <td bgcolor="#A0B9F3"><strong>Manage Walkin</strong></td>
+                    <td bgcolor="#A0B9F3">Manage Walkin</td>
                   </tr>
                   <tr>
                     <td><form id="form1" method="post" action="InsertWalkin.php">
                       <table width="100%" border="0" cellspacing="0" cellpadding="0">
                         <tr>
-                          <td><strong>Job Title:</strong></td>
+                          <td>Job Title:</td>
                           <td><span id="sprytextfield1">
                             <label>
                             <input type="text" name="txtTitle" id="txtTitle" />
@@ -415,7 +422,7 @@ include "menu.php"
                           <span class="textfieldRequiredMsg">A value is required.</span></span></td>
                         </tr>
                         <tr>
-                          <td><strong>Total Vacancy:</strong></td>
+                          <td>Total Vacancy:</td>
                           <td><span id="sprytextfield2">
                             <label>
                             <input type="text" name="txtTotal" id="txtTotal" />
@@ -423,19 +430,19 @@ include "menu.php"
                           <span class="textfieldRequiredMsg">A value is required.</span></span></td>
                         </tr>
                         <tr>
-                          <td><strong>Qualification:</strong></td>
+                          <td>Qualification:</td>
                           <td><input type="text" name="cmbQual" id="cmbQual">
                             
                            </td>
                         </tr>
                         <tr>
-                          <td><strong>Salary:</strong></td>
+                          <td>Salary:</td>
                           <td><label>
                             <input type="number" name="txtOther" id="txtOther" />
                           </label></td>
                         </tr>
                         <tr>
-                          <td><strong>Description:</strong></td>
+                          <td>Description:</td>
                           <td><span id="sprytextarea1">
                             <label>
                             <textarea name="txtDesc" id="txtDesc" cols="25" rows="3"></textarea>
@@ -443,7 +450,7 @@ include "menu.php"
                           <span class="textareaRequiredMsg">A value is required.</span></span></td>
                         </tr>
                         <tr>
-                          <td><strong>Interview Date:</strong></td>
+                          <td>Interview Date:</td>
                           <td><span id="sprytextfield3">
                             <label>
                             <input type="text" name="txtDate" onclick="ds_sh(this);" id="txtDate" />
@@ -451,7 +458,7 @@ include "menu.php"
                           <span class="textfieldRequiredMsg">A value is required.</span></span></td>
                         </tr>
                         <tr>
-                          <td><strong>Interview Time:</strong></td>
+                          <td>Interview Time:</td>
                           <td><span id="sprytextfield4">
                             <label>
                             <input type="text" name="txtTime" id="txtTime" />
@@ -469,18 +476,18 @@ include "menu.php"
                     </td>
                   </tr>
                   <tr>
-                    <td bgcolor="#A0B9F3"><strong>Posted Walkin </strong></td>
+                    <td bgcolor="#A0B9F3">Posted Walkin </td>
                   </tr>
                   <tr>
                     <td><table width="100%" border="1" bordercolor="#1CB5F1" >
                       <tr>
-                        <th height="32" bgcolor="#1CB5F1" class="style3"><div align="left" class="style9 style5"><strong>Id</strong></div></th>
-                        <th bgcolor="#1CB5F1" class="style3"><div align="left" class="style9 style5"><strong>Job Title</strong></div></th>
-                        <th bgcolor="#1CB5F1" class="style3"><div align="left" class="style9 style5"><strong>Vacancy</strong></div></th>
-                         <th bgcolor="#1CB5F1" class="style3"><div align="left" class="style9 style5"><strong>Qualification</strong></div></th>
-                          <th bgcolor="#1CB5F1" class="style3"><div align="left" class="style9 style5"><strong>Description</strong></div></th>
-                        <th bgcolor="#1CB5F1" class="style3"><div align="left" class="style9 style5"><strong>Date</strong></div></th>
-                        <th bgcolor="#1CB5F1" class="style3"><div align="left" class="style9 style5"><strong>Time</strong></div></th>
+                        <th height="32" bgcolor="#1CB5F1" class="style3"><div align="left" class="style9 style5">Id</div></th>
+                        <th bgcolor="#1CB5F1" class="style3"><div align="left" class="style9 style5">Job Title</div></th>
+                        <th bgcolor="#1CB5F1" class="style3"><div align="left" class="style9 style5">Vacancy</div></th>
+                         <th bgcolor="#1CB5F1" class="style3"><div align="left" class="style9 style5">Qualification</div></th>
+                          <th bgcolor="#1CB5F1" class="style3"><div align="left" class="style9 style5">Description</div></th>
+                        <th bgcolor="#1CB5F1" class="style3"><div align="left" class="style9 style5">Date</div></th>
+                        <th bgcolor="#1CB5F1" class="style3"><div align="left" class="style9 style5">Time</div></th>
                         <th bgcolor="#1CB5F1" class="style3"><div align="left" class="style12">Delete</div></th>
                       </tr>
                       <?php
@@ -504,15 +511,15 @@ $InterviewTime=$row['InterviewTime'];
 
 ?>
                       <tr>
-                        <td class="style3"><div align="left" class="style9 style5"><strong><?php echo $Id;?></strong></div></td>
-                        <td class="style3"><div align="left" class="style9 style5"><strong><?php echo $JobTitle;?></strong></div></td>
-                         <td class="style3"><div align="left" class="style9 style5"><strong><?php echo $Vacancy;?></strong></div></td>
-                         <td class="style3"><div align="left" class="style9 style5"><strong><?php echo $MinQualification;?></strong></div></td>
-                         <td class="style3"><div align="left" class="style9 style5"><strong><?php echo $Description;?></strong></div></td>
-                             <td class="style3"><div align="left" class="style9 style5"><strong><?php echo $InterviewDate;?></strong></div></td>
-                                 <td class="style3"><div align="left" class="style9 style5"><strong><?php echo $InterviewTime;?></strong></div></td>
+                        <td class="style3"><div align="left" class="style9 style5"><?php echo $Id;?></div></td>
+                        <td class="style3"><div align="left" class="style9 style5"><?php echo $JobTitle;?></div></td>
+                         <td class="style3"><div align="left" class="style9 style5"><?php echo $Vacancy;?></div></td>
+                         <td class="style3"><div align="left" class="style9 style5"><?php echo $MinQualification;?></div></td>
+                         <td class="style3"><div align="left" class="style9 style5"><?php echo $Description;?></div></td>
+                             <td class="style3"><div align="left" class="style9 style5"><?php echo $InterviewDate;?></div></td>
+                                 <td class="style3"><div align="left" class="style9 style5"><?php echo $InterviewTime;?></div></td>
                       
-                        <td class="style3"><div align="left" class="style9 style5"><strong><a href="DeleteWalkin.php?WalkinId=<?php echo $Id;?>">Delete</a></strong></div></td>
+                        <td class="style3"><div align="left" class="style9 style5"><a href="DeleteWalkin.php?WalkinId=<?php echo $Id;?>">Delete</a></div></td>
                       </tr>
                       <?php
 }
@@ -571,5 +578,6 @@ var sprytextfield3 = new Spry.Widget.ValidationTextField("sprytextfield3");
 var sprytextfield4 = new Spry.Widget.ValidationTextField("sprytextfield4");
 //-->
 </script>
+</font>
 </body>
 </html>

@@ -1,5 +1,6 @@
         <!-- Right column -->
 <script src="SpryAssets/SpryValidationTextField.js" type="text/javascript"></script>
+<font size=2>
 <link href="SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css">
 <div id="col" class="noprint">
             <div id="col-in">
@@ -9,7 +10,7 @@
                 <h3 >Login</h3>
                 <div class="login">
                 <form name="form1" method="post" action="login.php">
-                  <table width="100%" border="0">
+                  <table width="100%">
                     <tr>
                       <td><strong>User Name</strong></td>
                     </tr>
@@ -58,8 +59,9 @@
 
       </form>
       <div align="center"><a href="EmployerReg.php"><strong>New Employer? Register Here</strong></a>
+      <hr class="noscreen" />
                   </div>
-              
+                  
               <div align="center"><a href="JobSeekerReg.php"><strong>New Job Seeker? Register Here</strong></a>                  </div>
                 <p class="btn-more box noprint">&nbsp;</p>
               </div>
@@ -82,4 +84,6 @@
 var sprytextfield1 = new Spry.Widget.ValidationTextField("sprytextfield1");
 var sprytextfield2 = new Spry.Widget.ValidationTextField("sprytextfield2");
 //-->
+
 </script>
+      </font>

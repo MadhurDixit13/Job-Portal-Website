@@ -30,6 +30,12 @@ if(isset($_SESSION['$UserName_job'])){
 	font-weight: bold;
 }
 -->
+        table th, table td{
+        padding: 10px; /* Apply cell padding */
+        }
+        table{
+        border-spacing: 10px; /* Apply cell spacing */
+        }
     </style>
     <script src="../SpryAssets/SpryValidationTextarea.js" type="text/javascript"></script>
     <link href="../SpryAssets/SpryValidationTextarea.css" rel="stylesheet" type="text/css" />
@@ -37,6 +43,7 @@ if(isset($_SESSION['$UserName_job'])){
 
 <body id="www-url-cz">
 <!-- Main -->
+<font size=3>
 <div id="main" class="box">
 
 <?php 
@@ -134,5 +141,6 @@ include "footer.php"
 var sprytextarea1 = new Spry.Widget.ValidationTextarea("sprytextarea1");
 //-->
 </script>
+</font>
 </body>
 </html>

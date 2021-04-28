@@ -78,12 +78,19 @@ $totalRows_Recordset2 = mysqli_num_rows($Recordset2);
 	color: #000066;
 	font-weight: bold;
 }
-.style3 {font-weight: bold}
+.style3 {}
 -->
+table th, table td{
+        padding: 10px; /* Apply cell padding */
+        }
+        table{
+        border-spacing: 10px; /* Apply cell spacing */
+        }
     </style>
 </head>
 
 <body id="www-url-cz">
+<font size=3>
 <!-- Main -->
 <div id="main" class="box">
 
@@ -123,7 +130,7 @@ include "menu.php"
                 <form id="form1" method="post" action="Application.php">
                   <table width="100%" border="0" cellspacing="0" cellpadding="0">
                     <tr>
-                      <td><strong>Select Job Title:</strong></td>
+                      <td>Select Job Title:</td>
                       <td><label>
                         <select name="cmbTitle" id="cmbTitle">
                           <?php
@@ -155,12 +162,12 @@ do {
 		   ?>
                 <table width="100%" border="1" bordercolor="#1CB5F1" >
                   <tr>
-                    <th height="32" bgcolor="#1CB5F1" class="style3"><div align="left" class="style9 style5"><strong>Id</strong></div></th>
-                    <th bgcolor="#1CB5F1" class="style3"><div align="left" class="style9 style5"><strong>Name</strong></div></th>
-                    <th bgcolor="#1CB5F1" class="style3"><div align="left" class="style9 style5"><strong>City</strong></div></th>
-                    <th bgcolor="#1CB5F1" class="style3"><div align="left" class="style9 style5"><strong>Email</strong></div></th>
-                    <th bgcolor="#1CB5F1" class="style3"><div align="left" class="style9 style5"><strong>Status</strong></div></th>
-                     <th bgcolor="#1CB5F1" class="style3"><div align="left" class="style9 style5"><strong>View & Send</strong></div></th>
+                    <th height="32" bgcolor="#1CB5F1" class="style3"><div align="left" class="style9 style5">Id</div></th>
+                    <th bgcolor="#1CB5F1" class="style3"><div align="left" class="style9 style5">Name</div></th>
+                    <th bgcolor="#1CB5F1" class="style3"><div align="left" class="style9 style5">City</div></th>
+                    <th bgcolor="#1CB5F1" class="style3"><div align="left" class="style9 style5">Email</div></th>
+                    <th bgcolor="#1CB5F1" class="style3"><div align="left" class="style9 style5">Status</div></th>
+                     <th bgcolor="#1CB5F1" class="style3"><div align="left" class="style9 style5">View & Send</div></th>
                   </tr>
                   <?php
 // Establish Connection with Database
@@ -189,12 +196,12 @@ $Email =$row['Email'];
 $JobSeekId=$row['JobSeekId'];
 ?>
                   <tr>
-                    <td class="style3"><div align="left" class="style9 style5"><strong><?php echo $Id;?></strong></div></td>
-                    <td class="style3"><div align="left" class="style9 style5"><strong><?php echo $JobSeekerName;?></strong></div></td>
-                    <td class="style3"><div align="left" class="style9 style5"><strong><?php echo $City;?></strong></div></td>
-                    <td class="style3"><div align="left" class="style9 style5"><strong><?php echo $Email;?></strong></div></td>
-                    <td class="style3"><div align="left" class="style9 style5"><strong><?php echo $Status;?></strong></div></td>
-                     <td class="style3"><div align="left" class="style9 style5"><strong></strong><a href="ViewBiodata.php?JobSeekId=<?php echo $JobSeekId; ?>&AppId=<?php echo $Id;?>&JobId=<?php echo $Title;?>&Status=<?php echo $Status;?>">View</a></div></td>
+                    <td class="style3"><div align="left" class="style9 style5"><?php echo $Id;?></div></td>
+                    <td class="style3"><div align="left" class="style9 style5"><?php echo $JobSeekerName;?></div></td>
+                    <td class="style3"><div align="left" class="style9 style5"><?php echo $City;?></div></td>
+                    <td class="style3"><div align="left" class="style9 style5"><?php echo $Email;?></div></td>
+                    <td class="style3"><div align="left" class="style9 style5"><?php echo $Status;?></div></td>
+                     <td class="style3"><div align="left" class="style9 style5"><a href="ViewBiodata.php?JobSeekId=<?php echo $JobSeekId; ?>&AppId=<?php echo $Id;?>&JobId=<?php echo $Title;?>&Status=<?php echo $Status;?>">View</a></div></td>
                   </tr>
                   <?php
 }
@@ -252,7 +259,7 @@ include "right.php"
 include "footer.php"
 ?>
 </div> <!-- /main -->
-
+</font>
 </body>
 </html>
 <?php

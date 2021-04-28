@@ -13,9 +13,6 @@ if(isset($_SESSION['$UserName_job'])){
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="content-language" content="cs" />
     <meta name="robots" content="all,follow" />
-
-    <meta name="author" content="All: ... [Nazev webu - www.url.cz]; e-mail: info@url.cz" />
-    <meta name="copyright" content="Design/Code: Vit Dlouhy [Nuvio - www.nuvio.cz]; e-mail: vit.dlouhy@nuvio.cz" />
     
     <title>JOB PORTAL</title>
     <meta name="description" content="..." />
@@ -32,10 +29,17 @@ if(isset($_SESSION['$UserName_job'])){
 	font-weight: bold;
 }
 -->
+        table th, table td{
+        padding: 10px; /* Apply cell padding */
+        }
+        table{
+        border-spacing: 10px; /* Apply cell spacing */
+        }
     </style>
 </head>
 
 <body id="www-url-cz">
+<font size=3>
 <!-- Main -->
 <div id="main" class="box">
 
@@ -93,40 +97,40 @@ $row = mysqli_fetch_array($result)
 ?>
                 <table width="100%" border="1" cellspacing="2" cellpadding="2">
                   <tr>
-                    <td><strong>Name:</strong></td>
+                    <td>Name:</td>
                     <td><?php echo $row['JobSeekerName'];?></td>
                   </tr>
                   <tr>
-                    <td><strong>Address:</strong></td>
+                    <td>Address:</td>
                     <td><?php echo $row['Address'];?></td>
                   </tr>
                   <tr>
-                    <td><strong>City:</strong></td>
+                    <td>City:</td>
                     <td><?php echo $row['City'];?></td>
                   </tr>
                   <tr>
-                    <td><strong>Email:</strong></td>
+                    <td>Email:</td>
                     <td><?php echo $row['Email'];?></td>
                   </tr>
                   <tr>
-                    <td><strong>Mobile:</strong></td>
+                    <td>Mobile:</td>
                     <td><?php echo $row['Mobile'];?></td>
                   </tr>
                   <tr>
-                    <td><strong>Highest Qualification:</strong></td>
+                    <td>Highest Qualification:</td>
                     <td><?php echo $row['Qualification'];?></td>
                   </tr>
                   <tr>
-                    <td><strong>Gender:</strong></td>
+                    <td>Gender:</td>
                     <td><?php echo $row['Gender'];?></td>
                   </tr>
                   <tr>
-                    <td><strong>Birth Date:</strong></td>
+                    <td>Birth Date:</td>
                     <td><?php echo $row['BirthDate'];?></td>
                   </tr>
                   <tr>
-                    <td><strong>Resume:</strong></td>
-                    <td><a href="../upload/<?php echo $row['Resume'];?>" target="_blank"><strong>View</strong></a></td>
+                    <td>Resume:</td>
+                    <td><a href="../upload/<?php echo $row['Resume'];?>" target="_blank">View</a></td>
                   </tr>
                   <tr>
                     <td>&nbsp;</td>
@@ -163,6 +167,6 @@ include "right.php"
 include "footer.php"
 ?>
 </div> <!-- /main -->
-
+</font>
 </body>
 </html>

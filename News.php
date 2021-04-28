@@ -28,6 +28,7 @@
 
 <body id="www-url-cz">
 <!-- Main -->
+<font size=3>
 <div id="main" class="box">
 
 <?php 
@@ -60,7 +61,7 @@ include "menu.php"
 
             <!-- Article -->
             <div class="article">
-                <h2><span><a href="#">Latest News</a></span></h2>
+                <h2><span><U>Latest News</U></span></h2>
                
 
                 <p>
@@ -134,6 +135,6 @@ include "right.php"
 include "footer.php"
 ?>
 </div> <!-- /main -->
-
+</font>
 </body>
 </html>

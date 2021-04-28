@@ -12,9 +12,6 @@ if(isset($_SESSION['$UserName_job'])){
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="content-language" content="cs" />
     <meta name="robots" content="all,follow" />
-
-    <meta name="author" content="All: ... [Nazev webu - www.url.cz]; e-mail: info@url.cz" />
-    <meta name="copyright" content="Design/Code: Vit Dlouhy [Nuvio - www.nuvio.cz]; e-mail: vit.dlouhy@nuvio.cz" />
     
     <title>JOB PORTAL</title>
     <meta name="description" content="..." />
@@ -30,12 +27,19 @@ if(isset($_SESSION['$UserName_job'])){
 	color: #000066;
 	font-weight: bold;
 }
-.style3 {font-weight: bold}
+.style3 {}
 -->
+table th, table td{
+        padding: 10px; /* Apply cell padding */
+        }
+        table{
+        border-spacing: 10px; /* Apply cell spacing */
+        }
     </style>
 </head>
 
 <body id="www-url-cz">
+<font size=3>
 <!-- Main -->
 <div id="main" class="box">
 <?php 
@@ -107,39 +111,39 @@ $InterviewTime=$row['InterviewTime'];
                   
                   <tr>
                     <th width="5%" bgcolor="#1CB5F1" class="style3"><img src="../design/ico_cat.gif" alt="" width="8" height="9" /></th>
-                  <th width="26%" height="32" bgcolor="#1CB5F1" class="style3"><div align="left" class="style9 style5"><strong>Company Name</strong>:</div></th>
-                    <th width="69%" height="32" bgcolor="#1CB5F1" class="style3"><div align="left"><strong><?php echo $CompanyName;?></strong></div></th>
+                  <th width="26%" height="32" bgcolor="#1CB5F1" class="style3"><div align="left" class="style9 style5">Company Name:</div></th>
+                    <th width="69%" height="32" bgcolor="#1CB5F1" class="style3"><div align="left"><?php echo $CompanyName;?></div></th>
                   </tr>
                  
                   <tr>
                     <td class="style3"><img src="../design/ico_cat.gif" alt="" width="8" height="9" /></td>
-                   <td class="style3"><div align="left"><strong>Job Title:</strong></div></td>
-                    <td class="style3"><div align="left" class="style9 style5"><strong><?php echo $JobTitle;?></strong></div></td>
+                   <td class="style3"><div align="left">Job Title:</div></td>
+                    <td class="style3"><div align="left" class="style9 style5"><?php echo $JobTitle;?></div></td>
                   </tr>
                   <tr>
                     <td class="style3"><img src="../design/ico_cat.gif" alt="" width="8" height="9" /></td>
-                    <td class="style3"><div align="left" class="style9 style5"><strong>Vacancy</strong>:</div></td>
-                    <td class="style3"><div align="left" class="style9 style5"><strong><?php echo $Vacancy;?></strong></div></td>
+                    <td class="style3"><div align="left" class="style9 style5">Vacancy:</div></td>
+                    <td class="style3"><div align="left" class="style9 style5"><?php echo $Vacancy;?></div></td>
                   </tr>
                   <tr>
                     <td class="style3"><img src="../design/ico_cat.gif" alt="" width="8" height="9" /></td>
-                    <td class="style3"><div align="left" class="style9 style5"><strong>Qualification:</strong></div></td>
-                    <td class="style3"><div align="left" class="style9 style5"><strong><?php echo $MinQualification;?></strong></div></td>
+                    <td class="style3"><div align="left" class="style9 style5">Qualification:</div></td>
+                    <td class="style3"><div align="left" class="style9 style5"><?php echo $MinQualification;?></div></td>
                   </tr>
                   <tr>
                     <td class="style3"><img src="../design/ico_cat.gif" alt="" width="8" height="9" /></td>
-                    <td class="style3"><div align="left" class="style9 style5"><strong>Description:</strong></div></td>
-                    <td class="style3"><div align="left" class="style9 style5"><strong><?php echo $Description;?></strong></div></td>
+                    <td class="style3"><div align="left" class="style9 style5">Description:</div></td>
+                    <td class="style3"><div align="left" class="style9 style5"><?php echo $Description;?></div></td>
                   </tr>
                   <tr>
                     <td class="style3"><img src="../design/ico_cat.gif" alt="" width="8" height="9" /></td>
-                    <td class="style3"><div align="left" class="style9 style5"><strong>Date:</strong></div></td>
-                    <td class="style3"><div align="left" class="style9 style5"><strong><?php echo $InterviewDate;?></strong></div></td>
+                    <td class="style3"><div align="left" class="style9 style5">Date:</div></td>
+                    <td class="style3"><div align="left" class="style9 style5"><?php echo $InterviewDate;?></div></td>
                   </tr>
                   <tr>
                     <td class="style3"><img src="../design/ico_cat.gif" alt="" width="8" height="9" /></td>
-                    <td class="style3"><div align="left" class="style9 style5"><strong>Time:</strong></div></td>
-                    <td class="style3"><div align="left" class="style9 style5"><strong><?php echo $InterviewTime;?></strong></div></td>
+                    <td class="style3"><div align="left" class="style9 style5">Time:</div></td>
+                    <td class="style3"><div align="left" class="style9 style5"><?php echo $InterviewTime;?></div></td>
                   </tr>
                   <?php
 }
@@ -173,6 +177,6 @@ include "right.php"
 include "footer.php"
 ?>
 </div> <!-- /main -->
-
+</font>
 </body>
 </html>

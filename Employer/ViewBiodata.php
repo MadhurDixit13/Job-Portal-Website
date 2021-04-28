@@ -20,8 +20,14 @@
 	font-weight: bold;
 }
 .style2 {font-weight: bold}
-.style3 {font-weight: bold}
+.style3 {}
 -->
+table th, table td{
+        padding: 10px; /* Apply cell padding */
+        }
+        table{
+        border-spacing: 10px; /* Apply cell spacing */
+        }
     </style>
     <script src="../SpryAssets/SpryValidationTextarea.js" type="text/javascript"></script>
     <link href="../SpryAssets/SpryValidationTextarea.css" rel="stylesheet" type="text/css" />
@@ -29,6 +35,7 @@
 
 <body id="www-url-cz">
 <!-- Main -->
+<font size=3>
 <div id="main" class="box">
 <?php 
 include "menu.php"
@@ -69,12 +76,12 @@ include "menu.php"
 
             <!-- Article -->
             <div class="article">
-                <h2><span><a href="#">Welcome To Control Panel</a></span></h2>
+                <h2><span><U>Applicant's Info</U></span></h2>
                
 
               <table width="100%" border="0" cellspacing="0" cellpadding="0">
                   <tr>
-                    <td bgcolor="#A0B9F3"><strong>Personal Information</strong></td>
+                    <td bgcolor="#A0B9F3">Personal Information</td>
                   </tr>
                   <tr>
                     <td>
@@ -93,40 +100,22 @@ $row = mysqli_fetch_array($result)
 ?>
                 <table width="100%" border="1" cellspacing="2" cellpadding="2">
                   <tr>
-                    <td><strong>Name:</strong></td>
+                    <td>Name:</td>
                     <td><?php echo $row['JobSeekerName'];?></td>
                   </tr>
                   <tr>
-                    <td><strong>Address:</strong></td>
-                    <td><?php echo $row['Address'];?></td>
-                  </tr>
                   <tr>
-                    <td><strong>City:</strong></td>
-                    <td><?php echo $row['City'];?></td>
-                  </tr>
-                  <tr>
-                    <td><strong>Email:</strong></td>
+                    <td>Email:</td>
                     <td><?php echo $row['Email'];?></td>
                   </tr>
+                  
                   <tr>
-                    <td><strong>Mobile:</strong></td>
-                    <td><?php echo $row['Mobile'];?></td>
-                  </tr>
-                  <tr>
-                    <td><strong>Highest Qualification:</strong></td>
+                    <td>Highest Qualification:</td>
                     <td><?php echo $row['Qualification'];?></td>
                   </tr>
                   <tr>
-                    <td><strong>Gender:</strong></td>
-                    <td><?php echo $row['Gender'];?></td>
-                  </tr>
-                  <tr>
-                    <td><strong>Birth Date:</strong></td>
-                    <td><?php echo $row['BirthDate'];?></td>
-                  </tr>
-                  <tr>
-                    <td><strong>Resume:</strong></td>
-                    <td><a href="../upload/<?php echo $row['Resume'];?>" target="_blank"><strong>View</strong></a></td>
+                    <td>Resume:</td>
+                    <td><a href="../upload/<?php echo $row['Resume'];?>" target="_blank">View</a></td>
                   </tr>
                   <tr>
                     <td>&nbsp;</td>
@@ -135,17 +124,7 @@ $row = mysqli_fetch_array($result)
                 </table>
                     </td>
                   </tr>
-                  <tr>
-                    <td bgcolor="#A0B9F3"><strong>Educational Qualification</strong></td>
-                  </tr>
-                  <tr>
-                    <td><table width="100%" border="1" cellpadding="1" cellspacing="2" bordercolor="#006699" >
-                      <tr>
-                        <th height="32" bgcolor="#006699" class="style3"><div align="left" class="style9 style5 style2"><strong>Degree</strong></div></th>
-                        <th bgcolor="#006699" class="style3"><div align="left" class="style9 style5 style2"><strong>University</strong></div></th>
-                        <th bgcolor="#006699" class="style3"><div align="left" class="style9 style5 style2"><strong>Passing Year</strong></div></th>
-                        <th bgcolor="#006699" class="style3"><div align="left" class="style9 style5 style2"><strong>Percentage</strong></div></th>
-                      </tr>
+                  
                       <?php
 					  $ID=$_GET['JobSeekId'];
 // Establish Connection with Database
@@ -153,29 +132,17 @@ $con = mysqli_connect("localhost","root","","job");
 // Select Database
 //mysql_select_db("job", $con);
 // Specify the query to execute
-$sql = "select * from JobSeeker_Education where JobSeekId='".$ID."'";
-// Execute query
-$result = mysqli_query($con,$sql);
-// Loop through each records 
-while($row = mysqli_fetch_array($result))
-{
-$Degree=$row['Degree'];
-$Univ=$row['University'];
-$Passing=$row['PassingYear'];
-$Per=$row['Percentage'];
-?>
-                      <tr>
-                        <td class="style3"><div align="left" class="style9 style5"><strong><?php echo $Degree;?></strong></div></td>
-                        <td class="style3"><div align="left" class="style9 style5"><strong><?php echo $Univ;?></strong></div></td>
-                        <td class="style3"><div align="left" class="style9 style5"><strong><?php echo $Passing;?></strong></div></td>
-                        <td class="style3"><div align="left" class="style9 style5"><strong><?php echo $Per;?></strong></div></td>
-                      </tr>
-                      <?php
-}
-// Retrieve Number of records returned
-$records = mysqli_num_rows($result);
-?>
-                      
+// $sql = "select * from JobSeeker_Education where JobSeekId='".$ID."'";
+// // Execute query
+// $result = mysqli_query($con,$sql);
+// // Loop through each records 
+// while($row = mysqli_fetch_array($result))
+// {
+// $Degree=$row['Degree'];
+// $Univ=$row['University'];
+// $Passing=$row['PassingYear'];
+// $Per=$row['Percentage'];
+           ?> 
                       <?php
 // Close the connection
 mysqli_close($con);
@@ -191,7 +158,7 @@ mysqli_close($con);
                 <form id="form1" method="post" action="CallLatter.php?JobId=<?php echo $_GET['JobId'] ;?>&JobSeekId=<?php echo $_GET['JobSeekId'] ;?>&AppId=<?php echo $_GET['AppId'] ;?>">
                   <table width="100%" border="0" cellspacing="0" cellpadding="0">
                     <tr>
-                      <td><strong>Call Latter Description:</strong></td>
+                      <td>Call Latter Description:</td>
 <td><span id="sprytextarea1">
                         <label>
                         <textarea name="txtDesc" id="txtDesc" cols="35" rows="3"></textarea>
@@ -211,18 +178,22 @@ mysqli_close($con);
               <?php
 			  }
 			  ?>
-                <p align="center"><a href="Application.php"><strong>Back</strong></a></p>
+                <p align="center"><a href="Application.php">Back</a></p>
 
               <p class="btn-more box noprint">&nbsp;</p>
           </div> <!-- /article -->
 
             <hr class="noscreen" />
             
+            <p class="btn-more box noprint">&nbsp;</p>
+              <p class="btn-more box noprint">&nbsp;</p>
+              <p class="btn-more box noprint">&nbsp;</p>
+              
+              <p class="btn-more box noprint">&nbsp;</p>
+            
         </div> <!-- /content -->
 
-<?php
-include "right.php"
-?>
+
 
     </div> <!-- /page-in -->
     </div> <!-- /page -->
@@ -238,5 +209,6 @@ include "footer.php"
 var sprytextarea1 = new Spry.Widget.ValidationTextarea("sprytextarea1");
 //-->
 </script>
+</font>
 </body>
 </html>

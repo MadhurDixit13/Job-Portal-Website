@@ -27,7 +27,16 @@ if (!isset($_SESSION))
 	color: #000066;
 	font-weight: bold;
 }
--->
+-->table th, table td{
+        padding: 10px; /* Apply cell padding */
+        }
+        table{
+        border-spacing: 10px; /* Apply cell spacing */
+        }
+        .style2{
+          -moz-box-sizing: border-box;
+          -webkit-box-sizing: border-box;
+        }
     </style>
     <script src="SpryAssets/SpryValidationTextField.js" type="text/javascript"></script>
     <script src="SpryAssets/SpryValidationTextarea.js" type="text/javascript"></script>
@@ -37,6 +46,7 @@ if (!isset($_SESSION))
 
 <body id="www-url-cz">
 <!-- Main -->
+<font size=3>
 <SCRIPT language="JavaScript1.2" src="gen_validation.js"></SCRIPT>
 <SCRIPT language="JavaScript1.2">
 var arrFormValidation=
@@ -161,7 +171,7 @@ $result = mysqli_query($con,$sql);
 $row = mysqli_fetch_array($result)
 ?>
 <form method="post" action="UpdateProfile.php" onSubmit="return validateForm(this,arrFormValidation);" enctype="multipart/form-data" id="form2">
-                <table width="100%" border="1" cellspacing="2" cellpadding="2">
+                <table width="100%" border="1" cellspacing="2" cellpadding="2" class="style2">
               
                   <input type='hidden' name="txtId" id="txtId" value="<?php echo $row['EmployerId'];?>" />
                   <tr>
@@ -276,5 +286,6 @@ var sprytextfield8 = new Spry.Widget.ValidationTextField("sprytextfield8");
 var sprytextfield9 = new Spry.Widget.ValidationTextField("sprytextfield9");
 //-->
 </script>
+</font>
 </body>
 </html>
