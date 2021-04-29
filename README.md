@@ -88,6 +88,14 @@ o	Forgot Password
 •	Feedback
 •	Logout
 
+6) Admin Interface includes:
+• User
+•	Manage Job Seeker
+•	Manage Employer
+•	Feedback
+•	News
+•	Logout
+
 Functions Implemented:
 
 1. A verification mail must be sent to the user whenever the register for the first time in the system.
