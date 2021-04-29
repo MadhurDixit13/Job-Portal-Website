@@ -90,23 +90,23 @@ o	Forgot Password
 
 Functions Implemented:
 
-Functional:
 1. A verification mail must be sent to the user whenever the register for the first time in the system.
 2. Job seekers can apply for any number of jobs.
 3. Validating Jobseekers/Employees by Sign in/ Log in system.
 4. Users(both) can update their resume and profile.
-5. A Feedback system for both Job seekers and Companies for quick resolution of complaints if any.
+5. A Feedback system for both Job seekers for quick resolution of complaints if any.
 6. Job Seekers can view all applied jobs.
 7. Filter based (Drop Down) search applied.
 8. Companies/Employers can post jobs with detailed description.
 9. Companies can view the job applicants resume and profile.
 10. Company can send a descripted call letter to applied job applicants.
+11. Better UI Design to get the webpages user friendly.
+12. User authentication will be done through email.
+13. Fake or multiple accounts not possible to create.
+14. We can create new passwords for users and if they forget it ,they can complete new password generation with help of verification codes.
+15. Latest new can be added by Admin
+16. Recommendation mails are sent to users whenever a new job posting is created in their field of interest.
 
-Non-functional:
-1. Better UI Design to get the webpages user friendly.
-2. User authentication will be done through email.
-3. Fake or multiple accounts not possible to create.
-4. Smooth transition between various developed interfaces.
 
 
 
