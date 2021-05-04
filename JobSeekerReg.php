@@ -7,7 +7,7 @@
     <meta name="robots" content="all,follow" />
 
     
-    <title>Welcome To Job Portal</title>
+    <title>Job Portal</title>
     <meta name="description" content="..." />
     <meta name="keywords" content="..." />
     
