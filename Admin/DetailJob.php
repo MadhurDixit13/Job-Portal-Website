@@ -20,7 +20,13 @@
             font-weight: bold;
         }
 
-        -->
+        -->table th, table td{
+        padding: 10px; /* Apply cell padding */
+        }
+        table{
+        border-spacing: 10px; /* Apply cell spacing */
+        }
+
     </style>
 </head>
 
@@ -139,7 +145,10 @@
                     </table>
                     <p>&nbsp;</p>
 
-                    <p class="btn-more box noprint">&nbsp;</p>
+                    <p class="btn-more box noprint">&nbsp;</p><p class="btn-more box noprint">&nbsp;</p>
+ <p class="btn-more box noprint">&nbsp;</p>
+ <p class="btn-more box noprint">&nbsp;</p>
+
                 </div> <!-- /article -->
 
                 <hr class="noscreen"/>

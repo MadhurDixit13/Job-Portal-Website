@@ -14,18 +14,18 @@ error_reporting(0);
 	$con = mysqli_connect('localhost', 'root', '', 'job');
 	$errors = array();
 	if(isset($_POST['jobseekersignup'])){
-	$Name=mysqli_real_escape_string($con, $_POST['txtName']);
+	$Name= $_POST['txtName'];
 	$Address=mysqli_real_escape_string($con, $_POST['txtAddress']);
 	$City=mysqli_real_escape_string($con, $_POST['txtCity']);
 	$Email=$_POST['txtEmail'];
 	$Mobile=$_POST['txtMobile'];
-	$Qualification=mysqli_real_escape_string($con, $_POST['txtQualification']);
+	$Qualification= $_POST['cmbQualification'];
 	$Gender=$_POST['cmbGender'];	
 	//$BirthDate=$_POST['txtBirthDate'];
 	$date1=$_POST['txtBirthDate'];    
 	$BirthDate = date("Y-m-d", strtotime($date1)); 
 	$path1 = $_FILES["txtFile"]["name"];
-	$Status="Pending";
+	$Status="notverified";
 	$UserName=$_POST['txtUserName'];
 	$Password=$_POST['txtPassword'];
 	$cPassword=$_POST['txtcPassword'];
@@ -35,10 +35,6 @@ error_reporting(0);
 	$Question=$_POST['cmbQue'];
 	$Answer=$_POST['txtAnswer'];
 	$UserType="JobSeeker";
-	if ($Qualification=="Other")
-	{
-		$Qualification=$_POST['txtOther'];
-	}
 	$email_check = "SELECT * FROM jobseeker_reg WHERE (UserName='$UserName' or Email='$Email');";
 	$res = mysqli_query($con, $email_check);
 	if (mysqli_num_rows($res)>0) {
@@ -91,16 +87,15 @@ error_reporting(0);
             $Email = $fetch_data['Email'];
             $code = 0;
             $status = 'verified';
-            $update_otp = "UPDATE jobseeker_reg SET code = $code, Status = $status WHERE code = $fetch_code";
+            $update_otp = "UPDATE jobseeker_reg SET code = $code, Status = '$status' WHERE code = '$fetch_code'";
             $update_res = mysqli_query($con, $update_otp);
             if($update_res){
                 $_SESSION['Name'] = $Name;
-				echo "<h1>".$Name."</h1>";
                 $_SESSION['Email'] = $Email;
 				$info = "Your are registered successfully. Now you can login with your credentials.";
                 $_SESSION['info'] = $info;
                 $subject = "User Registered Successfully";
-                $message = "Hi $Name !! Your are successfully registered with us ";
+                $message = "Hi ".$Name." !! Your are successfully registered with us ";
                 $sender = "From: miniprojectmha@gmail.com";
                 if(mail($Email, $subject, $message, $sender)){
                     $_SESSION['Email'] = $Email;

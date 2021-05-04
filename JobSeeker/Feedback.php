@@ -36,6 +36,11 @@ if(isset($_SESSION['$UserName_job'])){
         table{
         border-spacing: 10px; /* Apply cell spacing */
         }
+        .button{
+            cursor: pointer;
+            width: 25%;
+            font-size: 16px;
+        }
     </style>
     <script src="../SpryAssets/SpryValidationTextarea.js" type="text/javascript"></script>
     <link href="../SpryAssets/SpryValidationTextarea.css" rel="stylesheet" type="text/css" />
@@ -97,7 +102,7 @@ include "menu.php"
                         <tr>
                           <td>&nbsp;</td>
                           <td><label>
-                            <input type="submit" name="button" id="button" value="Submit" />
+                            <input type="submit" name="button" id="button" class="button" value="Submit" />
                           </label></td>
                         </tr>
                       </table>

@@ -21,12 +21,16 @@
 	color: #000066;
 	font-weight: bold;
 }
--->
+-->table th, table td{
+        padding: 10px; /* Apply cell padding */
+        }
+    
     </style>
 </head>
 
 <body id="www-url-cz">
 <!-- Main -->
+<font size=3>
 <div id="main" class="box">
 <?php 
 error_reporting(0);
@@ -157,5 +161,6 @@ var sprytextfield3 = new Spry.Widget.ValidationTextField("sprytextfield3");
 var sprytextfield4 = new Spry.Widget.ValidationTextField("sprytextfield4");
 //-->
 </script>
+</font>
 </body>
 </html>

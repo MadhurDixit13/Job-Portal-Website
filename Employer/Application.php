@@ -86,6 +86,15 @@ table th, table td{
         table{
         border-spacing: 10px; /* Apply cell spacing */
         }
+        .style2{
+          -moz-box-sizing: border-box;
+          -webkit-box-sizing: border-box;
+        }
+        .button{
+            cursor: pointer;
+            width: 50%;
+            font-size: 16px;
+        }
     </style>
 </head>
 
@@ -100,7 +109,16 @@ include "menu.php"
 <!-- Page (2 columns) -->
     <div id="page" class="box">
     <div id="page-in" class="box">
+    <div id="strip" class="box noprint">
 
+<!-- RSS feeds -->
+<hr class="noscreen" />
+
+<!-- Breadcrumbs -->
+<p id="breadcrumbs">&nbsp;</p>
+<hr class="noscreen" />
+
+</div> <!-- /strip -->
       
 
         <!-- Content -->
@@ -149,7 +167,7 @@ do {
                         </select>
                       </label></td>
                       <td><label>
-                        <input type="submit" name="button" id="button" value="View " />
+                        <input type="submit" name="button" id="button" class="button" value="View " />
                       </label></td>
                     </tr>
                   </table>
@@ -247,9 +265,6 @@ mysqli_close($con);
               <p class="btn-more box noprint">&nbsp;</p>
         </div> <!-- /content -->
 
-<?php
-include "right.php"
-?>
 
     </div> <!-- /page-in -->
     </div> <!-- /page -->

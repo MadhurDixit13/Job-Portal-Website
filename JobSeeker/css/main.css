@@ -15,7 +15,6 @@
 body {border:0; margin:0; padding:0; background: 0 0 repeat-x; font:70%/160% "verdana",sans-serif; color:#192666; _text-align:center;}
 
 a {color:#192666;}
-a:hover {color:#4F6AD7;}
 
 p {border:0; margin:15px 0; padding:0;}
 
@@ -147,7 +146,7 @@ code, kbd, samp {font-family:monospace; font-size:110%;}
     #content .article p {text-align:justify;}
     #content .info {margin:10px 0; padding-bottom:8px; border-bottom:1px solid #DEE5FD; color:#6685CC;}
     #content .info a {color:#6685CC;}
-    #content .info a:hover {color:#FF9000;}
+    #content .info a:hover {}
     
     #content .info span.date, #content .info span.cat, #content .info span.user, #content .info span.comments {padding-left:15px;}
     #content .info span.date {background:url("../design/ico_date.gif") 0 50% no-repeat;}
@@ -158,7 +157,6 @@ code, kbd, samp {font-family:monospace; font-size:110%;}
     /* Content - More */
     #content .btn-more {margin:0 0 15px 0; padding:0; border:0; position:relative;}
     #content .btn-more a {display:block; position:absolute; top:0; right:0; width:67px; _width:95px; height:21px; margin:0; padding:0 0 0 28px; background:url("../design/btn_more.gif") 0 0 no-repeat; color:#FFF; text-decoration:none;}
-    #content .btn-more a:hover {background:url("../design/btn_more.gif") -95px 0 no-repeat;}
 
 /* Right column */
 #col {float:left; width:250px; margin:20px 0px; padding:0; background:linear-gradient(315deg, #abe9cd 0%, #3eadcf 74%) 0 0 repeat-y;}

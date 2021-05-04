@@ -30,6 +30,11 @@ else{
 }
 .style3 {}
 -->
+.button{
+            cursor: pointer;
+            width: 25%;
+            font-size: 16px;
+        }
     </style>
     <script src="../SpryAssets/SpryValidationTextField.js" type="text/javascript"></script>
     <link href="../SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css" />
@@ -98,7 +103,7 @@ include "menu.php"
               <tr>
                 <td>&nbsp;</td>
                 <td><label>
-                  <input type="submit" name="button" id="button" value="Submit" />
+                  <input type="submit" name="button" class="button" id="button" value="Submit" />
                 </label></td>
               </tr>
             </table>

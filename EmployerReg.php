@@ -42,55 +42,16 @@
 	font-weight: bold;
 }
 -->
+table th, table td{
+        padding: 10px; /* Apply cell padding */
+        }
+        .button{
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        
     </style>
-    <style type="text/css">
-
-.ds_box {
-	background-color: #FFF;
-	border: 1px solid #000;
-	position: absolute;
-	z-index: 32767;
-}
-
-.ds_tbl {
-	background-color: #FFF;
-}
-
-.ds_head {
-	background-color: #333;
-	color: #FFF;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 13px;
-	font-weight: bold;
-	text-align: center;
-	letter-spacing: 2px;
-}
-
-.ds_subhead {
-	background-color: #CCC;
-	color: #000;
-	font-size: 12px;
-	font-weight: bold;
-	text-align: center;
-	font-family: Arial, Helvetica, sans-serif;
-	width: 32px;
-}
-
-.ds_cell {
-	background-color: #EEE;
-	color: #000;
-	font-size: 13px;
-	text-align: center;
-	font-family: Arial, Helvetica, sans-serif;
-	padding: 5px;
-	cursor: pointer;
-}
-
-.ds_cell:hover {
-	background-color: #F3F3F3;
-} /* This hover*/
-</style>
-
     <script src="SpryAssets/SpryValidationTextarea.js" type="text/javascript"></script>
     <link href="SpryAssets/SpryValidationTextarea.css" rel="stylesheet" type="text/css" />
 </head>
@@ -104,6 +65,7 @@
     
 </head>
 <body id="www-url-cz">
+<font size=3>
 <SCRIPT language="JavaScript1.2" src="gen_validation.js"></SCRIPT>
 <SCRIPT language="JavaScript1.2">
 var arrFormValidation=
@@ -149,8 +111,8 @@ var arrFormValidation=
                    ],
 				   [//Area
 						  
-					  ["minlen=5",
-		"Please Enter Area of Work"
+					  [
+              
 						  ] 	
 								 
 						  
@@ -234,7 +196,6 @@ include "menu.php"
             <div class="article">
                 <h2><span><a href="#">Employer Registration Form</a></span></h2>
                <div class="login">
-
                 <form action="EmployeInsert.php" method="post" onSubmit="return validateForm(this,arrFormValidation);" enctype="multipart/form-data" id="form2">
                   <table width="100%" border="0" cellspacing="0" cellpadding="0">
                     <tr>
@@ -296,7 +257,7 @@ include "menu.php"
                       <td>Area of Work: </td>
                       <td><span id="sprytextfield7">
                       <input type="text" name="txtAreaWork" id="txtAreaWork" onkeyup="manage(this)"/>
-                      <span class="textfieldRequiredMsg">Enter Area of Work</span></span></td>
+                      
                     </tr>
                     <tr>
                       <td>User Name:</td>
@@ -344,12 +305,13 @@ include "menu.php"
                     <tr>
                       <td colspan="2"><label>
                         <div align="center">
-                          <input type="submit" name="employersignup" id="btSubmit" value="Submit" disabled/>
+                          <input type="submit" name="employersignup" class="button" id="btSubmit" value="Submit" disabled/>
                           </div>
                       </label></td>
                     </tr>
                   </table>
                  </form>
+                              
               </div>
               <p>&nbsp;</p>
 
@@ -387,5 +349,6 @@ var sprytextfield10 = new Spry.Widget.ValidationTextField("sprytextfield10");
 var sprytextfield11 = new Spry.Widget.ValidationTextField("sprytextfield11");
 //-->
 </script>
+</font>
 </body>
 </html>

@@ -52,7 +52,16 @@ include "menu.php"
 <!-- Page (2 columns) -->
     <div id="page" class="box">
     <div id="page-in" class="box">
+    <div id="strip" class="box noprint">
 
+<!-- RSS feeds -->
+<hr class="noscreen" />
+
+<!-- Breadcrumbs -->
+<p id="breadcrumbs">&nbsp;</p>
+<hr class="noscreen" />
+
+</div> <!-- /strip -->
         
 
         <!-- Content -->
@@ -149,9 +158,6 @@ $row = mysqli_fetch_array($result)
             
         </div> <!-- /content -->
 
-<?php
-include "right.php"
-?>
 
     </div> <!-- /page-in -->
     </div> <!-- /page -->

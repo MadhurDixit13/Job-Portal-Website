@@ -37,6 +37,11 @@ if (!isset($_SESSION))
           -moz-box-sizing: border-box;
           -webkit-box-sizing: border-box;
         }
+        .button{
+            cursor: pointer;
+            width: 18%;
+            font-size: 16px;
+        }
     </style>
     <script src="SpryAssets/SpryValidationTextField.js" type="text/javascript"></script>
     <script src="SpryAssets/SpryValidationTextarea.js" type="text/javascript"></script>
@@ -243,7 +248,7 @@ $row = mysqli_fetch_array($result)
                   <tr>
                     <td>&nbsp;</td>
                     <td><label>
-                      <input type="submit" name="button" id="btSubmit" value="Submit" />
+                      <input type="submit" name="button" id="btSubmit" class="button" value="Submit" />
                     </label></td>
                   </tr>
                 </table>
@@ -259,9 +264,6 @@ $row = mysqli_fetch_array($result)
             
         </div> <!-- /content -->
 
-<?php
-include "right.php"
-?>
 
     </div> <!-- /page-in -->
     </div> <!-- /page -->

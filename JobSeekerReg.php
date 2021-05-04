@@ -44,56 +44,12 @@
 	color: #000066;
 	font-weight: bold;
 }
--->
+-->table th, table td{
+        padding: 10px; /* Apply cell padding */
+        }
+        
     </style>
-    <style type="text/css">
-
-.ds_box {
-	background-color: #FFF;
-	border: 1px solid #000;
-	position: absolute;
-	z-index: 32767;
-}
-
-.ds_tbl {
-	background-color: #FFF;
-}
-
-.ds_head {
-	background-color: #333;
-	color: #FFF;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 13px;
-	font-weight: bold;
-	text-align: center;
-	letter-spacing: 2px;
-}
-
-.ds_subhead {
-	background-color: #CCC;
-	color: #000;
-	font-size: 12px;
-	font-weight: bold;
-	text-align: center;
-	font-family: Arial, Helvetica, sans-serif;
-	width: 32px;
-}
-
-.ds_cell {
-	background-color: #EEE;
-	color: #000;
-	font-size: 13px;
-	text-align: center;
-	font-family: Arial, Helvetica, sans-serif;
-	padding: 5px;
-	cursor: pointer;
-}
-
-.ds_cell:hover {
-	background-color: #F3F3F3;
-} /* This hover code won't work for IE */
-
-</style>
+    
 <script src="SpryAssets/SpryValidationTextarea.js" type="text/javascript"></script>
 <link href="SpryAssets/SpryValidationTextarea.css" rel="stylesheet" type="text/css" />
 </head>
@@ -109,6 +65,7 @@
 </head>
 
 <body id="www-url-cz">
+<font size=3>
 <SCRIPT language="JavaScript1.2" src="gen_validation.js"></SCRIPT>
 <SCRIPT language="JavaScript1.2">
 var arrFormValidation=
@@ -208,6 +165,7 @@ var arrFormValidation=
 				   
             ];
 </SCRIPT>
+
 <!-- Main -->
 <div id="main" class="box">
 <?php 
@@ -302,22 +260,24 @@ include "menu.php"
                       <td>Qualification:</td>
                       <td><label>
                         <select name="cmbQualification" id="cmbQualification" onkeyup="manage(this)">
-                          <option value="B.E./B.Tech">B.E./B.Tech</option>
-                          <option value="M.E./M.Tech">M.E./M.Tech</option>
-                          <option value="M.B.A.">M.B.A.</option>
-                          <option value="B.Sc.">B.Sc.</option>
-                          <option value="M.Sc.">M.Sc.</option>
-                          <option value="B.A.">B.A.</option>
-                          <option value="M.A.">M.A.</option>
-                          <option value="B.Com.">B.Com.</option>
-                          <option value="M.Com.">M.Com.</option>
+                          <optgroup label="B.E./B.Tech">
+                          <option value="Comps/IT">Comps/I.T.</option>
+                          <option value="Electronics">Electronics</option>
+                          <option value="EXTC">EXTC</option>
+                          <option value="Mechanical">Mechanical</option>
+                          </optgroup>
+                          <optgroup label="M.E./M.Tech">
+                          <option value="SoftwareEngineering">Software Engineering</option>
+                          <option value="Electronics">Electronics Engineering</option>
+                          <option value="CAD/CAM">CAD/CAM</option>
+                          <option value="ThermalEngineering">Thermal Engineering</option>
+                          </optgroup>
+                          <optgroup label="M.B.A.">
+                          <option value="Finance">Finance</option>
+                          <option value="Marketing">Marketing</option>
+                          <option value="I.T.">I.T.(Information Technology)</option>
+                          </optgroup>
                         </select>
-                      </label></td>
-                    </tr>
-                    <tr>
-                      <td>Other:</td>
-                      <td><label>
-                        <input type="text" name="txtOther" id="txtOther" onkeyup="manage(this)"/>
                       </label></td>
                     </tr>
                     <tr>
@@ -414,7 +374,6 @@ include "footer.php"
 </div> <!-- /main -->
 
 <script type="text/javascript">
-<!--
 var sprytextfield4 = new Spry.Widget.ValidationTextField("sprytextfield4");
 var sprytextfield5 = new Spry.Widget.ValidationTextField("sprytextfield5");
 var sprytextfield6 = new Spry.Widget.ValidationTextField("sprytextfield6");
@@ -424,7 +383,7 @@ var sprytextarea1 = new Spry.Widget.ValidationTextarea("sprytextarea1");
 var sprytextfield8 = new Spry.Widget.ValidationTextField("sprytextfield8");
 var sprytextfield9 = new Spry.Widget.ValidationTextField("sprytextfield9");
 var sprytextfield10 = new Spry.Widget.ValidationTextField("sprytextfield10");
-//-->
 </script>
+          </font>
 </body>
 </html>

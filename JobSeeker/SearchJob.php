@@ -131,6 +131,11 @@ $queryString_Recordset2 = sprintf("&totalRows_Recordset2=%d%s", $totalRows_Recor
         table{
         border-spacing: 10px; /* Apply cell spacing */
         }
+        .button{
+            cursor: pointer;
+            width: 25%;
+            font-size: 16px;
+        }
     </style>
 </head>
 
@@ -237,7 +242,7 @@ do {
                     </tr>
                     <tr>
                       <td>&nbsp;</td>
-                      <td><input type="submit" name="button" id="button" value="Search" /></td>
+                      <td><input type="submit" name="button" id="button" class="button" value="Search" /></td>
                       <td>&nbsp;</td>
                     </tr>
                   </table>

@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 if(isset($_SESSION['$UserName_emp'])){
@@ -38,16 +37,20 @@ table th, table td{
         table{
         border-spacing: 10px; /* Apply cell spacing */
         }
+        .style2{
+          -moz-box-sizing: border-box;
+          -webkit-box-sizing: border-box;
+        }
+        .button{
+            cursor: pointer;
+            width: 25%;
+            font-size: 16px;
+        }
     </style>
     <script src="../SpryAssets/SpryValidationTextField.js" type="text/javascript"></script>
     <script src="../SpryAssets/SpryValidationTextarea.js" type="text/javascript"></script>
     <link href="../SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css" />
     <link href="../SpryAssets/SpryValidationTextarea.css" rel="stylesheet" type="text/css" />
-    <style type="text/css">
-<!--
-.style3 {}
--->
-    </style>
 </head>
 
 <body id="www-url-cz">
@@ -61,7 +64,16 @@ include "menu.php"
 <!-- Page (2 columns) -->
     <div id="page" class="box">
     <div id="page-in" class="box">
+    <div id="strip" class="box noprint">
 
+<!-- RSS feeds -->
+<hr class="noscreen" />
+
+<!-- Breadcrumbs -->
+<p id="breadcrumbs">&nbsp;</p>
+<hr class="noscreen" />
+
+</div> <!-- /strip -->
        
 
         <!-- Content -->
@@ -113,8 +125,27 @@ include "menu.php"
                         </tr>
                         <tr>
                           <td>Qualification:</td>
-                          <td><input type name="cmbQual" id="cmbQual">
-                            
+                          <td><label>
+                          <select name="cmbQual" id="cmbQual">
+                          <optgroup label="B.E./B.Tech">
+                          <option value="Comps/IT">Comps/I.T.</option>
+                          <option value="Electronics">Electronics</option>
+                          <option value="EXTC">EXTC</option>
+                          <option value="Mechanical">Mechanical</option>
+                          </optgroup>
+                          <optgroup label="M.E./M.Tech">
+                          <option value="SoftwareEngineering">Software Engineering</option>
+                          <option value="Electronics">Electronics Engineering</option>
+                          <option value="CAD/CAM">CAD/CAM</option>
+                          <option value="ThermalEngineering">Thermal Engineering</option>
+                          </optgroup>
+                          <optgroup label="M.B.A.">
+                          <option value="Finance">Finance</option>
+                          <option value="Marketing">Marketing</option>
+                          <option value="I.T.">I.T.(Information Technology)</option>
+                          </optgroup>
+                        </select>
+                        </label>
                           </td>
                         </tr>
                         <tr>
@@ -134,7 +165,7 @@ include "menu.php"
                         <tr>
                           <td>&nbsp;</td>
                           <td><label>
-                            <input type="submit" name="button" id="button" value="Submit" />
+                            <input type="submit" name="button" id="button" class="button"value="Submit" />
                           </label></td>
                         </tr>
                       </table>
@@ -147,7 +178,7 @@ include "menu.php"
                   <tr>
                     <td><table width="100%" border="1" bordercolor="#1CB5F1" >
                       <tr>
-                        <th height="32" bgcolor="#1CB5F1" class="style3"><div align="left" class="style9 style5">Id</div></th>
+                        
                         <th bgcolor="#1CB5F1" class="style3"><div align="left" class="style9 style5">Job Title</div></th>
                         <th bgcolor="#1CB5F1" class="style3"><div align="left" class="style9 style5">Vacancy</div></th>
                          <th bgcolor="#1CB5F1" class="style3"><div align="left" class="style9 style5">Qualification</div></th>
@@ -174,7 +205,6 @@ $Description =$row['Description'];
 
 ?>
                       <tr>
-                        <td class="style3"><div align="left" class="style9 style5"><?php echo $Id;?></div></td>
                         <td class="style3"><div align="left" class="style9 style5"><?php echo $JobTitle;?></div></td>
                         <td class="style3"><div align="left" class="style9 style5"><?php echo $Vacancy;?></div></td>
                           <td class="style3"><div align="left" class="style9 style5"><?php echo $MinQualification;?></div></td>
@@ -210,9 +240,6 @@ mysqli_close($con);
             
         </div> <!-- /content -->
 
-<?php
-include "right.php"
-?>
 
     </div> <!-- /page-in -->
     </div> <!-- /page -->

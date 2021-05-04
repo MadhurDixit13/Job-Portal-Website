@@ -3,7 +3,7 @@
 * {min-height:1px;}
 body {border:0; margin:0; padding:0;background-color: #d9e4f5;
    background: 0 0 repeat-x; font:70%/160% "verdana",sans-serif; 
- color:#192666; _text-align:center;}
+  _text-align:center;}
    /* linear-gradient(315deg, #d9e4f5 0%, #f5e3e6 74%) */
 a {color:#192666;}
 a:hover {
@@ -22,7 +22,7 @@ h3 {font-size:120%; line-height:100%; font-weight:bold;}
 h4 {font-size:120%;}
 h5 {font-size:100%;}
 /* B7CAF6 */
-table {display:table;  margin:15px 0; padding:0; border:1px solid #001d3d; font-size:100%;}
+table {display:table;  margin:15px 0; padding:0; font-size:100%;}
 tr {display:table-row;}
 th, td {display: table-cell; border:1px solid black; margin:0; padding:5px; vertical-align:top; text-align:left;}
 th {background:#E7ECFD; text-align:center; 
@@ -138,7 +138,6 @@ code, kbd, samp {font-family:monospace; font-size:110%;}
 #strip {position:relative; clear:both; padding:3px 20px 10px 20px; color:#6182D1;}
 #strip p {margin:0;}
 #strip a {color:#6182D1;}
-#strip a:hover {color:#192666;}
 
     /* Strip - breadcrumbs */
     #strip #breadcrumbs {width:520px; margin:0; padding:0;}
@@ -217,7 +216,6 @@ code, kbd, samp {font-family:monospace; font-size:110%;}
 	background-color:#FFF;
 	height:22px;
 	width:160px;
-	border:1px solid #003366;
 	font-size:12px;
 	font-weight:bold;
 	border-radius:5px ;
@@ -225,7 +223,6 @@ code, kbd, samp {font-family:monospace; font-size:110%;}
 }
 .login input[type="text"]:hover
 {
-	background-color:rgb(99, 120, 212);
 	height:22px;
 	width:160px;
 	border:1px solid black;
@@ -246,7 +243,6 @@ code, kbd, samp {font-family:monospace; font-size:110%;}
 }
 .login input[type="password"]:hover
 {
-	background-color:rgb(99, 120, 212);
 	height:22px;
 	width:160px;
 	border:1px solid black;
@@ -268,7 +264,6 @@ code, kbd, samp {font-family:monospace; font-size:110%;}
 }
 .login input[type="submit"]:hover
 {
-	background-color:rgb(99, 120, 212);
 	height:22px;
 	width:100px;
 	border:1px solid black;
@@ -290,19 +285,16 @@ code, kbd, samp {font-family:monospace; font-size:110%;}
 }
 .login textarea
 {
-	background-color:#ffcdb2;
 	height:45px;
 	width:160px;
 	border:1px solid #003366;
 	font-size:12px;
 	font-weight:bold;
 	border-radius:5px;
-	color:#003366;
 }
 .login textarea:hover
 {
 	/* background-color:#003366; */
-    background-color:rgb(99, 120, 212);
 	height:45px;
 	width:160px;
 	border:1px solid black;

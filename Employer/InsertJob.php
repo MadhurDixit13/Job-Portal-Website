@@ -20,10 +20,6 @@ if (!isset($_SESSION))
 	$cmbQual=$_POST['cmbQual'];
 	$txtDesc=$_POST['txtDesc'];
 	$Name=$_SESSION['Name'];
-	if($cmbQual=="Other")
-	{
-	$cmbQual=$_POST['txtOther'];
-	}
 	// Establish Connection with MYSQL
 	$con = mysqli_connect ("localhost","root","","job");
 
@@ -37,16 +33,17 @@ if (!isset($_SESSION))
 	//$sql2 = "SELECT * from job_master";
 	//$result1 = mysqli_query($con,$sql2);
 	//$records1 = mysqli_num_rows($result1);
-	$res2="SELECT JobId FROM job_master ORDER BY JobId DESC LIMIT 1;";
+	$res2="SELECT * FROM job_master ORDER BY JobId DESC LIMIT 1;";
 	$result2=mysqli_query($con,$res2);
 	$j=mysqli_fetch_assoc($result2);
+	if($records>0){
 	//echo "<h2>".$j['JobId']."</h2>";
-    while($row = $result->fetch_assoc()){
-        $sql3="SELECT JobSeekId from job_master,jobseeker_reg where (job_master.MinQualification=jobseeker_reg.Qualification) and (job_master.JobId={$j['JobId']});";
-        $res7=mysqli_query($con,$sql3);
+	$sql3="SELECT distinct JobSeekId from job_master,jobseeker_reg where ('{$j['MinQualification']}'=jobseeker_reg.Qualification) and (job_master.JobId={$j['JobId']});";
+    $res7=mysqli_query($con,$sql3);
+	$res8=mysqli_fetch_array($res7);
+    while($row = mysqli_fetch_array($result)){
 		if($res7){
-		$res8=mysqli_fetch_assoc($res7);
-		if($res8['JobSeekId']==$row['JobSeekId']){
+		while("{$row['JobSeekId']}"=="{$res8['JobSeekId']}"){
             $query1="SELECT JobSeekerName from jobseeker_reg where JobSeekId='{$row['JobSeekId']}'";
             $query2="SELECT JobTitle from job_master where JobId={$j['JobId']}";
             $query3="SELECT CompanyName from job_master where JobId={$j['JobId']}";
@@ -75,7 +72,7 @@ if (!isset($_SESSION))
 			//echo "<h2>".$jobseeker_name."</h2>";
             $subject = "Hey Long away you haven't visited our Website!!";
 			//$message ="Hello";
-            $message = "Hello ".$jobseeker_name." !!You have been away for long. New job has been posted $job_name by $company_name with $vacancy vacancies.Minimum Qualification required is $minqual.";
+            $message = "Hello ".$jobseeker_name." !!You have been away for long. New job has been posted \"$job_name\" by \" $company_name\". Vacancies available are:\"$vacancy\". Minimum Qualification required is \"$minqual\".";
             $sender = "From: miniprojectmha@gmail.com";
             if(mail($Email, $subject, $message, $sender)){
                 echo '<script type="text/javascript">alert("Job Inserted Succesfully");window.location=\'ManageJob.php\';</script>';
@@ -85,6 +82,9 @@ if (!isset($_SESSION))
 	}else{
 		echo "Failed";
 	}
+	}
+	}else{
+		echo '<script type="text/javascript">alert("Job Inserted Succesfully");window.location=\'ManageJob.php\';</script>';
 	}
 	// Close The Connection
 	mysqli_close ($con);

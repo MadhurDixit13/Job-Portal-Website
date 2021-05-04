@@ -32,17 +32,12 @@ CREATE TABLE IF NOT EXISTS `application_master` (
   `Status` varchar(30) NOT NULL,
   `Description` varchar(200) NOT NULL,
   PRIMARY KEY (`ApplicationId`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
 -- Dumping data for table `application_master`
 --
 
-INSERT INTO `application_master` (`ApplicationId`, `JobSeekId`, `JobId`, `Status`, `Description`) VALUES
-(1, 3, 1, 'Call Latter Send', 'Invited on 21-Apr-2021.'),
-(2, 3, 2, 'Call Latter Send', 'You are Invited For Interview on 10-Mar-2021.'),
-(3, 3, 3, 'Call Latter Send', 'Invited on 21-Mar-2021.'),
-(5, 3, 4, 'Call Latter Send', 'Invited on 25-Mar-2021.');
 
 -- --------------------------------------------------------
 
@@ -66,17 +61,11 @@ CREATE TABLE IF NOT EXISTS `employer_reg` (
   `Answer` varchar(50) NOT NULL,
   `code` mediumint(50) NOT NULL,
   PRIMARY KEY (`EmployerId`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
 -- Dumping data for table `employer_reg`
 --
-
-INSERT INTO `employer_reg` (`EmployerId`, `CompanyName`, `ContactPerson`, `Address`, `City`, `Email`, `Mobile`, `Area_Work`, `Status`, `UserName`, `Password`, `Question`, `Answer`,`code`) VALUES
-(2, 'TCS Private Limited', 'Mr. Mohan Shah', 'Navarangpura1', 'Ahmedabad', 'mohan@gmail.com', 9898989898, 'Software', 'verified', 'mohan', 'mohan', 'Who is Your Favourite Person?', 'sachin',234),
-(3, 'Wipro Infotech', 'Mr. Sunil Pandya', 'Baroda', 'Baroda', 'sunil@wipro.com', 8989898989, 'Hardware', 'verified', 'sunil', 'sunil', '','',567),
-(4, 'Solusoft  Pvt Limite', 'Mr. Nirav Soni', 'Narayanpura', 'Ahmedabad', 'nirav@gmail.com', 9898989898, 'Software', 'verified', 'nirav', 'nirav', 'What is Your Pet Name?', 'niru',78),
-(5, 'Info Matrics', 'Mr. Narayan', 'Sahibagh', 'Ahmedabad', 'narayan@yahoo.com', 6767676767, 'Software', 'verified', 'narayan', 'narayan', 'What is Your Pet Name?', 'nari',89);
 
 -- --------------------------------------------------------
 
@@ -90,42 +79,14 @@ CREATE TABLE IF NOT EXISTS `feedback` (
   `Feedback` varchar(200) NOT NULL,
   `FeedbakDate` date NOT NULL,
   PRIMARY KEY (`FeedbackId`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
 -- Dumping data for table `feedback`
 --
 
-INSERT INTO `feedback` (`FeedbackId`, `JobSeekId`, `Feedback`, `FeedbakDate`) VALUES
-(5, 3, 'asdad', '2021-04-13'),
-(6, 3, 'asd', '2021-03-28'),
-(7, 4, 'Thanks For Your Support.', '2021-04-18'),
-(8, 3, 'asd', '2021-04-22');
-
 -- --------------------------------------------------------
 
---
--- Table structure for table `jobseeker_education`
---
-
-CREATE TABLE IF NOT EXISTS `jobseeker_education` (
-  `EduId` int(11) NOT NULL AUTO_INCREMENT,
-  `JobSeekId` int(11) NOT NULL,
-  `Degree` varchar(20) NOT NULL,
-  `University` varchar(100) NOT NULL,
-  `PassingYear` mediumint(9) NOT NULL,
-  `Percentage` float NOT NULL,
-  PRIMARY KEY (`EduId`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
-
---
--- Dumping data for table `jobseeker_education`
---
-
-INSERT INTO `jobseeker_education` (`EduId`, `JobSeekId`, `Degree`, `University`, `PassingYear`, `Percentage`) VALUES
-(3, 3, 'B.C.A', 'Ganpat Universiy', 2011, 68.89),
-(4, 3, 'M.C.A', 'Ganpat University', 2013, 89.9),
-(5, 3, 'S.S.C', 'GSEB', 2005, 80);
 
 -- --------------------------------------------------------
 
@@ -152,17 +113,11 @@ CREATE TABLE IF NOT EXISTS `jobseeker_reg` (
   `code` mediumint(50) NOT NULL,
   PRIMARY KEY (`JobSeekId`),
   KEY `JobSeekId` (`JobSeekId`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
 -- Dumping data for table `jobseeker_reg`
 --
-
-INSERT INTO `jobseeker_reg` (`JobSeekId`, `JobSeekerName`, `Address`, `City`, `Email`, `Mobile`, `Qualification`, `Gender`, `BirthDate`, `Resume`, `Status`, `UserName`, `Password`, `Question`, `Answer`) VALUES
-(3, 'Jalpa Prajapati', 'Near Dena Bank', 'Mehsana', 'jalpa@gmail.com', 9898989898, 'M.C.A', 'Female', '1999-09-10', 'Marksheet.pdf', 'verified', 'jalpa', 'jalpa', 'What is Your Pet Name?', 'jalpa'),
-(4, 'Krunal Prajapati', 'Patan', 'Patan', 'krunal@gmail.com', 8989898989, 'M.B.A', 'Male', '1998-09-16', 'Marksheet.pdf', 'verified', 'krunal', 'krunal', '', ''),
-(5, 'Gopal Patel', 'Patan', 'Patan', 'gopal@gmail.com', 9898989898, 'MA', 'Male', '1998-10-15', 'admin.jpg', 'verified', 'gopal', 'gopal', '', ''),
-(6, 'Mehul Mistry', 'Swastik SOciety', 'Baroda', 'mehul@gmail.com', 8989898998, 'BE', 'Male', '1996-10-09', '470X310_1.jpg', 'verified', 'mehul', 'mehul', 'What is Your Pet Name?', 'mehu');
 
 
 -- --------------------------------------------------------
@@ -179,17 +134,11 @@ CREATE TABLE IF NOT EXISTS `job_master` (
   `MinQualification` varchar(50) NOT NULL,
   `Description` varchar(200) NOT NULL,
   PRIMARY KEY (`JobId`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
 -- Dumping data for table `job_master`
 --
-
-INSERT INTO `job_master` (`JobId`, `CompanyName`, `JobTitle`, `Vacancy`, `MinQualification`, `Description`) VALUES
-(1, 'Wipro Infotech', 'Software Professional Required', 2, 'M.C.A', 'ASP.NET'),
-(2, 'Wipro Infotech', 'Marketing Executive Required', 5, 'M.B.A', 'Freshers Are Invited'),
-(3, 'TCS Private Limited', 'Software Trainee Required', 1, 'B.Sc.I.T', 'Starting Salary 5000'),
-(4, 'Wipro Infotech', 'Cleaners Required', 3, 'S.S.C', 'N');
 
 -- --------------------------------------------------------
 
@@ -202,15 +151,11 @@ CREATE TABLE IF NOT EXISTS `news_master` (
   `News` varchar(200) NOT NULL,
   `NewsDate` date NOT NULL,
   PRIMARY KEY (`NewsId`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
 -- Dumping data for table `news_master`
 --
-
-INSERT INTO `news_master` (`NewsId`, `News`, `NewsDate`) VALUES
-(1, 'Register and Get JOB', '2021-04-24'),
-(2, 'New Vacancies will be updated after diwali', '2021-03-31');
 
 -- --------------------------------------------------------
 
@@ -223,14 +168,14 @@ CREATE TABLE IF NOT EXISTS `user_master` (
   `UserName` varchar(20) NOT NULL,
   `Password` varchar(20) NOT NULL,
   PRIMARY KEY (`UserId`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `user_master`
 --
 
 INSERT INTO `user_master` (`UserId`, `UserName`, `Password`) VALUES
-(6, 'admin', 'admin');
+(1, 'admin', 'admin');
 
 -- --------------------------------------------------------
 
@@ -248,12 +193,5 @@ CREATE TABLE IF NOT EXISTS `walkin_master` (
   `InterviewDate` date NOT NULL,
   `InterviewTime` time NOT NULL,
   PRIMARY KEY (`WalkInId`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
---
--- Dumping data for table `walkin_master`
---
-
-INSERT INTO `walkin_master` (`WalkInId`, `CompanyName`, `JobTitle`, `Vacancy`, `MinQualification`, `Description`, `InterviewDate`, `InterviewTime`) VALUES
-(1, 'Wipro Infotech', 'Freshers Required', 5, 'B.C.A', 'Hardworking Person are Required.', '2021-04-25', '09:00:00'),
-(2, 'TCS Private Limited', 'Marketive Representative Invited', 2, 'Pharmacist', 'Ready TO work in North Gujarat', '2021-04-07', '09:00:00');

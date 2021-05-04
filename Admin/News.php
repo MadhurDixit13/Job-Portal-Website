@@ -41,6 +41,11 @@ else{
             font-weight: bold;
             color: #FFFFFF;
         }
+        .button{
+            cursor: pointer;
+            width: 25%;
+            font-size: 16px;
+        }
 
         .style7 {
             font-size: large
@@ -55,14 +60,6 @@ else{
             font-size: large;
         }
         -->
-        .button {
-            background-color: #192666; /* Green */
-            
-        }
-        .button:hover {
-            background-color: #192666; /* Green */
-            color: white;
-        }
         table th, table td{
         padding: 10px; /* Apply cell padding */
         }
@@ -465,7 +462,7 @@ else{
                                         <tr>
                                             <td>&nbsp;</td>
                                             <td><label>
-                                                    <input type="submit" name="button" id="button" class="button"value="Submit"/>
+                                                    <input type="submit" name="button" id="button" class="button" value="Submit"/>
                                                 </label></td>
                                         </tr>
                                     </table>

@@ -32,8 +32,12 @@
             font-size: small;
             font-weight: bold;
         }
-
-        -->
+        .button{
+            cursor: pointer;
+            width: 18%;
+            font-size: 16px;
+        }
+        
     </style>
     <script src="../SpryAssets/SpryValidationTextField.js" type="text/javascript"></script>
     <link href="../SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css"/>
@@ -49,7 +53,11 @@
 
 <body id="www-url-cz">
 <!-- Main -->
+<font size=3>
 <div id="main" class="box">
+<?php 
+include "menu.php"
+?> 
     <!-- Page (2 columns) -->
     <div id="page" class="box">
         <div id="page-in" class="box">
@@ -137,7 +145,7 @@
                                         </tr>
                                         <tr>
                                             <td></td>
-                                            <td><input type="submit" name="submit" value="Update Record"/></td>
+                                            <td><input type="submit" name="submit" class="button" value="Update Record"/></td>
                                         </tr>
                                     </table>
                                 </form>
@@ -158,6 +166,11 @@
                 </div> <!-- /article -->
 
                 <hr class="noscreen"/>
+                <p class="btn-more box noprint">&nbsp;</p>
+                <p class="btn-more box noprint">&nbsp;</p>
+                <p class="btn-more box noprint">&nbsp;</p>
+                <p class="btn-more box noprint">&nbsp;</p>
+                <p class="btn-more box noprint">&nbsp;</p>
                 <p class="btn-more box noprint">&nbsp;</p>
                 <p class="btn-more box noprint">&nbsp;</p>
                 <p class="btn-more box noprint">&nbsp;</p>
@@ -184,6 +197,7 @@
     var sprytextfield1 = new Spry.Widget.ValidationTextField("sprytextfield1");
     //-->
 </script>
+</font>
 </body>
 </html>
 
