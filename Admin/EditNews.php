@@ -5,7 +5,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <meta http-equiv="content-language" content="cs"/>
     <meta name="robots" content="all,follow"/>
-    <title>JOB PORTAL</title>
+    <title>JOB Portal</title>
     <meta name="description" content="..."/>
     <meta name="keywords" content="..."/>
 
