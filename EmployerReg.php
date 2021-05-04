@@ -18,17 +18,6 @@
             bt.disabled = true;
         }
     }
-
-// 	Using ES6 feature.
-// 	let manage = (txt) => { 
-//     	let bt = document.getElementById('btSubmit');
-//         if (txt.value != '') {
-//             bt.disabled = false;
-//         }
-//         else {
-//             bt.disabled = true;
-//         }
-//     }
 </script>
 
     <link rel="index" href="./" title="Home" />
